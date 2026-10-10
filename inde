@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0b0d">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>سيف شرفا | تسويق أداء، Google Ads وبنية قياس</title>
+  <meta name="description" content="سيف شرفا: متخصص تسويق أداء للسوق السعودي والخليجي. إدارة Google Ads وMeta وتسويق التطبيقات، مع GA4 وGTM وبنية تتبع دقيقة تربط الإنفاق بالنتائج.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="سيف شرفا | Paid Growth & Measurement">
+  <meta property="og:description" content="حملات مدفوعة مبنية على قياس صحيح، لا على التخمين. شاهد النتائج والأعمال الموثقة.">
+  <meta property="og:image" content="assets/saif-og.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Saif Shorfa",
+    "alternateName":"سيف شرفا",
+    "jobTitle":"Performance Marketing & Measurement Specialist",
+    "email":"mailto:saif.shorfa@gmail.com",
+    "telephone":"+970597200690",
+    "knowsAbout":["Google Ads","Meta Ads","Google Analytics 4","Google Tag Manager","App Marketing","Technical SEO"],
+    "sameAs":[
+      "https://www.linkedin.com/in/saif-shorfa/",
+      "https://medium.com/@saif.shorfa",
+      "https://barqoftech.com/author/saif-shorfa/"
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --panel:#121216;
+      --panel-2:#18181d;
+      --text:#f6f3ee;
+      --muted:#aaa7a2;
+      --soft:#d9d4cc;
+      --accent:#ff8f6b;
+      --accent-2:#ffb18f;
+      --line:rgba(255,255,255,.11);
+      --line-strong:rgba(255,255,255,.2);
+      --success:#98e0b0;
+      --shadow:0 30px 80px rgba(0,0,0,.35);
+      --radius:24px;
+      --radius-sm:14px;
+      --max:1220px;
+      --pad:clamp(18px,4vw,56px);
+      --font-ar:"IBM Plex Sans Arabic",system-ui,sans-serif;
+      --font-en:"Manrope",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-ar);line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    html[lang="en"] body{font-family:var(--font-en);line-height:1.62}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+      radial-gradient(circle at 12% 0%,rgba(255,94,61,.18),transparent 34%),
+      radial-gradient(circle at 88% 16%,rgba(255,143,107,.11),transparent 28%),
+      linear-gradient(180deg,#0a0a0c,#0e0e12 55%,#09090b)}
+    body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E")}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,select,textarea{font:inherit}
+    button{color:inherit}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+    .container{width:min(var(--max),calc(100% - (var(--pad) * 2)));margin-inline:auto}
+    .section{padding-block:clamp(76px,10vw,132px)}
+    .section-tight{padding-block:clamp(58px,7vw,88px)}
+    .kicker{display:flex;align-items:center;gap:12px;margin:0 0 18px;color:var(--accent-2);font-family:var(--font-en);font-size:.75rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .kicker::before{content:"";width:32px;height:1px;background:var(--accent)}
+    html[dir="rtl"] .kicker{letter-spacing:.02em}
+    .section-title{font-size:clamp(2rem,5vw,4.25rem);line-height:1.14;letter-spacing:-.035em;margin:0;max-width:16ch}
+    html[dir="rtl"] .section-title{letter-spacing:-.015em;line-height:1.3}
+    .section-intro{max-width:66ch;margin:18px 0 0;color:var(--muted);font-size:clamp(.98rem,1.3vw,1.1rem)}
+    .accent{color:var(--accent)}
+    .eyebrow-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(255,143,107,.12)}
+    .progress{position:fixed;inset-inline-start:0;top:0;z-index:110;height:2px;width:0;background:linear-gradient(90deg,var(--accent),#ffd0bc)}
+
+    .nav{position:fixed;top:0;inset-inline:0;z-index:100;background:rgba(11,11,13,.72);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;white-space:nowrap}
+    .brand-mark{width:34px;height:34px;display:grid;grid-template-columns:1fr 1fr;gap:3px;transform:rotate(0deg)}
+    .brand-mark i{display:block;background:var(--accent);border-radius:12px 2px 12px 2px}
+    .brand-mark i:nth-child(2),.brand-mark i:nth-child(3){border-radius:2px 12px 2px 12px}
+    .brand-name{font-family:var(--font-en);font-size:.92rem;letter-spacing:.01em}
+    .nav-links{display:flex;align-items:center;gap:28px;color:#c7c4bf;font-size:.9rem}
+    .nav-links a{position:relative;transition:.2s}
+    .nav-links a::after{content:"";position:absolute;inset-inline:0;bottom:-8px;height:1px;background:var(--accent);transform:scaleX(0);transition:.2s}
+    .nav-links a:hover{color:#fff}.nav-links a:hover::after{transform:scaleX(1)}
+    .nav-actions{display:flex;align-items:center;gap:9px}
+    .icon-btn{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;height:40px;padding-inline:15px;cursor:pointer;transition:.2s;font-family:var(--font-en);font-size:.75rem;font-weight:800;letter-spacing:.08em}
+    .icon-btn:hover{border-color:var(--line-strong);background:rgba(255,255,255,.08)}
+    .menu-btn{display:none;width:42px;padding:0;align-items:center;justify-content:center}
+    .menu-btn span,.menu-btn::before,.menu-btn::after{content:"";display:block;width:18px;height:1px;background:#fff;transition:.2s}
+    .menu-btn span{margin:5px 0}
+    .nav-cta{display:inline-flex;align-items:center;gap:8px;height:42px;padding-inline:18px;border-radius:999px;background:var(--text);color:#0a0a0c;font-weight:700;font-size:.84rem;transition:.2s}
+    .nav-cta:hover{background:var(--accent);transform:translateY(-1px)}
+
+    .hero{min-height:100svh;display:flex;align-items:center;padding-top:118px;padding-bottom:64px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(370px,.92fr);align-items:center;gap:clamp(38px,6vw,86px)}
+    .hero-copy{position:relative;z-index:2}
+    .availability{display:inline-flex;align-items:center;gap:12px;border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:999px;padding:8px 13px;margin-bottom:24px;color:#c8c4be;font-size:.78rem}
+    .availability .live{width:8px;height:8px;border-radius:50%;background:var(--success);box-shadow:0 0 0 6px rgba(152,224,176,.1);animation:pulse 2s infinite}
+    @keyframes pulse{50%{box-shadow:0 0 0 11px rgba(152,224,176,0)}}
+    .hero h1{font-size:clamp(2.65rem,6.2vw,6rem);line-height:1.08;letter-spacing:-.055em;margin:0;max-width:12ch}
+    html[dir="rtl"] .hero h1{line-height:1.23;letter-spacing:-.025em;max-width:11.5ch}
+    .hero h1 strong{font-weight:700;color:var(--accent);font-style:normal}
+    .hero-lead{margin:26px 0 0;color:#b9b5af;max-width:60ch;font-size:clamp(1rem,1.45vw,1.18rem)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .btn{min-height:52px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 24px;border-radius:999px;border:1px solid var(--line-strong);font-weight:700;cursor:pointer;transition:.22s}
+    .btn-primary{background:var(--accent);color:#15100e;border-color:var(--accent);box-shadow:0 12px 32px rgba(255,111,70,.22)}
+    .btn-primary:hover{background:#ffab8f;transform:translateY(-2px);box-shadow:0 18px 38px rgba(255,111,70,.28)}
+    .btn-secondary{background:rgba(255,255,255,.025)}
+    .btn-secondary:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:18px 28px;margin-top:34px;color:#8f8c88;font-family:var(--font-en);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .hero-meta span{display:flex;align-items:center;gap:8px}
+    .hero-meta i{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .hero-visual{position:relative;max-width:550px;justify-self:end}
+    .portrait-shell{position:relative;overflow:hidden;border-radius:34px;border:1px solid rgba(255,255,255,.16);background:#161317;box-shadow:var(--shadow);isolation:isolate}
+    .portrait-shell::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(11,11,13,.82) 100%);z-index:1;pointer-events:none}
+    .portrait-shell::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);z-index:2;pointer-events:none}
+    .portrait-shell img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center center}
+    .portrait-caption{position:absolute;z-index:3;inset-inline:26px;bottom:22px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+    .portrait-caption strong{display:block;font-family:var(--font-en);font-size:1.08rem}
+    .portrait-caption span{display:block;color:#c9c5bf;font-size:.78rem;margin-top:4px}
+    .signature{font-family:var(--font-en);font-size:.72rem;color:#d8d2ca;letter-spacing:.12em;text-transform:uppercase;text-align:end}
+    .float-card{position:absolute;z-index:4;border:1px solid rgba(255,255,255,.17);background:rgba(15,15,18,.85);backdrop-filter:blur(18px);border-radius:16px;padding:14px 16px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+    .float-card b{display:block;font-family:var(--font-en);font-size:1.22rem;line-height:1.1}
+    .float-card small{display:block;color:#aaa6a0;font-size:.68rem;margin-top:6px;white-space:nowrap}
+    .float-one{top:9%;inset-inline-start:-36px}.float-two{bottom:15%;inset-inline-end:-34px}
+
+    .trust{border-block:1px solid var(--line);background:rgba(255,255,255,.025)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:30px clamp(16px,2.6vw,34px);border-inline-end:1px solid var(--line)}
+    .trust-item:last-child{border-inline-end:0}
+    .trust-num{font-family:var(--font-en);font-size:clamp(1.75rem,3.3vw,2.8rem);font-weight:800;letter-spacing:-.055em;line-height:1;color:#fff}
+    .trust-label{margin-top:10px;color:#94908b;font-size:.78rem}
+
+    .work-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:46px}
+    .work-note{color:#898680;font-size:.8rem;max-width:34ch}
+    .cases{display:grid;gap:22px}
+    .case-card{position:relative;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));overflow:hidden;transition:.28s}
+    .case-card:hover{transform:translateY(-5px);border-color:rgba(255,143,107,.45);box-shadow:0 24px 58px rgba(0,0,0,.25)}
+    .case-card.featured{display:grid;grid-template-columns:1.08fr .92fr;min-height:470px}
+    .case-content{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column}
+    .case-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+    .tag{border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:#b9b6b1;font-family:var(--font-en);font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .tag-accent{color:var(--accent-2);border-color:rgba(255,143,107,.35);background:rgba(255,143,107,.08)}
+    .case-card h3{font-size:clamp(1.45rem,2.8vw,2.5rem);line-height:1.27;letter-spacing:-.025em;margin:0;max-width:22ch}
+    html[dir="rtl"] .case-card h3{letter-spacing:-.01em;line-height:1.45}
+    .case-copy{color:#aaa7a2;margin:16px 0 0;max-width:57ch}
+    .case-result{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:auto}
+    .case-stat{background:#111115;padding:20px}
+    .case-stat b{display:block;font-family:var(--font-en);font-size:clamp(1.35rem,2.6vw,2.1rem);line-height:1.1;letter-spacing:-.04em}
+    .case-stat span{display:block;color:#8f8c87;font-size:.7rem;margin-top:8px}
+    .case-proof{position:relative;min-height:380px;background:#0f0f12;overflow:hidden;border-inline-start:1px solid var(--line)}
+    .case-proof img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:saturate(.82) contrast(1.04);opacity:.92;transition:.4s}
+    .case-card:hover .case-proof img{transform:scale(1.025);opacity:1}
+    .case-proof::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,16,.72),transparent 35%),linear-gradient(0deg,rgba(13,13,16,.4),transparent 45%)}
+    html[dir="rtl"] .case-proof::after{background:linear-gradient(270deg,rgba(13,13,16,.72),transparent 35%),linear-gradient(0deg,rgba(13,13,16,.4),transparent 45%)}
+    .proof-label{position:absolute;z-index:2;bottom:22px;inset-inline:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:#e8e2db;font-size:.72rem}
+    .proof-label span:first-child{display:flex;align-items:center;gap:8px}.proof-label i{width:7px;height:7px;border-radius:50%;background:var(--success)}
+    .case-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .case-card.mini .case-content{min-height:420px}
+    .case-card.mini .case-result{margin-top:30px;grid-template-columns:repeat(2,1fr)}
+    .case-card.mini .case-stat:last-child:nth-child(3){grid-column:1/-1}
+    .case-link{display:inline-flex;align-items:center;gap:9px;margin-top:24px;color:var(--accent-2);font-size:.82rem;font-weight:700}
+    .case-link .arr{transition:.2s}.case-link:hover .arr{transform:translateX(-4px)}
+    html[dir="ltr"] .case-link:hover .arr{transform:translateX(4px)}
+
+    .approach{border-block:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.012))}
+    .approach-grid{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(40px,7vw,96px);align-items:start}
+    .sticky{position:sticky;top:118px}
+    .steps{border-top:1px solid var(--line)}
+    .step{display:grid;grid-template-columns:58px 1fr;gap:22px;padding:30px 0;border-bottom:1px solid var(--line)}
+    .step-no{font-family:var(--font-en);color:var(--accent);font-size:.78rem;font-weight:800;letter-spacing:.1em}
+    .step h3{margin:0;font-size:1.18rem}.step p{margin:9px 0 0;color:#9a9691;font-size:.92rem;max-width:60ch}
+
+    .capabilities{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+    .cap-card{border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.025);padding:28px;transition:.25s}
+    .cap-card:hover{background:rgba(255,255,255,.05);border-color:var(--line-strong)}
+    .cap-icon{width:44px;height:44px;border:1px solid rgba(255,143,107,.35);background:rgba(255,143,107,.08);border-radius:14px;display:grid;place-items:center;color:var(--accent);font-family:var(--font-en);font-weight:800;font-size:.75rem}
+    .cap-card h3{margin:22px 0 0;font-size:1.12rem}.cap-card p{margin:10px 0 0;color:#96928d;font-size:.88rem}
+    .cap-list{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 0;padding:0;list-style:none}
+    .cap-list li{font-family:var(--font-en);font-size:.64rem;color:#aaa6a0;border:1px solid var(--line);padding:5px 8px;border-radius:999px}
+
+    .proof-section{background:#f0ece5;color:#141416}
+    .proof-section .kicker{color:#a64f32}.proof-section .kicker::before{background:#bd5a3a}
+    .proof-section .section-intro{color:#66615b}
+    .proof-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:48px}
+    .proof-shot{position:relative;border:1px solid rgba(20,20,22,.14);border-radius:18px;overflow:hidden;background:#fff;cursor:zoom-in;box-shadow:0 14px 38px rgba(30,23,18,.07);transition:.25s}
+    .proof-shot:hover{transform:translateY(-4px);box-shadow:0 22px 48px rgba(30,23,18,.12)}
+    .proof-shot:nth-child(1){grid-column:span 7}.proof-shot:nth-child(2){grid-column:span 5}.proof-shot:nth-child(3){grid-column:span 4}.proof-shot:nth-child(4){grid-column:span 4}.proof-shot:nth-child(5){grid-column:span 4}.proof-shot:nth-child(6){grid-column:span 6}.proof-shot:nth-child(7){grid-column:span 6}
+    .proof-shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+    .proof-caption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 16px;border-top:1px solid rgba(20,20,22,.1);font-family:var(--font-en);font-size:.68rem;color:#68635d}
+    .proof-caption b{color:#1e1d1c;font-size:.72rem}
+
+    .about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(42px,7vw,100px);align-items:center}
+    .about-photo{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);background:#19191d}
+    .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;filter:saturate(.92) contrast(1.04)}
+    .about-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(145deg,transparent 45%,rgba(255,143,107,.17))}
+    .about-copy h2{font-size:clamp(2rem,4.4vw,3.8rem);line-height:1.23;letter-spacing:-.04em;margin:0;max-width:15ch}
+    html[dir="rtl"] .about-copy h2{line-height:1.42;letter-spacing:-.01em}
+    .about-copy>p{color:#aaa6a0;font-size:1.02rem;margin:20px 0 0;max-width:64ch}
+    .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+    .cred{border:1px solid var(--line);border-radius:14px;padding:16px}.cred span{display:block;color:#817e79;font-size:.68rem;margin-bottom:7px}.cred b{font-size:.82rem;font-weight:600}
+    .skill-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.skill-cloud span{border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:999px;padding:7px 11px;color:#b8b4ae;font-family:var(--font-en);font-size:.65rem}
+
+    .contact{padding-bottom:0}
+    .contact-panel{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:32px;background:linear-gradient(145deg,#19171a,#101014);box-shadow:var(--shadow)}
+    .contact-panel::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:rgba(255,112,70,.14);filter:blur(20px);top:-280px;inset-inline-end:-160px}
+    .contact-grid{position:relative;z-index:1;display:grid;grid-template-columns:.88fr 1.12fr}
+    .contact-copy{padding:clamp(34px,5vw,64px);border-inline-end:1px solid var(--line)}
+    .contact-copy h2{font-size:clamp(2rem,4.6vw,4rem);line-height:1.22;letter-spacing:-.045em;margin:0;max-width:12ch}
+    html[dir="rtl"] .contact-copy h2{line-height:1.43;letter-spacing:-.015em}
+    .contact-copy p{color:#aaa6a0;margin:18px 0 0;max-width:48ch}
+    .direct-links{display:grid;gap:10px;margin-top:32px}
+    .direct-link{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-family:var(--font-en);font-size:.76rem;color:#c9c5bf}
+    .direct-link b{color:#77736e;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase}
+    .direct-link:hover span{color:var(--accent)}
+    .contact-form{padding:clamp(34px,5vw,64px);display:grid;align-content:center}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:grid;gap:8px;margin-bottom:16px}
+    .field label{font-size:.73rem;color:#a7a39d}
+    .field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:#0e0e11;color:#fff;border-radius:13px;padding:13px 14px;transition:.2s;outline:none}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(255,143,107,.7);box-shadow:0 0 0 4px rgba(255,143,107,.08)}
+    .field textarea{min-height:112px;resize:vertical}
+    .field select option{background:#111116}
+    .form-submit{width:100%;border:0;margin-top:4px}
+    .form-note{min-height:22px;margin:12px 0 0;color:#97938e;font-size:.73rem;text-align:center}
+    .form-note.error{color:#ffad9a}.form-note.ok{color:var(--success)}
+
+    footer{padding:28px 0 34px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;color:#77736f;font-size:.76rem}
+    .footer-inner span:last-child{font-family:var(--font-en);letter-spacing:.08em;text-transform:uppercase}
+
+    dialog{width:min(1100px,calc(100% - 30px));max-height:92vh;border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:0;background:#0d0d10;color:#fff;box-shadow:0 40px 120px rgba(0,0,0,.65)}
+    dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(7px)}
+    dialog img{width:100%;max-height:82vh;object-fit:contain;background:#fff}
+    .dialog-bar{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;border-bottom:1px solid var(--line);font-family:var(--font-en);font-size:.72rem;color:#bdb9b3}
+    .dialog-close{border:1px solid var(--line);background:transparent;border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:1rem}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:1050px){
+      .hero-grid{grid-template-columns:1fr .82fr;gap:40px}.float-one{inset-inline-start:-18px}.float-two{inset-inline-end:-18px}
+      .case-card.featured{grid-template-columns:1fr}.case-proof{border-inline-start:0;border-top:1px solid var(--line);min-height:320px}
+      .approach-grid{grid-template-columns:1fr}.sticky{position:static}.capabilities{grid-template-columns:repeat(2,1fr)}
+      .about-grid{grid-template-columns:.85fr 1.15fr}.contact-grid{grid-template-columns:1fr}.contact-copy{border-inline-end:0;border-bottom:1px solid var(--line)}
+    }
+    @media(max-width:820px){
+      .nav-links{position:fixed;top:74px;inset-inline:var(--pad);display:none;flex-direction:column;align-items:stretch;gap:0;background:#111115;border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:var(--shadow)}
+      .nav-links.open{display:flex}.nav-links a{padding:13px 14px;border-radius:10px}.nav-links a:hover{background:rgba(255,255,255,.05)}.nav-links a::after{display:none}
+      .menu-btn{display:inline-flex}.nav-cta{display:none}
+      .hero{min-height:auto;padding-top:124px}.hero-grid{grid-template-columns:1fr}.hero-copy{text-align:start}.hero h1{max-width:13ch}.hero-visual{justify-self:center;width:min(100%,590px)}
+      .trust-grid{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(2){border-inline-end:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .work-head{display:block}.work-note{margin-top:18px}.case-mini-grid{grid-template-columns:1fr}.capabilities{grid-template-columns:1fr}
+      .proof-shot:nth-child(n){grid-column:span 6}.about-grid{grid-template-columns:1fr}.about-photo{max-width:480px}.cred-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:580px){
+      :root{--radius:20px}.nav-inner{height:68px}.nav-links{top:68px}.brand-name{display:none}.icon-btn{height:38px;padding-inline:13px}.menu-btn{width:38px}
+      .hero{padding-top:108px}.availability{font-size:.7rem}.hero h1{font-size:clamp(2.45rem,13vw,4.4rem)}.hero-actions{display:grid}.btn{width:100%}.hero-meta{gap:12px 16px}
+      .portrait-shell{border-radius:24px}.portrait-caption{inset-inline:18px;bottom:16px}.float-card{padding:11px 12px}.float-card b{font-size:1rem}.float-card small{font-size:.6rem}.float-one{top:6%;inset-inline-start:-6px}.float-two{bottom:16%;inset-inline-end:-6px}
+      .trust-item{padding:24px 16px}.trust-label{font-size:.7rem}.section{padding-block:72px}.section-title{font-size:2.2rem}
+      .case-content{padding:25px 20px}.case-result{grid-template-columns:1fr}.case-card.mini .case-result{grid-template-columns:1fr}.case-card.mini .case-content{min-height:auto}.case-stat{padding:17px}.case-proof{min-height:260px}
+      .step{grid-template-columns:40px 1fr;gap:12px}.cap-card{padding:22px}.proof-grid{gap:12px}.proof-shot:nth-child(n){grid-column:1/-1}.proof-caption{padding:12px;font-size:.62rem}
+      .about-copy h2{font-size:2.35rem}.contact-panel{border-radius:22px}.contact-copy,.contact-form{padding:28px 20px}.form-row{grid-template-columns:1fr}.footer-inner{display:grid;text-align:center;justify-items:center}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Saif Shorfa home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="brand-name">SAIF SHORFA</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#work" data-i="navWork">الأعمال</a>
+        <a href="#approach" data-i="navMethod">المنهجية</a>
+        <a href="#services" data-i="navServices">الخدمات</a>
+        <a href="#about" data-i="navAbout">عنّي</a>
+        <a href="#contact" data-i="navContact">تواصل</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language">EN</button>
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+        <a class="nav-cta" href="#contact"><span data-i="navCta">ابدأ مشروعك</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="availability"><span class="live"></span><span data-i="available">متاح لمشاريع مختارة في السعودية والخليج</span></div>
+          <h1 data-i="heroTitle">أحوّل ميزانية الإعلانات إلى <strong>نظام نمو قابل للقياس.</strong></h1>
+          <p class="hero-lead" data-i="heroLead">أدير Google Ads وMeta وحملات التطبيقات، وأبني GA4 وGTM والتتبّع من الأساس—حتى تعرف بالضبط أين يذهب الإنفاق، وما الذي يصنع النتيجة.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work"><span data-i="heroWork">شاهد أبرز النتائج</span><span aria-hidden="true">↓</span></a>
+            <a class="btn btn-secondary" href="#contact"><span data-i="heroCall">اطلب مراجعة حسابك</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-meta">
+            <span><i></i><b data-i="metaOne">Paid Media</b></span>
+            <span><i></i><b data-i="metaTwo">Measurement</b></span>
+            <span><i></i><b data-i="metaThree">KSA & GCC</b></span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="portrait-shell">
+            <img src="assets/hero-saif.webp" alt="سيف شرفا، متخصص تسويق الأداء وإدارة الحملات الإعلانية" width="1000" height="1000" fetchpriority="high" decoding="async">
+            <div class="portrait-caption">
+              <div><strong>Saif Shorfa</strong><span data-i="portraitRole">Performance Marketing & Measurement</span></div>
+              <div class="signature">Google Ads<br>GA4 · GTM</div>
+            </div>
+          </div>
+          <div class="float-card float-one"><b>SAR 7.26</b><small data-i="floatOne">Cost per qualified conversion</small></div>
+          <div class="float-card float-two"><b>9.5×</b><small data-i="floatTwo">E-commerce ROAS</small></div>
+        </div>
+      </div>
+    </header>
+
+    <section class="trust" aria-label="Selected results">
+      <div class="container trust-grid">
+        <div class="trust-item"><div class="trust-num">814</div><div class="trust-label" data-i="trustOne">تحويل لقطاع طبي خلال 25 يومًا</div></div>
+        <div class="trust-item"><div class="trust-num">5,070</div><div class="trust-label" data-i="trustTwo">تنزيل تطبيق بتكلفة 0.43 ريال</div></div>
+        <div class="trust-item"><div class="trust-num">9.5×</div><div class="trust-label" data-i="trustThree">عائد إنفاق لمتجر إلكتروني</div></div>
+        <div class="trust-item"><div class="trust-num">15+</div><div class="trust-label" data-i="trustFour">موقعًا في مشاريع SEO وتقنية</div></div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="work-head reveal">
+          <div>
+            <p class="kicker" data-i="workKicker">Selected Work</p>
+            <h2 class="section-title" data-i="workTitle">أعمال مختارة، مرتّبة حسب <span class="accent">الأثر التجاري.</span></h2>
+            <p class="section-intro" data-i="workIntro">لا أستعرض حملات جميلة فقط. أستعرض المشكلة، ما تغيّر داخل الحساب، والرقم الذي تحسّن بعد التنفيذ.</p>
+          </div>
+          <p class="work-note" data-i="workNote">الأرقام مأخوذة من بيانات المشاريع، وتتوفر لقطات داعمة للحالات التي تسمح بالمشاركة.</p>
+        </div>
+
+        <div class="cases">
+          <article class="case-card featured reveal">
+            <div class="case-content">
+              <div class="case-tags"><span class="tag tag-accent">Healthcare</span><span class="tag">Google Ads</span><span class="tag">Lead Generation</span></div>
+              <h3 data-i="caseOneTitle">إعادة هيكلة حساب عيادات متعددة التخصصات لخفض تكلفة التحويل ورفع حجم الحجوزات.</h3>
+              <p class="case-copy" data-i="caseOneCopy">فصلنا الحملات حسب التخصص والمدينة، أعدنا تعريف التحويلات الأساسية، وغيّرنا استراتيجيات المزايدة حسب قيمة كل هدف بدل إدارة الحساب ككتلة واحدة.</p>
+              <div class="case-result">
+                <div class="case-stat"><b>814</b><span data-i="caseOneStatOne">تحويل مسجّل</span></div>
+                <div class="case-stat"><b>SAR 7.26</b><span data-i="caseOneStatTwo">تكلفة التحويل</span></div>
+                <div class="case-stat"><b>25 days</b><span data-i="caseOneStatThree">فترة القياس</span></div>
+              </div>
+            </div>
+            <button class="case-proof proof-trigger" type="button" data-src="assets/majesty-campaigns.png" data-caption="Google Ads · Healthcare campaigns · July 2026" aria-label="Open healthcare campaign screenshot">
+              <img src="assets/majesty-campaigns.png" alt="لقطة من أداء حملات Google Ads لقطاع طبي" loading="lazy">
+              <span class="proof-label"><span><i></i><b data-i="proofVerified">لقطة من الحساب</b></span><span>Open ↗</span></span>
+            </button>
+          </article>
+
+          <div class="case-mini-grid">
+            <article class="case-card mini reveal">
+              <div class="case-content">
+                <div class="case-tags"><span class="tag tag-accent">Mobile App</span><span class="tag">Google UAC</span><span class="tag">Firebase</span></div>
+                <h3 data-i="caseTwoTitle">نمو تطبيق قانوني للنساء في السعودية بأقل من نصف ريال للتنزيل.</h3>
+                <p class="case-copy" data-i="caseTwoCopy">ربطنا Google Ads مع Play Console وFirebase وGA4، ثم نقلنا التركيز من عدد التنزيلات إلى جودة المستخدم والاحتفاظ.</p>
+                <div class="case-result">
+                  <div class="case-stat"><b>5,070</b><span data-i="caseTwoStatOne">تنزيل مدفوع</span></div>
+                  <div class="case-stat"><b>SAR 0.43</b><span data-i="caseTwoStatTwo">تكلفة التنزيل</span></div>
+                </div>
+                <a class="case-link" href="#proof"><span data-i="seeProof">شاهد لقطات الإثبات</span><span class="arr">←</span></a>
+              </div>
+            </article>
+
+            <article class="case-card mini reveal">
+              <div class="case-content">
+                <div class="case-tags"><span class="tag tag-accent">E-commerce</span><span class="tag">Search</span><span class="tag">CRO</span></div>
+                <h3 data-i="caseThreeTitle">تحويل متجر حقائب من زيارات مدفوعة ضعيفة إلى 9.5 أضعاف عائد.</h3>
+                <p class="case-copy" data-i="caseThreeCopy">استخرجنا عبارات الشراء الفعلية، عزلنا الكلمات الرابحة في Exact Match، وبنينا نظام كلمات سلبية مع تحسين مسار صفحة المنتج والدفع.</p>
+                <div class="case-result">
+                  <div class="case-stat"><b>SAR 105K</b><span data-i="caseThreeStatOne">إيرادات</span></div>
+                  <div class="case-stat"><b>225</b><span data-i="caseThreeStatTwo">طلبًا مكتملًا</span></div>
+                </div>
+                <span class="case-link"><span data-i="caseThreeNote">أكبر فرصة لاحقة: رفع تحويل الدفع إلى الشراء</span></span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section approach" id="approach">
+      <div class="container approach-grid">
+        <div class="sticky reveal">
+          <p class="kicker" data-i="methodKicker">How I Work</p>
+          <h2 class="section-title" data-i="methodTitle">الإعلان ليس البداية. <span class="accent">البيانات هي البداية.</span></h2>
+          <p class="section-intro" data-i="methodIntro">أي ميزانية تُدار فوق تتبّع مكسور ستتعلّم من إشارات خاطئة. لذلك يبدأ العمل بتثبيت القياس قبل زيادة الإنفاق.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal"><div class="step-no">01</div><div><h3 data-i="stepOneTitle">تشخيص الحساب ومسار التحويل</h3><p data-i="stepOneCopy">أراجع الهيكلة، عبارات البحث، الإحالات، الأحداث والقيم، ثم أحدد أين يضيع الإنفاق وأين تنكسر البيانات.</p></div></article>
+          <article class="step reveal"><div class="step-no">02</div><div><h3 data-i="stepTwoTitle">إصلاح القياس وبنية التتبّع</h3><p data-i="stepTwoCopy">GTM وGA4 والتحويلات المحسنة وMeta Pixel وCAPI وFirebase—بحسب المشروع، مع اختبار كل حدث وقيمته.</p></div></article>
+          <article class="step reveal"><div class="step-no">03</div><div><h3 data-i="stepThreeTitle">إعادة الهيكلة وإطلاق التجارب</h3><p data-i="stepThreeCopy">أفصل النوايا والميزانيات والأهداف، أبني فرضيات واضحة، ثم أطلق اختبارات يمكن قراءتها بدل تغييرات عشوائية.</p></div></article>
+          <article class="step reveal"><div class="step-no">04</div><div><h3 data-i="stepFourTitle">تحسين مستمر وتقارير تقود قرارًا</h3><p data-i="stepFourCopy">التقرير لا ينتهي عند CTR وCPC. يوضح ماذا حدث، لماذا حدث، وما القرار التالي الذي سيؤثر على الإيراد أو جودة العميل.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="reveal">
+          <p class="kicker" data-i="servicesKicker">Capabilities</p>
+          <h2 class="section-title" data-i="servicesTitle">من التنفيذ الإعلاني إلى <span class="accent">البنية التي تثبت النتيجة.</span></h2>
+          <p class="section-intro" data-i="servicesIntro">الخدمة تُبنى حسب المشكلة، وليست باقة ثابتة تفرض على كل مشروع نفس الخطوات.</p>
+        </div>
+        <div class="capabilities">
+          <article class="cap-card reveal"><div class="cap-icon">ADS</div><h3 data-i="serviceOneTitle">إدارة حملات الأداء</h3><p data-i="serviceOneCopy">Google Search وShopping وPerformance Max وMeta، مع هيكلة ومزايدة وتحسين يومي يركز على النتائج التجارية.</p><ul class="cap-list"><li>Google Ads</li><li>Meta Ads</li><li>PMax</li><li>Shopping</li></ul></article>
+          <article class="cap-card reveal"><div class="cap-icon">DATA</div><h3 data-i="serviceTwoTitle">القياس والتتبّع</h3><p data-i="serviceTwoCopy">تنفيذ ومراجعة GA4 وGTM والتحويلات المحسنة وData Layer وPixel/CAPI وربط مصادر البيانات.</p><ul class="cap-list"><li>GA4</li><li>GTM</li><li>Data Layer</li><li>CAPI</li></ul></article>
+          <article class="cap-card reveal"><div class="cap-icon">APP</div><h3 data-i="serviceThreeTitle">تسويق التطبيقات</h3><p data-i="serviceThreeCopy">حملات تنزيل واكتساب، تحسين صفحة المتجر، وربط Firebase لقياس الاستخدام والاحتفاظ وليس التنزيل فقط.</p><ul class="cap-list"><li>UAC</li><li>Firebase</li><li>Play Console</li><li>ASO</li></ul></article>
+          <article class="cap-card reveal"><div class="cap-icon">SEO</div><h3 data-i="serviceFourTitle">SEO تقني وتجاري</h3><p data-i="serviceFourCopy">تدقيق تقني، فهرسة، بنية محتوى وربط داخلي يركز على كلمات ذات نية شرائية وربط الزيارات بالتحويلات.</p><ul class="cap-list"><li>Technical SEO</li><li>Content</li><li>GSC</li><li>Ahrefs</li></ul></article>
+          <article class="cap-card reveal"><div class="cap-icon">CRO</div><h3 data-i="serviceFiveTitle">تحسين مسار التحويل</h3><p data-i="serviceFiveCopy">تحليل التسرب من النقرة إلى الطلب، وتحسين صفحات الهبوط والمنتج والنماذج وربط التغييرات بمؤشرات واضحة.</p><ul class="cap-list"><li>Landing Pages</li><li>Funnels</li><li>Forms</li><li>A/B Tests</li></ul></article>
+          <article class="cap-card reveal"><div class="cap-icon">FIX</div><h3 data-i="serviceSixTitle">إنقاذ الحسابات المعلّقة</h3><p data-i="serviceSixCopy">تشخيص أسباب تعليق Google Ads وMerchant Center، إصلاح المخالفة، وتجهيز استئناف واضح ومدعوم.</p><ul class="cap-list"><li>Google Ads</li><li>Merchant Center</li><li>Policy</li><li>Appeals</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-section" id="proof">
+      <div class="container">
+        <div class="reveal">
+          <p class="kicker" data-i="proofKicker">Account Evidence</p>
+          <h2 class="section-title" data-i="proofTitle">الأرقام لها <span class="accent">مصدر.</span></h2>
+          <p class="section-intro" data-i="proofIntro">اضغط على أي لقطة لفتحها بالحجم الكامل. تم إخفاء أي بيانات حساسة تخص العملاء.</p>
+        </div>
+        <div class="proof-grid">
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/majesty-campaigns.png" data-caption="Google Ads · Healthcare campaigns"><img src="assets/majesty-campaigns.png" alt="Google Ads healthcare campaigns" loading="lazy"><span class="proof-caption"><b>Healthcare · Google Ads</b><span>814 conversions</span></span></button>
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/majesty-june.png" data-caption="Google Ads · Healthcare June performance"><img src="assets/majesty-june.png" alt="Google Ads healthcare performance in June" loading="lazy"><span class="proof-caption"><b>Healthcare · June</b><span>SAR 7.63 CPA</span></span></button>
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/app-uac-year.jpeg" data-caption="Google Ads · App campaign yearly performance"><img src="assets/app-uac-year.jpeg" alt="Google Ads app campaign performance" loading="lazy"><span class="proof-caption"><b>App Campaign</b><span>5.07K installs</span></span></button>
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/play-growth.jpeg" data-caption="Play Console · Store growth"><img src="assets/play-growth.jpeg" alt="Google Play Console growth" loading="lazy"><span class="proof-caption"><b>Play Console</b><span>+36% impressions</span></span></button>
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/firebase-retention.jpeg" data-caption="Firebase · Day-one retention"><img src="assets/firebase-retention.jpeg" alt="Firebase retention report" loading="lazy"><span class="proof-caption"><b>Firebase</b><span>D1 retention</span></span></button>
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/ga4-traffic.jpeg" data-caption="GA4 · Traffic acquisition"><img src="assets/ga4-traffic.jpeg" alt="GA4 traffic acquisition report" loading="lazy"><span class="proof-caption"><b>GA4</b><span>Traffic acquisition</span></span></button>
+          <button class="proof-shot proof-trigger reveal" type="button" data-src="assets/ga4-overview.jpeg" data-caption="GA4 · Overview"><img src="assets/ga4-overview.jpeg" alt="GA4 overview report" loading="lazy"><span class="proof-caption"><b>GA4</b><span>Measurement overview</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-photo reveal"><img src="assets/portrait-saif.webp" alt="سيف شرفا، متخصص تسويق الأداء" width="1000" height="1250" loading="lazy" decoding="async"></div>
+        <div class="about-copy reveal">
+          <p class="kicker" data-i="aboutKicker">About Saif</p>
+          <h2 data-i="aboutTitle">تتعامل معي مباشرة—من التشخيص إلى التنفيذ والتقرير.</h2>
+          <p data-i="aboutCopy">أعمل في تسويق الأداء للسوق السعودي والخليجي، مع تركيز خاص على الحسابات التي تحتاج إعادة بناء: حملات لا تحقق عائدًا واضحًا، تتبّع غير موثوق، أو بيانات لا تجيب عن السؤال الأهم: ما الذي يصنع الإيراد فعلًا؟</p>
+          <div class="cred-grid">
+            <div class="cred"><span data-i="credOneLabel">التركيز</span><b data-i="credOneValue">Paid Growth + Measurement</b></div>
+            <div class="cred"><span data-i="credTwoLabel">الأسواق</span><b data-i="credTwoValue">السعودية ودول الخليج</b></div>
+            <div class="cred"><span data-i="credThreeLabel">اللغات</span><b data-i="credThreeValue">العربية والإنجليزية</b></div>
+          </div>
+          <div class="skill-cloud"><span>Google Ads</span><span>GA4</span><span>GTM</span><span>Meta CAPI</span><span>Firebase</span><span>Technical SEO</span><span>Zid</span><span>Salla</span><span>WordPress</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-grid">
+            <div class="contact-copy">
+              <p class="kicker" data-i="contactKicker">Start a Project</p>
+              <h2 data-i="contactTitle">أرسل المشكلة. أرجع لك <span class="accent">بأول تشخيص واضح.</span></h2>
+              <p data-i="contactCopy">اكتب معلومات المشروع باختصار. عند الإرسال ستفتح رسالة واتساب جاهزة على رقمي مباشرة—بدون تسجيل أو انتظار نموذج بريد.</p>
+              <div class="direct-links">
+                <a class="direct-link" href="https://wa.me/970597200690" target="_blank" rel="noopener"><b>WhatsApp</b><span>+970 59 720 0690 ↗</span></a>
+                <a class="direct-link" href="mailto:saif.shorfa@gmail.com"><b>Email</b><span>saif.shorfa@gmail.com ↗</span></a>
+                <a class="direct-link" href="https://www.linkedin.com/in/saif-shorfa/" target="_blank" rel="noopener"><b>LinkedIn</b><span>saif-shorfa ↗</span></a>
+              </div>
+            </div>
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="field"><label for="name" data-i="formName">الاسم *</label><input id="name" name="name" autocomplete="name" required></div>
+                <div class="field"><label for="business" data-i="formBusiness">الشركة أو الموقع</label><input id="business" name="business" autocomplete="organization"></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label for="service" data-i="formService">الخدمة المطلوبة</label><select id="service" name="service"><option data-i="serviceOptionOne">إدارة حملات مدفوعة</option><option data-i="serviceOptionTwo">تتبّع وقياس GA4 / GTM</option><option data-i="serviceOptionThree">تسويق تطبيقات</option><option data-i="serviceOptionFour">SEO تقني</option><option data-i="serviceOptionFive">مراجعة حساب فقط</option></select></div>
+                <div class="field"><label for="budget" data-i="formBudget">الميزانية الشهرية</label><select id="budget" name="budget"><option data-i="budgetOne">أقل من 5,000 ريال</option><option data-i="budgetTwo">5,000 – 15,000 ريال</option><option data-i="budgetThree">15,000 – 50,000 ريال</option><option data-i="budgetFour">أكثر من 50,000 ريال</option></select></div>
+              </div>
+              <div class="field"><label for="problem" data-i="formProblem">ما أكبر مشكلة حاليًا؟ *</label><textarea id="problem" name="problem" required data-placeholder-ar="مثال: تكلفة العملاء ارتفعت، والتتبّع لا يسجل قيمة الطلب بشكل صحيح." data-placeholder-en="Example: Lead cost has increased and purchase value is not being tracked correctly." placeholder="مثال: تكلفة العملاء ارتفعت، والتتبّع لا يسجل قيمة الطلب بشكل صحيح."></textarea></div>
+              <button class="btn btn-primary form-submit" type="submit"><span data-i="formSubmit">إرسال التفاصيل عبر واتساب</span><span aria-hidden="true">↗</span></button>
+              <p class="form-note" id="formNote" aria-live="polite" data-i="formNote">سيتم فتح واتساب برسالة مرتّبة تحتوي على بيانات النموذج.</p>
+            </form>
+          </div>
+        </div>
+        <footer>
+          <div class="footer-inner"><span data-i="footerCopy">© 2026 سيف شرفا. نتائج موثقة، وقرارات مبنية على بيانات.</span><span>REMOTE · KSA & GCC</span></div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="proofDialog" aria-label="Account screenshot">
+    <div class="dialog-bar"><span id="dialogCaption">Account evidence</span><button class="dialog-close" id="dialogClose" type="button" aria-label="Close">×</button></div>
+    <img id="dialogImage" alt="Full account screenshot">
+  </dialog>
+
+  <script>
+    const copy = {
+      en:{
+        navWork:"Work",navMethod:"Method",navServices:"Services",navAbout:"About",navContact:"Contact",navCta:"Start a project",
+        available:"Available for selected projects across KSA & GCC",
+        heroTitle:"I turn ad spend into a <strong>measurable growth system.</strong>",
+        heroLead:"I manage Google Ads, Meta and app campaigns, then build GA4, GTM and tracking from the ground up—so you know where spend goes and what actually creates the result.",
+        heroWork:"See selected results",heroCall:"Request an account review",metaOne:"Paid Media",metaTwo:"Measurement",metaThree:"KSA & GCC",portraitRole:"Performance Marketing & Measurement",floatOne:"Cost per qualified conversion",floatTwo:"E-commerce ROAS",
+        trustOne:"healthcare conversions in 25 days",trustTwo:"app installs at SAR 0.43 each",trustThree:"return on ad spend for e-commerce",trustFour:"sites across SEO and technical projects",
+        workKicker:"Selected Work",workTitle:"Selected work, ordered by <span class='accent'>commercial impact.</span>",workIntro:"Not a gallery of pretty campaigns. Each case shows the problem, what changed inside the account, and the number that improved.",workNote:"Figures are taken from project data. Supporting account screenshots are included where sharing is permitted.",
+        caseOneTitle:"Rebuilt a multi-specialty clinic account to reduce conversion cost and grow bookings.",caseOneCopy:"We separated campaigns by specialty and city, redefined primary conversions, and matched bidding strategy to the value of each objective instead of running the account as one block.",caseOneStatOne:"recorded conversions",caseOneStatTwo:"cost per conversion",caseOneStatThree:"measurement period",proofVerified:"Account screenshot",
+        caseTwoTitle:"Scaled a legal app for women in Saudi Arabia at under half a riyal per install.",caseTwoCopy:"We connected Google Ads, Play Console, Firebase and GA4, then shifted the focus from raw installs to user quality and retention.",caseTwoStatOne:"paid installs",caseTwoStatTwo:"cost per install",seeProof:"View supporting screenshots",
+        caseThreeTitle:"Moved a travel-bag store from low-quality paid traffic to 9.5× ROAS.",caseThreeCopy:"We mined real purchase terms, isolated winners in Exact Match, built a structured negative-keyword system, and improved the product-to-checkout journey.",caseThreeStatOne:"revenue",caseThreeStatTwo:"completed orders",caseThreeNote:"Next growth lever: improve checkout-to-purchase rate",
+        methodKicker:"How I Work",methodTitle:"Advertising is not the start. <span class='accent'>Data is.</span>",methodIntro:"Any budget managed on broken tracking learns from the wrong signals. The work starts by fixing measurement before scaling spend.",
+        stepOneTitle:"Audit the account and conversion journey",stepOneCopy:"I review structure, search terms, attribution, events and values, then identify where spend is leaking and where data is breaking.",stepTwoTitle:"Repair measurement and tracking",stepTwoCopy:"GTM, GA4, enhanced conversions, Data Layer, Meta Pixel/CAPI and Firebase—depending on the project—with every event and value tested.",stepThreeTitle:"Restructure and launch controlled tests",stepThreeCopy:"I separate intent, budgets and objectives, build clear hypotheses, and run tests that can be read instead of random changes.",stepFourTitle:"Optimise continuously and report for decisions",stepFourCopy:"Reporting goes beyond CTR and CPC. It explains what happened, why, and the next decision most likely to affect revenue or lead quality.",
+        servicesKicker:"Capabilities",servicesTitle:"From campaign execution to <span class='accent'>the infrastructure that proves the result.</span>",servicesIntro:"The engagement is built around the problem—not a fixed package imposed on every business.",
+        serviceOneTitle:"Performance campaign management",serviceOneCopy:"Google Search, Shopping, Performance Max and Meta with account structure, bidding and daily optimisation tied to commercial outcomes.",serviceTwoTitle:"Measurement and tracking",serviceTwoCopy:"GA4, GTM, enhanced conversions, Data Layer, Pixel/CAPI and source integrations—implemented or audited end to end.",serviceThreeTitle:"App marketing",serviceThreeCopy:"Install and acquisition campaigns, store listing optimisation, and Firebase measurement for usage and retention—not installs alone.",serviceFourTitle:"Technical and commercial SEO",serviceFourCopy:"Technical audits, indexation, content structure and internal linking focused on purchase-intent queries and conversion measurement.",serviceFiveTitle:"Conversion journey optimisation",serviceFiveCopy:"Analyse leakage from click to order, improve landing pages, product pages and forms, and tie changes to clear metrics.",serviceSixTitle:"Suspension recovery",serviceSixCopy:"Diagnose Google Ads and Merchant Center suspensions, fix the policy issue, and prepare a clear, evidence-based appeal.",
+        proofKicker:"Account Evidence",proofTitle:"Every number has <span class='accent'>a source.</span>",proofIntro:"Open any screenshot in full size. Sensitive client data has been removed or hidden.",
+        aboutKicker:"About Saif",aboutTitle:"You work with me directly—from diagnosis to execution and reporting.",aboutCopy:"I work in performance marketing across Saudi Arabia and the Gulf, with a focus on accounts that need rebuilding: campaigns with unclear returns, unreliable tracking, or data that cannot answer the most important question—what is actually creating revenue?",credOneLabel:"Focus",credOneValue:"Paid Growth + Measurement",credTwoLabel:"Markets",credTwoValue:"Saudi Arabia and GCC",credThreeLabel:"Languages",credThreeValue:"Arabic and English",
+        contactKicker:"Start a Project",contactTitle:"Send the problem. I will return with <span class='accent'>a clear first diagnosis.</span>",contactCopy:"Share the project details briefly. Submitting opens a prepared WhatsApp message to my number directly—no account and no email form delay.",
+        formName:"Name *",formBusiness:"Company or website",formService:"Service needed",formBudget:"Monthly budget",formProblem:"What is the biggest problem right now? *",serviceOptionOne:"Paid campaign management",serviceOptionTwo:"GA4 / GTM tracking",serviceOptionThree:"App marketing",serviceOptionFour:"Technical SEO",serviceOptionFive:"Account review only",budgetOne:"Under SAR 5,000",budgetTwo:"SAR 5,000 – 15,000",budgetThree:"SAR 15,000 – 50,000",budgetFour:"Over SAR 50,000",formSubmit:"Send details on WhatsApp",formNote:"WhatsApp will open with a structured message containing the form details.",footerCopy:"© 2026 Saif Shorfa. Verified outcomes, data-led decisions."
+      }
+    };
+    const ar = {};
+    document.querySelectorAll('[data-i]').forEach(el=>ar[el.dataset.i]=el.innerHTML);
+    let language='ar';
+    const langBtn=document.getElementById('langBtn');
+    function setLanguage(next){
+      language=next;
+      const dict=language==='ar'?ar:copy.en;
+      document.documentElement.lang=language;
+      document.documentElement.dir=language==='ar'?'rtl':'ltr';
+      document.querySelectorAll('[data-i]').forEach(el=>{const v=dict[el.dataset.i];if(v!==undefined)el.innerHTML=v});
+      const problem=document.getElementById('problem');
+      problem.placeholder=language==='ar'?problem.dataset.placeholderAr:problem.dataset.placeholderEn;
+      langBtn.textContent=language==='ar'?'EN':'AR';
+      document.title=language==='ar'?'سيف شرفا | تسويق أداء، Google Ads وبنية قياس':'Saif Shorfa | Performance Marketing & Measurement';
+    }
+    langBtn.addEventListener('click',()=>setLanguage(language==='ar'?'en':'ar'));
+
+    const menuBtn=document.getElementById('menuBtn');
+    const navLinks=document.getElementById('navLinks');
+    menuBtn.addEventListener('click',()=>{
+      const open=navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
+
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in');revealObserver.unobserve(entry.target)}})
+    },{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+    const progress=document.getElementById('progress');
+    function updateProgress(){
+      const max=document.documentElement.scrollHeight-innerHeight;
+      progress.style.width=(max>0?(scrollY/max)*100:0)+'%';
+    }
+    addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+
+    const dialog=document.getElementById('proofDialog');
+    const dialogImage=document.getElementById('dialogImage');
+    const dialogCaption=document.getElementById('dialogCaption');
+    document.querySelectorAll('.proof-trigger').forEach(btn=>btn.addEventListener('click',()=>{
+      dialogImage.src=btn.dataset.src;
+      dialogCaption.textContent=btn.dataset.caption||'Account evidence';
+      dialog.showModal();
+    }));
+    document.getElementById('dialogClose').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+
+    const form=document.getElementById('contactForm');
+    const formNote=document.getElementById('formNote');
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const business=document.getElementById('business').value.trim();
+      const service=document.getElementById('service').value;
+      const budget=document.getElementById('budget').value;
+      const problem=document.getElementById('problem').value.trim();
+      if(!name||!problem){
+        formNote.className='form-note error';
+        formNote.textContent=language==='ar'?'اكتب الاسم والمشكلة الأساسية قبل الإرسال.':'Please enter your name and the main problem before sending.';
+        return;
+      }
+      const message=language==='ar'
+        ?`مرحبًا سيف، لدي استفسار عن مشروع جديد.\n\nالاسم: ${name}\nالشركة/الموقع: ${business||'غير مذكور'}\nالخدمة: ${service}\nالميزانية الشهرية: ${budget}\nالمشكلة الحالية: ${problem}\n\nوصلت من موقعك الشخصي.`
+        :`Hi Saif, I have a new project enquiry.\n\nName: ${name}\nCompany/website: ${business||'Not provided'}\nService: ${service}\nMonthly budget: ${budget}\nCurrent problem: ${problem}\n\nSent from your portfolio website.`;
+      formNote.className='form-note ok';
+      formNote.textContent=language==='ar'?'جاري فتح واتساب…':'Opening WhatsApp…';
+      const url='https://wa.me/970597200690?text='+encodeURIComponent(message);
+      window.open(url,'_blank','noopener');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Saif Shorfa",
+  "alternateName": "سيف الشرفا",
+  "jobTitle": "Performance Marketing & Measurement Specialist",
+  "email": "mailto:saif.shorfa@gmail.com",
+  "telephone": "+970597200690",
+  "knowsAbout": [
+    "Google Ads",
+    "Meta Ads",
+    "Google Analytics 4",
+    "Google Tag Manager",
+    "App Marketing",
+    "Technical SEO"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/saif-shorfa/",
+    "https://medium.com/@saif.shorfa",
+    "https://barqoftech.com/author/saif-shorfa/"
+  ]
+}
