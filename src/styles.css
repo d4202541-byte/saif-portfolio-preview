@@ -1450,14 +1450,14 @@ main:focus {
   color: var(--text);
 }
 [dir="rtl"] {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-family: "Alexandria", sans-serif;
 }
 [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] h4 {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
-  letter-spacing: -0.02em;
+  font-family: "Alexandria", sans-serif;
+  letter-spacing: 0;
 }
 [dir="rtl"] .hero h1 {
   font-size: clamp(56px, 6.4vw, 88px);

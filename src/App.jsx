@@ -12,6 +12,9 @@ import {
   About,
 } from "./components/Sections";
 import Contact, { Footer } from "./components/Contact";
+import ServicePage, { NotFound } from "./components/ServicePage";
+import { WhatsAppIcon } from "./components/Icons";
+import { getService } from "./services";
 function useMotion(scope) {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -74,7 +77,10 @@ function Analytics() {
   }, []);
   return null;
 }
-export default function App({ lang = "en" }) {
+export default function App({ lang = "en", page = "home", serviceSlug = "" }) {
+  const isHome = page === "home";
+  const missing =
+    page === "notfound" || (page === "service" && !getService(serviceSlug));
   const scope = useRef(null);
   useMotion(scope);
   return (
@@ -88,38 +94,43 @@ export default function App({ lang = "en" }) {
         <a className="skip-link" href="#main-content">
           {lang === "ar" ? "انتقل إلى المحتوى" : "Skip to content"}
         </a>
-        <Header />
+        <Header page={page} serviceSlug={missing ? "" : serviceSlug} />
         <main id="main-content" tabIndex={-1}>
-          <Hero />
-          <Results />
-          <Clients />
-          <Services />
-          <Work />
-          <Process />
-          <Insights />
-          <About />
-          <Contact />
+          {missing ? (
+            <NotFound />
+          ) : isHome ? (
+            <>
+              <Hero />
+              <Results />
+              <Clients />
+              <Services />
+              <Work />
+              <Process />
+              <Insights />
+              <About />
+            </>
+          ) : (
+            <ServicePage slug={serviceSlug} />
+          )}
+          {!missing && (
+            <Contact compact={!isHome} selectedService={serviceSlug} />
+          )}
         </main>
-        <Footer />
+        <Footer page={page} />
         <a
           className="floating-whatsapp"
           href="https://wa.me/970597200690"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="WhatsApp"
+          aria-label={
+            lang === "ar"
+              ? "تواصل مع سيف عبر واتساب"
+              : "Contact Saif on WhatsApp"
+          }
+          title={lang === "ar" ? "تواصل عبر واتساب" : "Chat on WhatsApp"}
         >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            aria-hidden="true"
-          >
-            <path d="M21 11.5a8.5 8.5 0 0 1-12 8L3 21l1.5-5.5A8.5 8.5 0 1 1 21 11.5Z" />
-            <path d="M8 8c1 4 3 6 7 7" />
-          </svg>
+          <WhatsAppIcon size={25} />
+          <span>{lang === "ar" ? "تواصل معي" : "Let’s talk"}</span>
         </a>
         <Analytics />
       </div>

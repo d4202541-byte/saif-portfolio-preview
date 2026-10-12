@@ -125,12 +125,12 @@ test("static HTML contains usable content without JavaScript", async ({
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   for (const path of ["/", "/ar/"]) {
-    await page.goto("http://127.0.0.1:4173" + path);
+    await page.goto("http://127.0.0.1:4175" + path);
     await expect(page.locator("h1")).toBeVisible();
     await expect(page.locator(".service-card")).toHaveCount(6);
     await expect(page.locator("link[rel=canonical]")).toHaveAttribute(
       "href",
-      "https://saif-shorfa.netlify.app" + path,
+      "https://saif-growth.com" + path,
     );
     expect(
       await page.locator('script[type="application/ld+json"]').textContent(),

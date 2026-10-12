@@ -22,7 +22,23 @@ npm run preview
 npm test
 ```
 
-Browser tests use the installed Microsoft Edge through Playwright. Change `channel` in `playwright.config.js` if a different installed browser is needed. Build output is `dist/`; the SSR intermediate directory `.ssr/` is ignored.
+Browser tests use the installed Microsoft Edge through Playwright and a dedicated local port 4175. Change `channel` in `playwright.config.js` if a different installed browser is needed. Build output is `dist/`; the SSR intermediate directory `.ssr/` is ignored.
+
+## Pages and content
+
+The build produces 16 static pages: the homepage, service directory, and six service detail pages in both English and Arabic. All have their own metadata and matching language links. A 404 page is included.
+
+- `/services/` and `/ar/services/`: service directory.
+- `/services/paid-media/`: campaign management.
+- `/services/analytics-tracking/`: analytics and conversion tracking.
+- `/services/app-marketing/`: app marketing.
+- `/services/technical-seo/`: search visibility and technical SEO.
+- `/services/conversion-optimisation/`: landing pages and conversion journeys.
+- `/services/account-suspensions/`: suspension review and appeals.
+
+Add `/ar` before each service path for Arabic. `src/services.js` contains the catalogue, deliverables and FAQs. `src/arabic.js` contains the revised Arabic editorial copy; original project facts and detailed evidence caveats remain in `src/content.json`. Claims about past projects have not been expanded. Scope and pricing are agreed after review, without guaranteed commercial results or account reinstatement.
+
+Alexandria is the new Arabic font. All Arabic and Latin fonts are hosted locally in `public/fonts`, with their SIL Open Font License files. `src/components/Icons.jsx` contains reusable SVG service and contact icons.
 
 ## Editing
 
@@ -52,7 +68,9 @@ The enquiry form retains the original phone number and opens an encoded WhatsApp
 
 Microsoft Clarity retains the original project ID, configurable via `VITE_CLARITY_ID` (see `.env.example`). Tracking is disabled in development, on loopback hosts, and in the published preview.
 
-GitHub Actions runs lint and builds this preview on pushes to this repository's `main` branch, then publishes `dist` to GitHub Pages. The workflow sets `VITE_BASE_PATH=/saif-portfolio-preview/`, `VITE_PREVIEW_MODE=true`, and `VITE_PREVIEW_URL` to the preview URL. Preview pages use `noindex, nofollow`, disallow crawling, and do not include a sitemap. The original Netlify configuration is retained for reference; no existing Netlify site is connected or deployed by this workflow.
+GitHub Actions runs lint and builds this preview on pushes to this repository's `main` branch, then publishes `dist` to GitHub Pages. The workflow sets `VITE_BASE_PATH=/saif-portfolio-preview/`, `VITE_PREVIEW_MODE=true`, and `VITE_PREVIEW_URL` to the preview URL. Preview pages use `noindex, nofollow` and do not include a sitemap. A restrictive robots file is included, though project-subdirectory hosting relies on the page-level robots metadata. The original Netlify configuration is retained for reference; no existing Netlify site is connected or deployed by this workflow.
+
+The owner's intended domain is `saif-growth.com`. Production builds default metadata and sitemap URLs to `https://saif-growth.com/`; override with `VITE_SITE_URL` if needed. This does not configure DNS, change the original website, add a GitHub Pages custom domain, or deploy to production. Domain connection, HTTPS verification, and any production redirects remain a separate approval step. The GitHub Pages preview keeps its own URLs and noindex settings.
 
 For a local Pages build in PowerShell:
 
@@ -64,7 +82,7 @@ npm run build
 npm run preview -- --port 4174
 ```
 
-Open `http://127.0.0.1:4174/saif-portfolio-preview/`. Run `node scripts/check-preview.mjs` in another terminal to check the project path, both languages, images, navigation, responsive layouts, and browser errors. The original browser suite covers root-hosted builds; it expects port 4173 and a default `/` build.
+Open `http://127.0.0.1:4174/saif-portfolio-preview/`. Run `node scripts/check-preview.mjs` in another terminal to check the project path, both languages, images, navigation, responsive layouts, and browser errors. The full browser suite covers root-hosted builds; it expects port 4175 and a default `/` build. Close a preview server before changing between root and Pages builds.
 
 ## Assets still needed
 

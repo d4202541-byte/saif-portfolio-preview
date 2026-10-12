@@ -1,34 +1,41 @@
 import { useCopy } from "../copy";
 import { Arrow, Copy, SectionHeading } from "./Shared";
-const services = [
-  ["One", "↗", ["Google Ads", "Meta Ads", "PMax", "Shopping"]],
-  ["Two", "⌘", ["GA4", "GTM", "Data Layer", "CAPI"]],
-  ["Three", "▯", ["UAC", "Firebase", "Play Console", "ASO"]],
-  ["Four", "⌕", ["Technical SEO", "Content", "GSC", "Ahrefs"]],
-  ["Five", "⇄", ["Landing Pages", "Funnels", "Forms", "A/B Tests"]],
-  ["Six", "◇", ["Google Ads", "Merchant Center", "Policy", "Appeals"]],
-];
-export default function Services() {
-  const { t } = useCopy();
+import { Icon } from "./Icons";
+import { services, serviceLabels } from "../services";
+import { routePath } from "../paths";
+export default function Services({ directory = false }) {
+  const { lang } = useCopy();
   return (
     <section className="section services" id="services">
       <div className="container">
-        <SectionHeading
-          label="servicesLabel"
-          heading="servicesHeading"
-          accent="servicesAccent"
-          description="servicesDescription"
-        />
+        {!directory && (
+          <SectionHeading
+            label="servicesLabel"
+            heading="servicesHeading"
+            accent="servicesAccent"
+            description="servicesDescription"
+          >
+            <a href={routePath(lang, "services")} className="text-link">
+              {serviceLabels[lang].all}
+              <Arrow />
+            </a>
+          </SectionHeading>
+        )}
+        {directory && (
+          <h2 className="directory-heading">{serviceLabels[lang].directory}</h2>
+        )}
         <div className="services-grid">
-          {services.map(([key, icon, tags], i) => (
+          {services.map(({ key, slug, icon, tags, [lang]: data }, i) => (
             <article className="service-card" key={key} data-reveal>
               <div className="service-top">
                 <span className="service-icon" aria-hidden="true">
-                  {icon}
+                  <Icon name={icon} />
                 </span>
                 <span className="mono muted">0{i + 1}</span>
               </div>
-              <Copy as="h3" id={"service" + key + "Title"} />
+              <h3>
+                <a href={routePath(lang, "service", slug)}>{data.title}</a>
+              </h3>
               <Copy as="p" id={"service" + key + "Copy"} />
               <div className="chips">
                 {tags.map((tag) => (
@@ -37,9 +44,10 @@ export default function Services() {
               </div>
               <a
                 className="service-link"
-                href="#contact"
-                aria-label={t("service" + key + "Title") + " — " + t("start")}
+                href={routePath(lang, "service", slug)}
+                aria-label={serviceLabels[lang].details + " — " + data.title}
               >
+                <span>{serviceLabels[lang].details}</span>
                 <Arrow />
               </a>
             </article>

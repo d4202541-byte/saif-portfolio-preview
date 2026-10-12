@@ -5,7 +5,7 @@ export default defineConfig({
   fullyParallel: true,
   workers: 2,
   use: {
-    baseURL: "http://127.0.0.1:4173",
+    baseURL: "http://127.0.0.1:4175",
     channel: "msedge",
     headless: true,
     launchOptions: { args: ["--use-angle=swiftshader"] },
@@ -13,8 +13,8 @@ export default defineConfig({
   },
   reporter: "list",
   webServer: {
-    command: "npm run preview -- --port 4173 --strictPort",
-    url: "http://127.0.0.1:4173",
+    command: "npm run preview -- --port 4175 --strictPort",
+    url: "http://127.0.0.1:4175",
     reuseExistingServer: true,
   },
 });

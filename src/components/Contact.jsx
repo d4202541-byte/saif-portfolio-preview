@@ -1,10 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useCopy } from "../copy";
 import { Arrow, Copy, Mark } from "./Shared";
-export default function Contact() {
+import { Icon, WhatsAppIcon } from "./Icons";
+import { services, getService, serviceLabels } from "../services";
+import { routePath } from "../paths";
+export default function Contact({ compact = false, selectedService = "" }) {
   const { t, lang } = useCopy();
   const [status, setStatus] = useState("");
   const [url, setUrl] = useState("");
+  const [ready, setReady] = useState(false);
+  useEffect(() => setReady(true), []);
   const form = useRef(null);
   function submit(event) {
     event.preventDefault();
@@ -23,9 +28,9 @@ export default function Contact() {
           "\nالشركة/الموقع: " +
           (data.get("business").trim() || "غير مذكور") +
           "\nالخدمة: " +
-          data.get("service") +
-          "\nالميزانية الشهرية: " +
-          data.get("budget") +
+          (data.get("service") || "نحددها معًا") +
+          "\nميزانية الإعلانات الشهرية: " +
+          (data.get("budget") || "غير محددة") +
           "\nالمشكلة الحالية: " +
           problem +
           "\n\nوصلت من موقعك الشخصي."
@@ -34,9 +39,9 @@ export default function Contact() {
           "\nCompany/website: " +
           (data.get("business").trim() || "Not provided") +
           "\nService: " +
-          data.get("service") +
-          "\nMonthly budget: " +
-          data.get("budget") +
+          (data.get("service") || "To discuss") +
+          "\nMonthly ad budget: " +
+          (data.get("budget") || "Not specified") +
           "\nCurrent problem: " +
           problem +
           "\n\nSent from your portfolio website.";
@@ -50,41 +55,46 @@ export default function Contact() {
     <>
       <section className="section contact" id="contact">
         <div className="container">
-          <div className="cta-heading" data-reveal>
-            <p className="eyebrow">
-              <span className="status-dot" />
-              {t("ctaLabel")}
-            </p>
-            <h2>
-              {t("ctaHeading")}
-              <br />
-              <span className="accent">{t("ctaAccent")}</span>
-            </h2>
-            <p>{t("ctaNote")}</p>
-            <a
-              className="button button-primary"
-              href="#project-form"
-              onClick={() =>
-                setTimeout(
-                  () => form.current?.querySelector("input")?.focus(),
-                  100,
-                )
-              }
-            >
-              {t("ctaButton")}
-              <Arrow />
-            </a>
-            <a href="mailto:saif.shorfa@gmail.com" className="cta-email">
-              saif.shorfa@gmail.com <Arrow />
-            </a>
-          </div>
+          {!compact && (
+            <div className="cta-heading" data-reveal>
+              <p className="eyebrow">
+                <span className="status-dot" />
+                {t("ctaLabel")}
+              </p>
+              <h2>
+                {t("ctaHeading")}
+                <br />
+                <span className="accent">{t("ctaAccent")}</span>
+              </h2>
+              <p>{t("ctaNote")}</p>
+              <a
+                className="button button-primary"
+                href="#project-form"
+                onClick={() =>
+                  setTimeout(
+                    () => form.current?.querySelector("input")?.focus(),
+                    100,
+                  )
+                }
+              >
+                {t("ctaButton")}
+                <Arrow />
+              </a>
+              <a href="mailto:saif.shorfa@gmail.com" className="cta-email">
+                saif.shorfa@gmail.com <Arrow />
+              </a>
+            </div>
+          )}
           <div className="contact-grid" id="project-form">
             <div className="contact-copy">
               <h3>{t("contactForm")}</h3>
               <Copy as="p" id="contactCopy" />
               <div className="direct-links">
                 <a href="mailto:saif.shorfa@gmail.com">
-                  <span>{t("email")}</span>
+                  <span>
+                    <Icon name="mail" size={19} />
+                    {t("email")}
+                  </span>
                   <span>
                     saif.shorfa@gmail.com
                     <Arrow />
@@ -95,7 +105,10 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>{t("phone")}</span>
+                  <span>
+                    <WhatsAppIcon size={19} />
+                    {t("phone")}
+                  </span>
                   <span dir="ltr">
                     +970 59 720 0690
                     <Arrow />
@@ -115,57 +128,94 @@ export default function Contact() {
               </div>
             </div>
             <form ref={form} onSubmit={submit} className="contact-form">
-              <div className="form-row">
+              <fieldset className="form-fields" disabled={!ready}>
+                <div className="form-row">
+                  <label>
+                    <Copy id="formName" />
+                    <input
+                      name="name"
+                      autoComplete="name"
+                      required
+                      maxLength="120"
+                    />
+                  </label>
+                  <label>
+                    <Copy id="formBusiness" />
+                    <input
+                      name="business"
+                      autoComplete="organization"
+                      maxLength="250"
+                    />
+                  </label>
+                </div>
+                <div className="form-row">
+                  <label>
+                    <Copy id="formService" />
+                    <select
+                      name="service"
+                      defaultValue={
+                        getService(selectedService)?.[lang].title || ""
+                      }
+                    >
+                      <option value="">
+                        {lang === "ar"
+                          ? "اختر الخدمة أو نحددها معًا"
+                          : "Choose a service or discuss it together"}
+                      </option>
+                      {services.map((service) => (
+                        <option key={service.slug}>
+                          {service[lang].title}
+                        </option>
+                      ))}
+                      <option>
+                        {lang === "ar"
+                          ? "مراجعة الحساب فقط"
+                          : "Account review only"}
+                      </option>
+                    </select>
+                  </label>
+                  <label>
+                    <Copy id="formBudget" />
+                    <select name="budget" defaultValue="">
+                      <option value="">
+                        {lang === "ar"
+                          ? "غير محددة / لا ينطبق"
+                          : "Not specified / not applicable"}
+                      </option>
+                      {["One", "Two", "Three", "Four"].map((key) => (
+                        <option key={key}>{t("budget" + key)}</option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
                 <label>
-                  <Copy id="formName" />
-                  <input
-                    name="name"
-                    autoComplete="name"
+                  <Copy id="formProblem" />
+                  <textarea
+                    name="problem"
                     required
-                    maxLength="120"
+                    rows="3"
+                    maxLength="2000"
+                    placeholder={t("formPlaceholder")}
                   />
                 </label>
-                <label>
-                  <Copy id="formBusiness" />
-                  <input
-                    name="business"
-                    autoComplete="organization"
-                    maxLength="250"
-                  />
-                </label>
-              </div>
-              <div className="form-row">
-                <label>
-                  <Copy id="formService" />
-                  <select name="service">
-                    {["One", "Two", "Three", "Four", "Five"].map((key) => (
-                      <option key={key}>{t("serviceOption" + key)}</option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  <Copy id="formBudget" />
-                  <select name="budget">
-                    {["One", "Two", "Three", "Four"].map((key) => (
-                      <option key={key}>{t("budget" + key)}</option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-              <label>
-                <Copy id="formProblem" />
-                <textarea
-                  name="problem"
-                  required
-                  rows="3"
-                  maxLength="2000"
-                  placeholder={t("formPlaceholder")}
-                />
-              </label>
-              <button className="button button-primary" type="submit">
-                {t("formSubmit")}
-                <Arrow />
-              </button>
+                <button className="button button-primary" type="submit">
+                  {t("formSubmit")}
+                  <WhatsAppIcon size={21} />
+                </button>
+              </fieldset>
+              <noscript>
+                <p className="form-note">
+                  {lang === "ar"
+                    ? "لتجهيز الرسالة من النموذج، فعّل JavaScript أو "
+                    : "Enable JavaScript to prepare a message, or "}
+                  <a href="https://wa.me/970597200690">
+                    {lang === "ar"
+                      ? "تواصل مباشرة عبر واتساب"
+                      : "contact me directly on WhatsApp"}
+                  </a>
+                  .
+                </p>
+              </noscript>
               <p className="form-note">{t("privacy")}</p>
               <div className="form-status" aria-live="polite">
                 {status}
@@ -182,14 +232,17 @@ export default function Contact() {
     </>
   );
 }
-export function Footer() {
-  const { t } = useCopy();
+export function Footer({ page = "home" }) {
+  const { t, lang } = useCopy();
   return (
     <footer className="site-footer">
       <div className="container">
         <div className="footer-main">
           <div>
-            <a href="#top" className="brand">
+            <a
+              href={page === "home" ? "#top" : routePath(lang)}
+              className="brand"
+            >
               <Mark />
               <span>
                 SAIF SHORFA<span className="brand-dot">.</span>
@@ -220,6 +273,23 @@ export function Footer() {
             </a>
           </div>
         </div>
+        <nav
+          className="footer-services"
+          aria-label={serviceLabels[lang].directory}
+        >
+          <a href={routePath(lang, "services")}>
+            {serviceLabels[lang].all}
+            <Arrow />
+          </a>
+          {services.map((service) => (
+            <a
+              key={service.slug}
+              href={routePath(lang, "service", service.slug)}
+            >
+              {service[lang].title}
+            </a>
+          ))}
+        </nav>
         <div className="footer-bottom">
           <p>{t("footerCopy")}</p>
           <span>{t("location")}</span>

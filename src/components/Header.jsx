@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { useCopy } from "../copy";
-import { sitePath } from "../paths";
+import { routePath } from "../paths";
 import { Arrow, Mark } from "./Shared";
-export default function Header() {
+export default function Header({ page = "home", serviceSlug = "" }) {
   const { t, lang } = useCopy();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
   const button = useRef(null);
   const header = useRef(null);
+  const home = routePath(lang);
+  const sectionPath = (id) =>
+    page === "home"
+      ? "#" + id
+      : id === "services"
+        ? routePath(lang, "services")
+        : home + "#" + id;
   useEffect(() => {
     const escape = (e) => {
       if (
@@ -57,7 +64,7 @@ export default function Header() {
       <div className="container nav-row">
         <a
           className="brand"
-          href="#top"
+          href={page === "home" ? "#top" : home}
           aria-label={"Saif Shorfa — " + t("home")}
         >
           <Mark />
@@ -79,8 +86,12 @@ export default function Header() {
           ].map(([id, key]) => (
             <a
               key={id}
-              href={"#" + id}
-              aria-current={active === id ? "location" : undefined}
+              href={sectionPath(id)}
+              aria-current={
+                active === id || (page !== "home" && id === "services")
+                  ? "location"
+                  : undefined
+              }
               onClick={() => setOpen(false)}
             >
               {t(key)}
@@ -98,7 +109,11 @@ export default function Header() {
         <div className="nav-actions">
           <a
             className="language-link"
-            href={sitePath(lang === "en" ? "ar/" : "")}
+            href={routePath(
+              lang === "en" ? "ar" : "en",
+              page === "notfound" ? "home" : page,
+              serviceSlug,
+            )}
             lang={lang === "en" ? "ar" : "en"}
             aria-label={
               lang === "en" ? "عرض الموقع بالعربية" : "View site in English"

@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
 import content from "./content.json";
+import { arabic } from "./arabic";
 export const CopyContext = createContext("en");
 const ui = {
   en: {
@@ -102,6 +103,7 @@ const ui = {
     email: "Email me",
     phone: "WhatsApp",
     tools: "Tools I work with",
+    formBudget: "Monthly ad budget, if applicable",
   },
   ar: {
     home: "الرئيسية",
@@ -197,6 +199,7 @@ const ui = {
     email: "راسلني",
     phone: "واتساب",
     tools: "الأدوات التي أعمل بها",
+    ...arabic,
   },
 };
 export function useCopy() {
