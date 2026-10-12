@@ -40,4 +40,4 @@ Removed decorative section/project numbering, hand-drawn platform icons, and pro
 
 Portraits disable native dragging and their context menus; CSS also suppresses the standard touch callout where supported. These are basic interaction deterrents, not protection against screenshots, network access or inspection of public frontend code. No copy, keyboard or developer-tool restrictions are imposed.
 
-The closed social account still needs identification before its links are removed. Domain connection, articles, a dashboard and publication to the original production site are outside this preview release.
+The closed LinkedIn account was confirmed by Saif. All LinkedIn links were removed from the active UI and Person structured data. Domain connection, articles, a dashboard and publication to the original production site are outside this preview release.

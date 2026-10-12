@@ -460,15 +460,6 @@ function About({ c, l, lang }) {
             <li key={tag}>{tag}</li>
           ))}
         </ul>
-        <a
-          className="text-link"
-          href="https://www.linkedin.com/in/saif-shorfa/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LinkedIn
-          <Arrow diagonal />
-        </a>
       </div>
     </section>
   );
@@ -650,13 +641,6 @@ function Footer({ l, lang }) {
         <div>
           <a href={routePath(lang, "service", "meta-ads")}>Meta Ads</a>
           <a href={routePath(lang, "service", "google-ads")}>Google Ads</a>
-          <a
-            href="https://www.linkedin.com/in/saif-shorfa/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn ↗
-          </a>
         </div>
       </div>
     </footer>
