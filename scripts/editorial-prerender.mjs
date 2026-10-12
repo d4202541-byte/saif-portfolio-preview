@@ -72,7 +72,7 @@ function htmlFor(route) {
     "og:description": description,
     "og:url": origin + path,
     "og:locale": ar ? "ar_SA" : "en_US",
-    "og:image": origin + "brand/saif-portrait.webp",
+    "og:image": origin + "brand/saif-portrait-current.webp",
   };
   for (const [name, value] of Object.entries(metas)) {
     const type = name.startsWith("og:") ? "property" : "name";

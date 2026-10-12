@@ -239,9 +239,9 @@ function Hero({ c, l, lang }) {
       </div>
       <div className="hero-portrait">
         <img
-          src={sitePath("brand/saif-portrait.webp")}
-          width="1145"
-          height="1374"
+          src={sitePath("brand/saif-portrait-current.webp")}
+          width="1122"
+          height="1402"
           fetchPriority="high"
           alt={
             lang === "ar"
@@ -467,9 +467,9 @@ function About({ c, l, lang }) {
       <div className="about-image" data-reveal>
         <div className="about-photo">
           <img
-            src={sitePath("brand/saif-portrait.webp")}
-            width="1145"
-            height="1374"
+            src={sitePath("brand/saif-portrait-current.webp")}
+            width="1122"
+            height="1402"
             loading="lazy"
             alt={lang === "ar" ? "سيف الشرفا" : "Saif Shorfa"}
           />
