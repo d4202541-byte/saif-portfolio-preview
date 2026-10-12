@@ -654,9 +654,34 @@ em {
   gap: 25px;
   align-items: center;
 }
-.platform-top svg {
-  width: 60px;
-  height: 45px;
+.platform-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.platform-icon img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.platform-icon-meta-ads img {
+  width: 56px;
+  height: 56px;
+}
+.service-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-block: 32px;
+}
+.service-brand .eyebrow {
+  margin: 0;
 }
 .platform-top .eyebrow {
   font-size: 9px;

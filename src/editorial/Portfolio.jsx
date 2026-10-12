@@ -369,6 +369,21 @@ function Work({ c, l }) {
     </section>
   );
 }
+function PlatformIcon({ slug }) {
+  return (
+    <span className={"platform-icon platform-icon-" + slug} aria-hidden="true">
+      <img
+        src={sitePath(
+          "brand/" + (slug === "meta-ads" ? "meta.svg" : "google-ads.webp"),
+        )}
+        width="64"
+        height="64"
+        alt=""
+        loading="lazy"
+      />
+    </span>
+  );
+}
 function Services({ c, l, lang, directory = false }) {
   const Heading = directory ? "h1" : "h2";
   return (
@@ -387,6 +402,7 @@ function Services({ c, l, lang, directory = false }) {
           >
             <div className="platform-top">
               <span className="eyebrow">{p.tag}</span>
+              <PlatformIcon slug={p.slug} />
             </div>
             <h3 dir="ltr">
               {p.name}
@@ -654,9 +670,12 @@ function ServiceDetail({ platform: p, lang, l }) {
           {l.home}
           <Arrow />
         </a>
-        <p className="eyebrow">
-          {l.serviceEyebrow} / {p.name}
-        </p>
+        <div className="service-brand">
+          <PlatformIcon slug={p.slug} />
+          <p className="eyebrow">
+            {p.name} · {l.serviceEyebrow}
+          </p>
+        </div>
         <h1>{p[lang].headline}</h1>
         <div className="service-lead">
           <p>{p[lang].description}</p>

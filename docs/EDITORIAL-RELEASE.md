@@ -41,3 +41,11 @@ Removed decorative section/project numbering, hand-drawn platform icons, and pro
 Portraits disable native dragging and their context menus; CSS also suppresses the standard touch callout where supported. These are basic interaction deterrents, not protection against screenshots, network access or inspection of public frontend code. No copy, keyboard or developer-tool restrictions are imposed.
 
 The closed LinkedIn account was confirmed by Saif. All LinkedIn links were removed from the active UI and Person structured data. Domain connection, articles, a dashboard and publication to the original production site are outside this preview release.
+
+
+## Official platform icons
+
+Replaced the inaccurate hand-drawn marks with original full-color platform artwork, displayed in service cards and on their detail pages. Assets are served locally without color filters or distortion. These identify the advertising platforms; they are not partner or certification badges.
+
+- Meta symbol: https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg , sourced from https://about.fb.com/media-gallery/ on October 12, 2026.
+- Google Ads: https://www.gstatic.com/marketing-cms/assets/images/a0/c7/a37cda3447639b52f627e91993ee/ads.webp=s80-fcrop64=1,00000000ffffffff-rw , sourced from https://about.google/brand-resource-center/products-and-services/ on October 12, 2026.
