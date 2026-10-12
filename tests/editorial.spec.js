@@ -86,6 +86,7 @@ for (const lang of ["en", "ar"])
       .locator("input[name=business]")
       .fill("https://example.com/?a=1&b=2");
     await page.locator("select[name=platform]").selectOption({ index: 3 });
+    await page.locator("select[name=budget]").selectOption({ index: 2 });
     await page.locator("textarea").fill("Testing + growth & تحسين");
     const popupPromise = page.waitForEvent("popup");
     await page.locator("button[type=submit]").click();
@@ -99,6 +100,7 @@ for (const lang of ["en", "ar"])
     expect(text).toContain("Saif & فريق");
     expect(text).toContain("https://example.com/?a=1&b=2");
     expect(text).toContain("Testing + growth & تحسين");
+    expect(text).toContain(lang === "ar" ? "دولار" : "USD");
     await popup.close();
   });
 for (const lang of ["en", "ar"])

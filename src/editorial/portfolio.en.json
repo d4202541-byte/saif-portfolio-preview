@@ -39,40 +39,43 @@
         "id": "healthcare-google",
         "category": "Google Ads · Lead Generation",
         "industry": "Healthcare",
-        "headline": "More clarity. Better cost per conversion.",
+        "headline": "A clearer account structure for a multi-specialty clinic.",
         "metric": "814",
         "metricLabel": "recorded conversions",
-        "secondaryMetric": "SAR 7.26 cost per recorded conversion · 25 days",
-        "challenge": "A multi-specialty account needed clearer campaign structure and measurement.",
-        "solution": "Campaign structure by specialty and city, improved conversion definitions, refined bidding strategy.",
+        "secondaryMetric": "SAR 7.26 per recorded conversion · July 1 to 25, 2026 · SAR 5,906.11 spend",
+        "challenge": "A multi-specialty clinic account needed a clearer structure and more reliable measurement for each goal.",
+        "solution": "Separated campaigns by specialty and city, redefined primary conversions and adjusted bidding to the value of each objective.",
         "finePrint": "Recorded conversions are not necessarily confirmed patient bookings.",
-        "proofUrl": "https://saif-shorfa.netlify.app/assets/majesty-campaigns.png"
+        "proofUrl": "https://saif-shorfa.netlify.app/assets/majesty-campaigns.png",
+        "summary": "Campaigns organized by specialty and city, with measurement aligned to each objective."
       },
       {
         "id": "app-google",
         "category": "Google Ads · App Acquisition",
-        "industry": "Mobile App",
-        "headline": "Acquisition backed by measurement.",
+        "industry": "Legal app",
+        "headline": "Acquisition and measurement for a legal app.",
         "metric": "5,070",
         "metricLabel": "paid installations",
         "secondaryMetric": "SAR 0.43 cost per install",
-        "challenge": "Grow app acquisition while gaining visibility into post-install behavior.",
-        "solution": "Connected Google Ads, Play Console, Firebase and GA4 to evaluate acquisition signals.",
+        "challenge": "Grow a legal app for women in Saudi Arabia while connecting acquisition with measurement of usage.",
+        "solution": "Connected Google Ads, Play Console, Firebase and GA4 to follow acquisition, usage and retention signals.",
         "finePrint": "Install volume is not a measure of user retention or in-app revenue.",
-        "proofUrl": "https://saif-shorfa.netlify.app/assets/app-uac-year.jpeg"
+        "proofUrl": "https://saif-shorfa.netlify.app/assets/app-uac-year.jpeg",
+        "summary": "Paid acquisition for a legal app serving women in Saudi Arabia, supported by connected analytics."
       },
       {
         "id": "ecom-google",
         "category": "Google Ads · Search",
-        "industry": "E-commerce",
-        "headline": "Turning search intent into revenue.",
+        "industry": "Travel-bag store",
+        "headline": "Turning purchase intent into reported sales.",
         "metric": "9.5×",
         "metricLabel": "reported ROAS",
         "secondaryMetric": "SAR 105K reported revenue · 225 completed orders",
-        "challenge": "Paid visits needed stronger purchase intent and a smoother buying journey.",
-        "solution": "Focused high-intent exact-match keywords, search negatives, and product/checkout improvements.",
+        "challenge": "A travel-bag store was receiving low-quality paid traffic.",
+        "solution": "Isolated purchase-intent search terms in Exact Match, built negative keyword lists and improved the product and checkout journey.",
         "finePrint": "Reported advertising return is not net profit.",
-        "proofUrl": null
+        "proofUrl": null,
+        "summary": "Focused search campaigns and a clearer journey from product page to checkout."
       }
     ],
     "pendingMetaCase": {
@@ -121,5 +124,8 @@
     "heading": "Let's make your next move count.",
     "text": "Tell me what you're running, what's not working and what you'd like to improve."
   },
-  "contacts": { "whatsapp": "970597200690", "email": "saif.shorfa@gmail.com" }
+  "contacts": {
+    "whatsapp": "970597200690",
+    "email": "saif.shorfa@gmail.com"
+  }
 }

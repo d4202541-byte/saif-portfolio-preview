@@ -11,20 +11,17 @@ export const labels = {
     menu: "Open navigation",
     close: "Close",
     skip: "Skip to content",
-    location: "Independent specialist · KSA & GCC",
+    location: "Independent specialist · Available internationally",
     hero: "I help businesses turn paid media into a clearer path to growth. Focused campaigns. Reliable measurement. Continuous improvement.",
     workIntro:
       "Three projects. Different goals. Results with the context that matters.",
     caseDetail: "Read the case",
     caseLabel: "Project",
+    challengeTitle: "The challenge",
+    notProvided: "Not provided",
     result: "The result",
     contribution: "The approach",
     context: "What the numbers mean",
-    caseApproach: [
-      "Campaign structure organized around services and locations, with clearer conversion definitions and ongoing bidding refinements.",
-      "Google App Campaigns supported by measurement across Google Ads, Firebase, GA4 and Play Console.",
-      "High-intent search campaigns, focused keyword matching, negative keywords and improvements along the purchase journey.",
-    ],
     caseContexts: [
       "Google Ads recorded conversions during a 25-day reporting window. They may include multiple conversion actions and are not the same as confirmed medical bookings.",
       "Paid installs reported by the acquisition campaign. Install volume does not establish retention, active usage or customer value.",
@@ -38,8 +35,13 @@ export const labels = {
     serviceLink: "Explore the service",
     processNote: "A considered process. A clear next step.",
     aboutText:
-      "I’m Saif Shorfa, an independent paid media specialist working with businesses in Saudi Arabia and the GCC. I bring campaign execution and measurement together, so you can understand what your advertising is doing — and decide what comes next.",
-    aboutTags: ["Direct collaboration", "Arabic & English", "KSA & GCC"],
+      "I’m Saif Shorfa, an independent paid media specialist working with businesses in Saudi Arabia and the GCC. I bring campaign execution and measurement together, so you can understand what your advertising is doing, and decide what comes next. My next focus is collaborating with businesses in Europe.",
+    aboutTags: [
+      "Direct collaboration",
+      "Arabic & English",
+      "Saudi Arabia & GCC",
+      "Europe: next focus",
+    ],
     contactIntro:
       "Tell me about your business, the campaigns you’re running and what you want to improve. Let’s find a practical starting point.",
     name: "Your name",
@@ -52,10 +54,10 @@ export const labels = {
     platforms: ["Meta Ads", "Google Ads", "Both platforms"],
     budgets: [
       "Prefer to discuss",
-      "Under SAR 5,000",
-      "SAR 5,000–15,000",
-      "SAR 15,000–50,000",
-      "SAR 50,000+",
+      "Under USD 1,000",
+      "USD 1,000 to 5,000",
+      "USD 5,000 to 15,000",
+      "USD 15,000+",
     ],
     send: "Start the conversation",
     privacy:
@@ -86,19 +88,16 @@ export const labels = {
     menu: "افتح القائمة",
     close: "إغلاق",
     skip: "انتقل إلى المحتوى",
-    location: "متخصص مستقل · السعودية والخليج",
+    location: "متخصص مستقل · متاح للتعاون دوليًا",
     hero: "أساعد الشركات والمتاجر على الوصول إلى العملاء المناسبين عبر حملات مدروسة، وقياس موثوق، وتحسين مستمر مبني على ما يحدث فعليًا.",
     workIntro: "ثلاثة مشاريع بأهداف مختلفة. لكل نتيجة سياقها، ولكل رقم معنى.",
     caseDetail: "تفاصيل المشروع",
     caseLabel: "المشروع",
+    challengeTitle: "التحدي",
+    notProvided: "غير مذكور",
     result: "النتيجة",
     contribution: "طريقة العمل",
     context: "كيف نقرأ هذه الأرقام؟",
-    caseApproach: [
-      "تنظيم الحملات حسب الخدمة والموقع، ومراجعة تعريفات التحويل، وتحسين المزايدة بناءً على البيانات.",
-      "إدارة حملات اكتساب التطبيقات على Google، مع قياس عبر Google Ads وFirebase وGA4 وPlay Console.",
-      "التركيز على عمليات البحث الأقرب للشراء، وضبط مطابقة الكلمات والكلمات السلبية، وتحسين مسار الشراء.",
-    ],
     caseContexts: [
       "تحويلات سجّلها Google Ads خلال 25 يومًا. قد تشمل أكثر من نوع إجراء، ولا تعني بالضرورة حجوزات طبية مؤكدة.",
       "تنزيلات مدفوعة سجّلتها حملة الاكتساب. عدد التنزيلات وحده لا يثبت الاحتفاظ بالمستخدم أو استخدامه للتطبيق أو قيمته التجارية.",
@@ -112,11 +111,12 @@ export const labels = {
     serviceLink: "تعرّف على الخدمة",
     processNote: "خطوات مدروسة، وقرار واضح في كل مرحلة.",
     aboutText:
-      "أنا سيف الشرفا، متخصص مستقل في الإعلانات الممولة، أعمل مع الشركات والمتاجر في السعودية والخليج. أجمع بين إدارة الحملات والقياس حتى تفهم ما يقدّمه الإعلان لمشروعك، وتعرف أين تضع خطوتك القادمة.",
+      "أنا سيف الشرفا، متخصص مستقل في الإعلانات الممولة، أعمل مع الشركات والمتاجر في السعودية والخليج. أجمع بين إدارة الحملات والقياس حتى تفهم ما يقدّمه الإعلان لمشروعك، وتعرف أين تضع خطوتك القادمة. أتطلّع في المرحلة القادمة إلى التعاون مع مشاريع في السوق الأوروبي.",
     aboutTags: [
       "تواصل وعمل مباشر معي",
       "العربية والإنجليزية",
       "السعودية والخليج",
+      "أوروبا: الوجهة القادمة",
     ],
     contactIntro:
       "احكِ لي عن مشروعك، وحملاتك الحالية، وما تريد تحسينه. نبدأ بفهم التحدي ونحدّد خطوة عملية تناسبك.",
@@ -130,10 +130,10 @@ export const labels = {
     platforms: ["إعلانات Meta", "إعلانات Google", "المنصتان معًا"],
     budgets: [
       "نناقشها لاحقًا",
-      "أقل من 5,000 ريال",
-      "5,000–15,000 ريال",
-      "15,000–50,000 ريال",
-      "أكثر من 50,000 ريال",
+      "أقل من 1,000 دولار",
+      "من 1,000 إلى 5,000 دولار",
+      "من 5,000 إلى 15,000 دولار",
+      "15,000 دولار فأكثر",
     ],
     send: "ابدأ الحديث معي",
     privacy:
@@ -160,7 +160,6 @@ export const platforms = [
   {
     slug: "meta-ads",
     name: "Meta Ads",
-    number: "01",
     tag: "Facebook / Instagram",
     en: {
       headline: "Reach the right people. Give them a reason to act.",
@@ -176,7 +175,7 @@ export const platforms = [
       fit: "For businesses that want a structured way to test their offer, acquire customers and understand campaign performance. Scope starts with your account, your goals and the measurement you already have.",
     },
     ar: {
-      headline: "وصل عرضك للشخص المناسب. واعطه سببًا ليتفاعل.",
+      headline: "أوصل عرضك إلى الشخص المناسب، وشجّعه على التفاعل.",
       description:
         "حملات فيسبوك وإنستغرام تبدأ من فهم عرضك وجمهورك وهدف مشروعك. من أول اختبار للمحتوى، إلى قرار التحسين التالي.",
       items: [
@@ -192,12 +191,11 @@ export const platforms = [
   {
     slug: "google-ads",
     name: "Google Ads",
-    number: "02",
     tag: "Search / Shopping / Apps",
     en: {
       headline: "Be there when intent turns into opportunity.",
       description:
-        "Google campaigns that connect search intent with a relevant offer. Search, Shopping, Performance Max and app acquisition — selected around what your business actually needs.",
+        "Google campaigns that connect search intent with a relevant offer. Search, Shopping, Performance Max and app acquisition, selected around what your business actually needs.",
       items: [
         "Account audit & intent-led strategy",
         "Search campaign structure & keywords",

@@ -31,3 +31,13 @@ WhatsApp messages are prepared locally and open only after a visitor submits. Th
 ## Before production
 
 Approve portrait likeness and final copy; reconfirm WhatsApp contact details; supply approved evidence for ecommerce and any future Meta case; configure consent/analytics and connect the custom domain only after approval. Original production remains untouched.
+
+## Finishing pass, October 12, 2026
+
+Reviewed the live original at https://saif-shorfa.netlify.app/ and transferred its three case narratives: a multi-specialty clinic, a legal app serving women in Saudi Arabia, and a travel-bag store. Each case now includes the challenge and execution in both languages. The healthcare period (July 1 to 25, 2026) and SAR 5,906.11 spend are from the published original. Results remain reported project figures, with their original SAR currency and existing qualifications. No Meta case was present in the original, so none was added. Client evidence screenshots remain withheld.
+
+Removed decorative section/project numbering, hand-drawn platform icons, and prose em dashes. Contact budget choices use USD; these are visitor input ranges, not currency conversions of previous campaign results. Europe is described as the next focus for collaboration, without claiming past European projects.
+
+Portraits disable native dragging and their context menus; CSS also suppresses the standard touch callout where supported. These are basic interaction deterrents, not protection against screenshots, network access or inspection of public frontend code. No copy, keyboard or developer-tool restrictions are imposed.
+
+The closed social account still needs identification before its links are removed. Domain connection, articles, a dashboard and publication to the original production site are outside this preview release.

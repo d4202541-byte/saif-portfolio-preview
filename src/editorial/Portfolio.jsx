@@ -44,10 +44,9 @@ function Button({ children, href, secondary = false, ...props }) {
     </a>
   );
 }
-function SectionLabel({ number, children }) {
+function SectionLabel({ children }) {
   return (
     <div className="section-label">
-      <span dir="ltr">/{number}</span>
       <span>{children}</span>
     </div>
   );
@@ -84,7 +83,7 @@ function Header({ lang, page, serviceSlug, l }) {
           className="brand-link"
           href={routePath(lang)}
           aria-label={
-            lang === "ar" ? "سيف الشرفا — الرئيسية" : "Saif Shorfa — home"
+            lang === "ar" ? "سيف الشرفا, الرئيسية" : "Saif Shorfa, home"
           }
         >
           <Wordmark />
@@ -240,6 +239,8 @@ function Hero({ c, l, lang }) {
       <div className="hero-portrait">
         <img
           src={sitePath("brand/saif-portrait-current.webp")}
+          draggable={false}
+          onContextMenu={(event) => event.preventDefault()}
           width="1122"
           height="1402"
           fetchPriority="high"
@@ -249,10 +250,6 @@ function Hero({ c, l, lang }) {
               : "Saif Shorfa seated in a chair, wearing black"
           }
         />
-      </div>
-      <div className="hero-bottom-note" aria-hidden="true">
-        <span>PAID MEDIA. CONSIDERED.</span>
-        <span>01 — 2026</span>
       </div>
     </section>
   );
@@ -295,7 +292,7 @@ function Work({ c, l }) {
   const item = selected === null ? null : c.work.cases[selected];
   return (
     <section id="work" className="work-section section container">
-      <SectionLabel number="01">{l.work}</SectionLabel>
+      <SectionLabel>{l.work}</SectionLabel>
       <div className="section-heading">
         <h2>{c.work.heading}</h2>
         <p>{l.workIntro}</p>
@@ -304,7 +301,6 @@ function Work({ c, l }) {
         {c.work.cases.map((project, i) => (
           <article className="case-card" key={project.id} data-reveal>
             <div className="case-visual">
-              <span className="case-number">0{i + 1}</span>
               <div className={"case-art art-" + i} aria-hidden="true">
                 <i />
                 <i />
@@ -316,10 +312,9 @@ function Work({ c, l }) {
               <span className="case-category">{project.category}</span>
             </div>
             <div className="case-body">
-              <p className="eyebrow">
-                {l.caseLabel} / 0{i + 1}
-              </p>
+              <p className="eyebrow">{project.industry}</p>
               <h3>{project.title || project.headline}</h3>
+              <p>{project.summary}</p>
               <p>{project.secondaryMetric}</p>
               <p className="case-fine">
                 {project.disclaimer || project.finePrint}
@@ -360,8 +355,10 @@ function Work({ c, l }) {
                   {item.secondaryMetric}
                 </p>
               </div>
+              <h3>{l.challengeTitle}</h3>
+              <p>{item.challenge}</p>
               <h3>{l.contribution}</h3>
-              <p>{l.caseApproach[selected]}</p>
+              <p>{item.solution}</p>
               <h3>{l.context}</h3>
               <p>{l.caseContexts[selected]}</p>
               <p className="fine-print">{l.evidence}</p>
@@ -372,39 +369,16 @@ function Work({ c, l }) {
     </section>
   );
 }
-function PlatformIcon({ meta }) {
-  return meta ? (
-    <svg viewBox="0 0 80 50" fill="none" aria-hidden="true">
-      <path
-        d="M6 37C0 16 12 4 21 8c13 5 27 40 40 33C82 29 72 5 60 8 43 9 33 47 18 42 8 40 5 31 7 22"
-        stroke="currentColor"
-        strokeWidth="5"
-        strokeLinecap="round"
-      />
-    </svg>
-  ) : (
-    <svg viewBox="0 0 60 60" fill="none" aria-hidden="true">
-      <path
-        d="m15 44 20-33 17 33"
-        stroke="currentColor"
-        strokeWidth="13"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="15" cy="44" r="7" fill="currentColor" />
-    </svg>
-  );
-}
 function Services({ c, l, lang, directory = false }) {
   const Heading = directory ? "h1" : "h2";
   return (
     <section id="services" className="services-section section container">
-      <SectionLabel number="02">{l.services}</SectionLabel>
+      <SectionLabel>{l.services}</SectionLabel>
       <div className="section-heading">
         <Heading>{c.services.heading}</Heading>
       </div>
       <div className="platform-grid">
-        {platforms.map((p, i) => (
+        {platforms.map((p) => (
           <a
             className="platform-card"
             href={routePath(lang, "service", p.slug)}
@@ -412,10 +386,7 @@ function Services({ c, l, lang, directory = false }) {
             data-reveal
           >
             <div className="platform-top">
-              <span className="eyebrow">
-                /{p.number} — {p.tag}
-              </span>
-              <PlatformIcon meta={!i} />
+              <span className="eyebrow">{p.tag}</span>
             </div>
             <h3 dir="ltr">
               {p.name}
@@ -441,17 +412,14 @@ function Process({ c, l }) {
   return (
     <section id="approach" className="process-section section">
       <div className="container">
-        <SectionLabel number="03">{l.approach}</SectionLabel>
+        <SectionLabel>{l.approach}</SectionLabel>
         <div className="section-heading">
           <h2>{c.approach.heading}</h2>
           <p>{l.processNote}</p>
         </div>
         <div className="process-grid">
-          {c.approach.steps.map((step, i) => (
+          {c.approach.steps.map((step) => (
             <article className="process-step" key={step.title} data-reveal>
-              <span className="step-number" dir="ltr">
-                0{i + 1}
-              </span>
               <h3>{step.title}</h3>
               <p>{step.description}</p>
             </article>
@@ -468,6 +436,8 @@ function About({ c, l, lang }) {
         <div className="about-photo">
           <img
             src={sitePath("brand/saif-portrait-current.webp")}
+            draggable={false}
+            onContextMenu={(event) => event.preventDefault()}
             width="1122"
             height="1402"
             loading="lazy"
@@ -482,7 +452,7 @@ function About({ c, l, lang }) {
         </span>
       </div>
       <div className="about-copy">
-        <SectionLabel number="04">{l.about}</SectionLabel>
+        <SectionLabel>{l.about}</SectionLabel>
         <h2>{c.about.heading}</h2>
         <p>{l.aboutText}</p>
         <ul className="about-tags">
@@ -526,7 +496,7 @@ function Contact({ c, l, lang, serviceSlug }) {
         ? "مرحبًا سيف، أود مناقشة حملاتي الإعلانية."
         : "Hi Saif, I’d like to discuss my paid campaigns.",
       `${l.name}: ${name}`,
-      `${l.business}: ${String(data.get("business") || "").trim() || "—"}`,
+      `${l.business}: ${String(data.get("business") || "").trim() || l.notProvided}`,
       `${l.platform}: ${data.get("platform")}`,
       `${l.budget}: ${data.get("budget")}`,
       `${l.challenge}: ${challenge}`,
@@ -544,7 +514,7 @@ function Contact({ c, l, lang, serviceSlug }) {
     <section id="contact" className="contact-section">
       <div className="container contact-grid">
         <div className="contact-copy">
-          <SectionLabel number="05">{c.nav[3]}</SectionLabel>
+          <SectionLabel>{c.nav[3]}</SectionLabel>
           <h2>{c.contact.heading}</h2>
           <p>{l.contactIntro}</p>
           <div className="contact-direct">
@@ -714,13 +684,12 @@ function ServiceDetail({ platform: p, lang, l }) {
       </section>
       <section className="service-scope section container">
         <div>
-          <SectionLabel number="01">{p.name}</SectionLabel>
+          <SectionLabel>{p.name}</SectionLabel>
           <h2>{l.deliverables}</h2>
         </div>
         <ol>
-          {p[lang].items.map((item, i) => (
+          {p[lang].items.map((item) => (
             <li key={item}>
-              <span dir="ltr">0{i + 1}</span>
               {item}
               <Arrow diagonal />
             </li>

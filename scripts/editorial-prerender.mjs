@@ -57,8 +57,8 @@ function htmlFor(route) {
   const description =
     platform?.[lang].description ||
     (ar
-      ? "إدارة وتحسين حملات Meta وGoogle للشركات والمتاجر في السعودية والخليج، مع قياس واضح وقرارات مبنية على النتائج."
-      : "Independent Meta Ads and Google Ads specialist for businesses in Saudi Arabia and the GCC. Paid acquisition, reliable measurement and continuous optimization.");
+      ? "إدارة وتحسين حملات Meta وGoogle للشركات والمتاجر. خبرة في السعودية والخليج وتوجّه للتعاون في أوروبا، مع قياس واضح وتحسين مستمر."
+      : "Independent Meta Ads and Google Ads specialist. Experience in Saudi Arabia and the GCC, with Europe as the next focus for collaboration.");
   let html = template
     .replace("<!--app-->", render(lang, page, route.slug || ""))
     .replace(
@@ -99,7 +99,7 @@ function htmlFor(route) {
       description,
       url: origin + path,
       provider: { "@type": "Person", name: "Saif Shorfa", url: origin },
-      areaServed: ["Saudi Arabia", "GCC"],
+      areaServed: ["Saudi Arabia", "GCC", "Europe"],
     });
   html = html.replace(
     "<!--person-->",
