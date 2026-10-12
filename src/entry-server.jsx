@@ -5,3 +5,5 @@ export function render(lang, page = "home", serviceSlug = "") {
     <App lang={lang} page={page} serviceSlug={serviceSlug} />,
   );
 }
+
+export { platforms } from "./editorial/copy.js";

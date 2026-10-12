@@ -17,7 +17,11 @@ export function resolveRoute(pathname) {
   const lang = segments[0] === "ar" ? "ar" : "en";
   if (lang === "ar") segments.shift();
   if (!segments.length) return { lang, page: "home", serviceSlug: "" };
-  if (segments[0] === "services" && segments.length <= 2)
+  if (
+    segments[0] === "services" &&
+    segments.length <= 2 &&
+    (!segments[1] || ["meta-ads", "google-ads"].includes(segments[1]))
+  )
     return {
       lang,
       page: segments[1] ? "service" : "services",
