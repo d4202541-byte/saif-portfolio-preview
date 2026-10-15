@@ -21,6 +21,10 @@ function WhatsApp() {
   );
 }
 function track(name, source) {
+  (window.dataLayer = window.dataLayer || []).push({
+    event: name,
+    event_source: source,
+  });
   window.dispatchEvent(
     new CustomEvent("portfolio:event", { detail: { name, source } }),
   );
