@@ -272,6 +272,52 @@ function ProofStrip({ c }) {
     </div>
   );
 }
+function ProofFigure({ proof, l }) {
+  return (
+    <figure className="proof-figure">
+      <a href={sitePath(proof.src)} target="_blank" rel="noreferrer">
+        <img
+          src={sitePath(proof.src)}
+          width={proof.width}
+          height={proof.height}
+          loading="lazy"
+          alt={proof.caption}
+        />
+        <span className="proof-open">
+          {l.openProof}
+          <Arrow diagonal />
+        </span>
+      </a>
+      <figcaption>{proof.caption}</figcaption>
+    </figure>
+  );
+}
+function Measurement({ c, l }) {
+  const m = c.measurement;
+  return (
+    <section
+      id="measurement"
+      className="measurement-section section container"
+      aria-labelledby="measurement-heading"
+    >
+      <SectionLabel>{l.measurement}</SectionLabel>
+      <div className="section-heading">
+        <h2 id="measurement-heading">{m.heading}</h2>
+        <p>{m.intro}</p>
+      </div>
+      <div className="measurement-grid">
+        {m.items.map((entry) => (
+          <article className="measurement-item" key={entry.title} data-reveal>
+            <ProofFigure proof={entry.proof} l={l} />
+            <h3>{entry.title}</h3>
+            <p>{entry.body}</p>
+          </article>
+        ))}
+      </div>
+      <p className="fine-print">{l.evidence}</p>
+    </section>
+  );
+}
 function Work({ c, l }) {
   const [selected, setSelected] = useState(null);
   const dialog = useRef(null);
@@ -360,7 +406,17 @@ function Work({ c, l }) {
               <h3>{l.contribution}</h3>
               <p>{item.solution}</p>
               <h3>{l.context}</h3>
-              <p>{l.caseContexts[selected]}</p>
+              <p>{item.context}</p>
+              {item.proofs?.length > 0 && (
+                <>
+                  <h3>{l.proofTitle}</h3>
+                  <div className="proof-gallery">
+                    {item.proofs.map((proof) => (
+                      <ProofFigure key={proof.src} proof={proof} l={l} />
+                    ))}
+                  </div>
+                </>
+              )}
               <p className="fine-print">{l.evidence}</p>
             </>
           )}
@@ -769,6 +825,7 @@ export default function Portfolio({
             <Hero {...{ c, l, lang }} />
             <ProofStrip c={c} />
             <Work {...{ c, l }} />
+            <Measurement {...{ c, l }} />
             <Services {...{ c, l, lang }} />
             <Process {...{ c, l }} />
             <About {...{ c, l, lang }} />

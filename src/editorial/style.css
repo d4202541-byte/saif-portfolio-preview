@@ -492,6 +492,15 @@ em {
 .case-card:nth-child(3) .case-visual {
   background: #dedbd7;
 }
+.case-card:nth-child(4) .case-visual {
+  background: #e3e1d8;
+}
+.case-card:nth-child(5) .case-visual {
+  background: #dde2e0;
+}
+.case-card:nth-child(6) .case-visual {
+  background: #e6e0d9;
+}
 .case-number {
   position: absolute;
   inset-inline-start: 20px;
@@ -548,6 +557,15 @@ em {
 }
 .art-2 {
   transform: rotate(-50deg);
+}
+.art-3 {
+  transform: rotate(90deg);
+}
+.art-4 {
+  transform: rotate(-20deg);
+}
+.art-5 {
+  transform: rotate(150deg);
 }
 .case-card:hover .case-art {
   scale: 1.07;
@@ -630,6 +648,81 @@ em {
 .dialog-content .fine-print {
   font-size: 11px;
   margin-top: 25px;
+}
+.proof-gallery {
+  display: grid;
+  gap: 22px;
+}
+.proof-figure {
+  margin: 0;
+}
+.proof-figure a {
+  position: relative;
+  display: block;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+.proof-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.proof-open {
+  position: absolute;
+  inset-inline-end: 8px;
+  bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.proof-open .arrow {
+  width: 12px;
+  height: 12px;
+}
+.proof-figure a:is(:hover, :focus-visible) .proof-open {
+  opacity: 1;
+}
+.proof-figure figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.measurement-section {
+  border-top: 1px solid var(--line);
+}
+.measurement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.measurement-item .proof-figure a {
+  aspect-ratio: 1.6;
+  overflow: hidden;
+}
+.measurement-item .proof-figure img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+.measurement-item h3 {
+  font-size: 22px;
+  margin-top: 20px;
+  line-height: 1.25;
+}
+.measurement-item p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.measurement-section > .fine-print {
+  margin-top: 28px;
 }
 .services-section {
   border-top: 1px solid var(--line);
@@ -1298,7 +1391,12 @@ em {
     margin-top: 22px;
   }
   .case-grid {
-    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 18px;
+  }
+  .measurement-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
   }
   .case-body h3 {
     font-size: 22px;
