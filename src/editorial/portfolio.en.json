@@ -20,9 +20,9 @@
       "scope": "Healthcare · Google Ads · 25 days"
     },
     {
-      "metric": "≈8.7×",
-      "label": "purchase value / ad spend",
-      "scope": "E-commerce · Google Ads · 7 weeks"
+      "metric": "4,070",
+      "label": "messaging leads",
+      "scope": "Two accounts · Meta Ads · 6 weeks"
     },
     {
       "metric": "1,000+",
@@ -96,26 +96,26 @@
         "category": "Google Ads · Search",
         "industry": "Travel-bag store · KSA",
         "headline": "Turning purchase intent into reported sales.",
-        "metric": "≈8.7×",
-        "metricLabel": "purchase value / ad spend",
-        "secondaryMetric": "≈SAR 103K purchase value on SAR 11.8K spend · February 1 to March 24, 2026",
+        "metric": "234",
+        "metricLabel": "store orders in 30 days",
+        "secondaryMetric": "SAR 103.7K store sales · February 3 to March 5, 2026 · SAR 11.8K Google Ads spend (February 1 to March 24)",
         "challenge": "A travel-bag store was receiving low-quality paid traffic.",
         "solution": "Isolated purchase-intent search terms in Exact Match, built negative keyword lists and improved the product and checkout journey.",
-        "finePrint": "Reported advertising return is not net profit.",
-        "context": "Purchase value reported by Google Ads, divided by cost for the same period. For comparison, the store backend recorded SAR 103.7K in sales from 234 orders between February 3 and March 5, across all channels, so not every order came from Google Ads. Return on ad spend is not net profit.",
+        "finePrint": "Store orders come from all channels, with Google Search as the main paid channel.",
+        "context": "Orders and sales recorded by the store's own backend (Salla) across all channels, while Google Search campaigns ran on SAR 11.8K. We report the store's numbers rather than Google's conversion value, because the account's older conversion settings over-counted purchases. Store sales are revenue, not net profit.",
         "summary": "Focused search campaigns and a clearer journey from product page to checkout.",
         "proofs": [
-          {
-            "src": "proof/ecommerce-google-ads-feb-mar-2026.webp",
-            "width": 1509,
-            "height": 393,
-            "caption": "Google Ads, February 1 to March 24, 2026: about SAR 103K purchase value on SAR 11.8K cost."
-          },
           {
             "src": "proof/ecommerce-store-sales-feb-mar-2026.webp",
             "width": 1600,
             "height": 881,
             "caption": "Store backend (Salla), February 3 to March 5, 2026: SAR 103.7K sales from 234 orders, all channels."
+          },
+          {
+            "src": "proof/ecommerce-google-ads-feb-mar-2026.webp",
+            "width": 1509,
+            "height": 393,
+            "caption": "Google Ads, February 1 to March 24, 2026: SAR 11.8K cost and 15.4K clicks."
           }
         ]
       },
@@ -225,7 +225,7 @@
       },
       {
         "title": "Ad platform vs store backend",
-        "body": "Google Ads purchase value for the travel-bag store was compared with Salla sales and orders, so the reported return is grounded in real orders.",
+        "body": "Google Ads purchase value for the travel-bag store was checked against Salla sales and orders. Google was over-counting, so reporting moved to the store's real orders.",
         "proof": {
           "src": "proof/ecommerce-store-sales-feb-mar-2026.webp",
           "width": 1600,
