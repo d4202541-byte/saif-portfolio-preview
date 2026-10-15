@@ -1,0 +1,719 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Saif Shorfa intro motion</title>
+    <link rel="stylesheet" href="/src/editorial/font-faces.css" />
+    <style>
+      @font-face {
+        font-family: Manrope;
+        src: url("/fonts/manrope-latin.woff2") format("woff2");
+        font-weight: 200 800;
+      }
+      :root {
+        --paper: #f7f5f0;
+        --soft: #efece5;
+        --ink: #101010;
+        --muted: #5e5c58;
+        --line: #dcd8d0;
+        --display: "Bodoni Moda", Georgia, serif;
+        --body: Manrope, Arial, sans-serif;
+      }
+      html[lang="ar"] {
+        --display: "IBM Plex Sans Arabic", Arial, sans-serif;
+        --body: "IBM Plex Sans Arabic", Manrope, Arial, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--body);
+        -webkit-font-smoothing: antialiased;
+      }
+      #stage {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .arcs {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .arcs circle {
+        fill: none;
+        stroke: #d6d1c6;
+        stroke-width: 1.2;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+        padding: 110px 150px;
+        display: none;
+      }
+      [data-a] {
+        will-change: transform, opacity;
+      }
+      .eyebrow {
+        font-size: 22px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      html[lang="ar"] .eyebrow {
+        letter-spacing: 0;
+        font-size: 26px;
+      }
+      .display {
+        font-family: var(--display);
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        line-height: 1.02;
+      }
+      html[lang="ar"] .display {
+        letter-spacing: 0;
+        line-height: 1.25;
+        font-weight: 600;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .rule {
+        height: 1px;
+        background: var(--ink);
+        transform-origin: left;
+      }
+      html[dir="rtl"] .rule {
+        transform-origin: right;
+      }
+      .num {
+        font-family: "Bodoni Moda", Georgia, serif;
+        font-weight: 500;
+        letter-spacing: -0.04em;
+        font-variant-numeric: lining-nums;
+        unicode-bidi: isolate;
+      }
+      html[lang="ar"] .num {
+        text-align: right;
+      }
+      html[lang="ar"] .scope,
+      html[lang="ar"] .ctx {
+        text-transform: none;
+      }
+      html[lang="ar"] .num .u,
+      html[lang="ar"] .row .big {
+        font-family: "Bodoni Moda", "IBM Plex Sans Arabic", serif;
+      }
+      .latin {
+        font-family: Manrope, Arial, sans-serif;
+      }
+
+      /* 1. Intro */
+      #s1 .wrap {
+        display: grid;
+        grid-template-columns: 1fr 560px;
+        gap: 80px;
+        height: 100%;
+        align-items: center;
+      }
+      #s1 h1 {
+        font-size: 230px;
+        margin: 26px 0 30px;
+      }
+      html[lang="ar"] #s1 h1 {
+        font-size: 160px;
+        white-space: nowrap;
+      }
+      #s1 .roles {
+        position: relative;
+        height: 70px;
+        font-size: 52px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+      #s1 .roles span {
+        position: absolute;
+        inset-inline-start: 0;
+        top: 0;
+        white-space: nowrap;
+      }
+      #s1 .foot {
+        margin-top: 60px;
+        font-size: 26px;
+      }
+      .portrait {
+        position: relative;
+        width: 560px;
+        height: 760px;
+        border-radius: 280px 280px 0 0;
+        overflow: hidden;
+        background: #e6e2dc;
+      }
+      .portrait img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 94%;
+        transform: translateX(-50%);
+      }
+
+      /* 2. Services */
+      #s2 h2,
+      #s3 h2,
+      #s4 h2,
+      #s5 h2 {
+        font-size: 104px;
+        margin: 22px 0 0;
+      }
+      html[lang="ar"] #s2 h2,
+      html[lang="ar"] #s3 h2,
+      html[lang="ar"] #s4 h2,
+      html[lang="ar"] #s5 h2 {
+        font-size: 92px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 70px;
+      }
+      .card {
+        background: #ebe7df;
+        padding: 52px 56px;
+        min-height: 330px;
+      }
+      .card:nth-child(2) {
+        background: #e1e3dd;
+      }
+      .card .logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+      }
+      .card h3 {
+        font-size: 54px;
+        font-weight: 600;
+        margin: 30px 0 18px;
+        letter-spacing: -0.03em;
+        font-family: Manrope, sans-serif;
+      }
+      .card p {
+        font-size: 30px;
+        line-height: 1.45;
+        margin: 0;
+        color: #333;
+      }
+      .supporting {
+        margin-top: 46px;
+        font-size: 28px;
+      }
+
+      /* 3. Approach */
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 36px;
+        margin-top: 110px;
+      }
+      .step .n {
+        font-family: "Bodoni Moda", serif;
+        font-size: 92px;
+        line-height: 1;
+      }
+      .step .rule {
+        margin: 34px 0 30px;
+      }
+      .step h3 {
+        font-size: 42px;
+        font-weight: 600;
+        margin: 0 0 16px;
+      }
+      .step p {
+        font-size: 27px;
+        line-height: 1.45;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      /* 4. Spend vs result */
+      .rows {
+        margin-top: 70px;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 360px 1fr 160px 1.25fr;
+        align-items: center;
+        gap: 30px;
+        padding: 34px 0;
+        border-top: 1px solid var(--line);
+      }
+      .row:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .row .ctx {
+        font-size: 22px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      html[lang="ar"] .row .ctx {
+        letter-spacing: 0;
+        font-size: 25px;
+      }
+      .row .big {
+        font-size: 84px;
+        line-height: 1;
+      }
+      .row .lab {
+        font-size: 24px;
+        color: var(--muted);
+        margin-top: 10px;
+      }
+      .row .arrow {
+        height: 2px;
+        background: var(--ink);
+        position: relative;
+        transform-origin: left;
+      }
+      html[dir="rtl"] .row .arrow {
+        transform-origin: right;
+      }
+      .row .arrow::after {
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: -9px;
+        border: 10px solid transparent;
+        border-left: 16px solid var(--ink);
+        border-right: 0;
+      }
+      html[dir="rtl"] .row .arrow::after {
+        right: auto;
+        left: -2px;
+        border-left: 0;
+        border-right: 16px solid var(--ink);
+      }
+      .fine {
+        margin-top: 34px;
+        font-size: 22px;
+        color: var(--muted);
+      }
+
+      /* 5. Results */
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px;
+        margin-top: 90px;
+      }
+      .stat {
+        padding: 56px 50px 50px;
+        background: #ebe7df;
+        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .stat:nth-child(2) {
+        background: #e1e3dd;
+      }
+      .stat:nth-child(3) {
+        background: #e8e1d9;
+      }
+      .stat .num {
+        font-size: 160px;
+        line-height: 1;
+      }
+      html[dir="rtl"] .stat .num {
+        text-align: right;
+      }
+      .stat .lab {
+        font-size: 36px;
+        font-weight: 500;
+        margin-top: 26px;
+      }
+      .stat .scope {
+        font-size: 20px;
+        color: var(--muted);
+        margin-top: 12px;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+      html[lang="ar"] .stat .scope {
+        letter-spacing: 0;
+        font-size: 24px;
+      }
+
+      /* 6. CTA */
+      #s6 {
+        display: none;
+        text-align: center;
+        padding-top: 150px;
+      }
+      #s6 h2 {
+        font-size: 150px;
+        margin: 30px auto 0;
+        max-width: 1500px;
+      }
+      html[lang="ar"] #s6 h2 {
+        font-size: 120px;
+      }
+      #s6 p {
+        font-size: 34px;
+        margin: 44px auto 0;
+        max-width: 1100px;
+        line-height: 1.5;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 22px;
+        margin-top: 64px;
+        padding: 30px 56px;
+        background: var(--ink);
+        color: var(--paper);
+        font-size: 34px;
+        font-weight: 600;
+        border-radius: 999px;
+      }
+      .contacts {
+        margin-top: 46px;
+        font-size: 28px;
+        color: var(--muted);
+        direction: ltr;
+      }
+      .brandmark {
+        position: absolute;
+        bottom: 64px;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+      .brandmark img {
+        display: block;
+        width: 240px;
+        margin: 0 auto;
+      }
+      .chip {
+        position: absolute;
+        top: 64px;
+        inset-inline-start: 150px;
+        font-size: 20px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      html[lang="ar"] .chip {
+        letter-spacing: 0;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <script>
+      const COPY = {
+        en: {
+          dir: "ltr",
+          eyebrow: "Growth · Campaigns · Performance",
+          hello: "Meet Saif",
+          roles: ["Meta Ads", "Google Ads", "Performance Marketing"],
+          foot: "Saif Shorfa · Independent Paid Media Specialist · KSA & GCC",
+          servicesEyebrow: "Services",
+          servicesHeading: "Two platforms.<br />One performance mindset.",
+          meta: "Facebook and Instagram campaigns, creative testing, audience signals and retargeting.",
+          google: "Search, Shopping and Performance Max, built around search intent and conversion quality.",
+          supporting: "Measurement behind every decision: GA4 · GTM · Meta Pixel · Conversions API",
+          approachEyebrow: "How I work",
+          approachHeading: "Clarity before scale.",
+          steps: [
+            ["Audit", "Structure, funnel and tracking reviewed first."],
+            ["Build", "Focused campaigns tied to business goals."],
+            ["Test", "Creative, audiences, intent and landing pages."],
+            ["Optimize", "Decisions on conversion quality, not vanity metrics."],
+          ],
+          spendEyebrow: "What goes in, what comes out",
+          spendHeading: "Spend in. Results out.",
+          rows: [
+            {
+              ctx: "Google Ads<br />Online store · KSA",
+              spend: { pre: "SAR ", to: 11.8, dec: 1, suf: "K" },
+              spendLab: "ad spend · 7 weeks",
+              res: { pre: "SAR ", to: 103.7, dec: 1, suf: "K" },
+              resLab: "store sales · 234 orders",
+            },
+            {
+              ctx: "Google Ads<br />Healthcare · KSA",
+              spend: { pre: "SAR ", to: 5906, dec: 0, suf: "" },
+              spendLab: "ad spend · 25 days",
+              res: { pre: "", to: 814, dec: 0, suf: "" },
+              resLab: "conversions at SAR 7.26 each",
+            },
+            {
+              ctx: "Meta Ads<br />Two service accounts",
+              spend: { pre: "≈$", to: 3560, dec: 0, suf: "" },
+              spendLab: "ad spend · 6 weeks",
+              res: { pre: "", to: 4070, dec: 0, suf: "" },
+              resLab: "messaging leads, under $1 each",
+            },
+          ],
+          spendFine:
+            "Store sales come from the store's own backend across all channels and are revenue, not profit.",
+          resultsEyebrow: "Selected results",
+          resultsHeading: "Real accounts. Real numbers.",
+          stats: [
+            { to: 814, suf: "", lab: "recorded conversions", scope: "Healthcare · Google Ads · 25 days" },
+            { to: 4070, suf: "", lab: "messaging leads", scope: "Two accounts · Meta Ads · 6 weeks" },
+            { to: 1000, suf: "+", lab: "e-commerce orders", scope: "Client stores · 2026" },
+          ],
+          resultsFine: "Selected project results, not universal performance guarantees.",
+          ctaEyebrow: "Contact",
+          ctaHeading: "Let's make your next move count.",
+          ctaText: "Tell me what you're running, what's not working and what you'd like to improve.",
+          ctaBtn: "Let's Talk",
+        },
+        ar: {
+          dir: "rtl",
+          eyebrow: "نمو · حملات إعلانية · أداء",
+          hello: "تعرّف على سيف",
+          roles: ["Meta Ads", "Google Ads", "تسويق الأداء"],
+          foot: "سيف الشرفا · متخصص مستقل في الحملات الإعلانية الممولة · السعودية والخليج",
+          servicesEyebrow: "الخدمات",
+          servicesHeading: "منصتان.<br />تركيز واحد على الأداء.",
+          meta: "حملات فيسبوك وإنستغرام، اختبار المحتوى والجمهور، وإعادة الاستهداف.",
+          google: "البحث وShopping وPerformance Max، مبنية على نية البحث وجودة التحويل.",
+          supporting: "قياس يدعم كل قرار: GA4 · GTM · Meta Pixel · Conversions API",
+          approachEyebrow: "المنهجية",
+          approachHeading: "الوضوح قبل التوسّع.",
+          steps: [
+            ["التشخيص", "فحص الحساب ومسار العميل ودقة القياس أولًا."],
+            ["البناء", "حملات مركّزة مرتبطة بأهداف العمل."],
+            ["الاختبار", "المحتوى والجمهور ونية البحث والصفحات."],
+            ["التحسين", "قرارات مبنية على جودة التحويل، لا الأرقام الشكلية."],
+          ],
+          spendEyebrow: "الإنفاق والنتيجة",
+          spendHeading: "ما نصرفه، وما يعود به.",
+          rows: [
+            {
+              ctx: "Google Ads<br />متجر إلكتروني · السعودية",
+              spend: { pre: "", to: 11.8, dec: 1, suf: " ألف ريال" },
+              spendLab: "إنفاق إعلاني · 7 أسابيع",
+              res: { pre: "", to: 103.7, dec: 1, suf: " ألف ريال" },
+              resLab: "مبيعات المتجر · 234 طلبًا",
+            },
+            {
+              ctx: "Google Ads<br />القطاع الطبي · السعودية",
+              spend: { pre: "", to: 5906, dec: 0, suf: " ريال" },
+              spendLab: "إنفاق إعلاني · 25 يومًا",
+              res: { pre: "", to: 814, dec: 0, suf: "" },
+              resLab: "تحويلًا بتكلفة 7.26 ريال للتحويل",
+            },
+            {
+              ctx: "Meta Ads<br />حسابا خدمات",
+              spend: { pre: "≈$", to: 3560, dec: 0, suf: "" },
+              spendLab: "إنفاق إعلاني · 6 أسابيع",
+              res: { pre: "", to: 4070, dec: 0, suf: "" },
+              resLab: "عميلًا محتملًا عبر الرسائل، بأقل من دولار للعميل",
+            },
+          ],
+          spendFine: "مبيعات المتجر من نظام المتجر نفسه ولكل القنوات، وهي إيرادات وليست أرباحًا.",
+          resultsEyebrow: "أبرز النتائج",
+          resultsHeading: "حسابات حقيقية. أرقام حقيقية.",
+          stats: [
+            { to: 814, suf: "", lab: "تحويلًا مسجلًا", scope: "القطاع الطبي · Google Ads · 25 يومًا" },
+            { to: 4070, suf: "", lab: "عميلًا محتملًا عبر الرسائل", scope: "حسابان · Meta Ads · 6 أسابيع" },
+            { to: 1000, suf: "+", lab: "طلب في المتاجر الإلكترونية", scope: "متاجر العملاء · 2026" },
+          ],
+          resultsFine: "هذه نتائج مشاريع محددة وليست ضمانًا أو متوسطًا متوقعًا لكل حساب.",
+          ctaEyebrow: "تواصل",
+          ctaHeading: "خلينا نحدد الخطوة القادمة.",
+          ctaText: "احكِ لي عن حملاتك الحالية والتحدي الأكبر، ونحدد بداية عملية للتحسين.",
+          ctaBtn: "تواصل معي",
+        },
+      };
+
+      const lang = new URLSearchParams(location.search).get("lang") === "ar" ? "ar" : "en";
+      const C = COPY[lang];
+      // Keep Latin product names as their own bidi run inside Arabic lines.
+      if (lang === "ar")
+        (function wrap(o) {
+          for (const k in o)
+            if (typeof o[k] === "string" && k !== "dir")
+              o[k] = o[k].replace(/(Google Ads|Meta Ads)(?!<\/bdi>)/g, "<bdi>$1</bdi>");
+            else if (typeof o[k] === "object") wrap(o[k]);
+        })(C);
+      document.documentElement.lang = lang;
+      document.documentElement.dir = C.dir;
+
+      // Scene timing in seconds: [start, end]
+      const S = { s1: [0, 6.6], s2: [6.6, 13.2], s3: [13.2, 19], s4: [19, 28.4], s5: [28.4, 34.4], s6: [34.4, 41] };
+      const DURATION = 41;
+
+      // a(in, out, y): element enters at `in`, leaves at `out`
+      const a = (i, o, y = 30) => `data-a="${i},${o},${y}"`;
+      const out = (k) => S[k][1] - 0.55;
+      const fmt = (o) => `${o.pre || ""}0${o.suf || ""}`;
+      const cnt = (o, t0, d) =>
+        `dir="auto" data-count="${o.to}" data-dec="${o.dec || 0}" data-pre="${o.pre || ""}" data-suf="${o.suf || ""}" data-at="${t0},${d}"`;
+
+      const r1 = S.s1[0];
+      const r2 = S.s2[0];
+      const r3 = S.s3[0];
+      const r4 = S.s4[0];
+      const r5 = S.s5[0];
+      const r6 = S.s6[0];
+
+      document.getElementById("stage").innerHTML = `
+        <svg class="arcs" viewBox="0 0 1920 1080"><g id="arcs">
+          <circle cx="1500" cy="980" r="620"/><circle cx="1650" cy="1140" r="760"/>
+          <circle cx="260" cy="-120" r="520"/><circle cx="120" cy="-260" r="700"/>
+        </g></svg>
+
+        <section class="scene" id="s1"><div class="wrap">
+          <div>
+            <div class="eyebrow" ${a(r1 + 0.2, out("s1"))}>${C.eyebrow}</div>
+            <h1 class="display" ${a(r1 + 0.45, out("s1"), 60)}>${C.hello}</h1>
+            <div class="roles">
+              <span ${a(r1 + 1.3, r1 + 2.9, 40)}>${C.roles[0]}</span>
+              <span ${a(r1 + 3.0, r1 + 4.4, 40)}>${C.roles[1]}</span>
+              <span ${a(r1 + 4.5, out("s1"), 40)}>${C.roles[2]}</span>
+            </div>
+            <div class="rule" data-grow="${r1 + 1.1},1.4" style="margin-top:44px;width:640px"></div>
+            <div class="foot muted" ${a(r1 + 1.6, out("s1"))}>${C.foot}</div>
+          </div>
+          <div class="portrait" ${a(r1 + 0.6, out("s1"), 80)}>
+            <img src="/brand/saif-portrait-current.webp" alt="" data-zoom="${r1},${S.s1[1]}" />
+          </div>
+        </div></section>
+
+        <section class="scene" id="s2">
+          <div class="eyebrow" ${a(r2 + 0.2, out("s2"))}>${C.servicesEyebrow}</div>
+          <h2 class="display" ${a(r2 + 0.35, out("s2"), 50)}>${C.servicesHeading}</h2>
+          <div class="cards">
+            <div class="card" ${a(r2 + 1.2, out("s2"), 60)}>
+              <img class="logo" src="/brand/meta.svg" alt="" />
+              <h3>Meta Ads</h3><p>${C.meta}</p>
+            </div>
+            <div class="card" ${a(r2 + 1.6, out("s2"), 60)}>
+              <img class="logo" src="/brand/google-ads.webp" alt="" />
+              <h3>Google Ads</h3><p>${C.google}</p>
+            </div>
+          </div>
+          <div class="supporting muted" ${a(r2 + 2.6, out("s2"))}>${C.supporting}</div>
+        </section>
+
+        <section class="scene" id="s3">
+          <div class="eyebrow" ${a(r3 + 0.2, out("s3"))}>${C.approachEyebrow}</div>
+          <h2 class="display" ${a(r3 + 0.35, out("s3"), 50)}>${C.approachHeading}</h2>
+          <div class="steps">
+            ${C.steps
+              .map(
+                ([h, p], i) => `<div class="step" ${a(r3 + 1.0 + i * 0.55, out("s3"), 50)}>
+                  <div class="n">0${i + 1}</div>
+                  <div class="rule" data-grow="${r3 + 1.2 + i * 0.55},0.9"></div>
+                  <h3>${h}</h3><p>${p}</p></div>`,
+              )
+              .join("")}
+          </div>
+        </section>
+
+        <section class="scene" id="s4">
+          <div class="eyebrow" ${a(r4 + 0.2, out("s4"))}>${C.spendEyebrow}</div>
+          <h2 class="display" ${a(r4 + 0.35, out("s4"), 50)}>${C.spendHeading}</h2>
+          <div class="rows">
+            ${C.rows
+              .map((row, i) => {
+                const t = r4 + 1.2 + i * 1.7;
+                return `<div class="row" ${a(t, out("s4"), 40)}>
+                  <div class="ctx">${row.ctx}</div>
+                  <div><div class="big num" ${cnt(row.spend, t + 0.1, 0.9)}>${fmt(row.spend)}</div>
+                    <div class="lab">${row.spendLab}</div></div>
+                  <div class="arrow" data-grow="${t + 0.7},0.6"></div>
+                  <div><div class="big num" ${cnt(row.res, t + 1.0, 1.3)}>${fmt(row.res)}</div>
+                    <div class="lab">${row.resLab}</div></div>
+                </div>`;
+              })
+              .join("")}
+          </div>
+          <div class="fine" ${a(r4 + 5.4, out("s4"), 10)}>${C.spendFine}</div>
+        </section>
+
+        <section class="scene" id="s5">
+          <div class="eyebrow" ${a(r5 + 0.2, out("s5"))}>${C.resultsEyebrow}</div>
+          <h2 class="display" ${a(r5 + 0.35, out("s5"), 50)}>${C.resultsHeading}</h2>
+          <div class="stats">
+            ${C.stats
+              .map(
+                (s, i) => `<div class="stat" ${a(r5 + 1.0 + i * 0.4, out("s5"), 60)}>
+                  <div class="num" ${cnt(s, r5 + 1.2 + i * 0.4, 1.8)}>0${s.suf}</div>
+                  <div class="lab">${s.lab}</div><div class="scope">${s.scope}</div></div>`,
+              )
+              .join("")}
+          </div>
+          <div class="fine" ${a(r5 + 2.6, out("s5"), 10)}>${C.resultsFine}</div>
+        </section>
+
+        <section class="scene" id="s6">
+          <div class="eyebrow" ${a(r6 + 0.2, 99)}>${C.ctaEyebrow}</div>
+          <h2 class="display" ${a(r6 + 0.4, 99, 60)}>${C.ctaHeading}</h2>
+          <p class="muted" ${a(r6 + 1.2, 99)}>${C.ctaText}</p>
+          <div ${a(r6 + 1.9, 99, 30)}><span class="btn">${C.ctaBtn} <span class="latin">${C.dir === "rtl" ? "←" : "→"}</span></span></div>
+          <div class="contacts latin" ${a(r6 + 2.5, 99, 20)}>saif-growth.com · WhatsApp +970 59 720 0690</div>
+          <div class="brandmark" ${a(r6 + 3.0, 99, 0)}><img src="/brand/logo-integrated.svg" alt="" /></div>
+        </section>
+      `;
+
+      const clamp = (v) => Math.min(1, Math.max(0, v));
+      const easeOut = (x) => 1 - Math.pow(1 - x, 3);
+      const easeIn = (x) => x * x * x;
+      const easeInOut = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const parse = (s) => s.split(",").map(Number);
+
+      const scenes = Object.entries(S).map(([id, span]) => [document.getElementById(id), span]);
+      const anims = [...document.querySelectorAll("[data-a]")].map((el) => [el, parse(el.dataset.a)]);
+      const grows = [...document.querySelectorAll("[data-grow]")].map((el) => [el, parse(el.dataset.grow)]);
+      const counts = [...document.querySelectorAll("[data-count]")].map((el) => [el, parse(el.dataset.at)]);
+      const zooms = [...document.querySelectorAll("[data-zoom]")].map((el) => [el, parse(el.dataset.zoom)]);
+      const arcs = document.getElementById("arcs");
+      const rtl = C.dir === "rtl";
+
+      window.DURATION = DURATION;
+      window.renderAt = (t) => {
+        for (const [el, [s, e]] of scenes) el.style.display = t >= s - 0.05 && t < e + 0.05 ? "block" : "none";
+        for (const [el, [i, o, y]] of anims) {
+          const pin = easeOut(clamp((t - i) / 0.8));
+          const pout = easeIn(clamp((t - o) / 0.5));
+          el.style.opacity = (pin * (1 - pout)).toFixed(4);
+          el.style.transform = `translateY(${((1 - pin) * y - pout * 20).toFixed(2)}px)`;
+        }
+        for (const [el, [i, d]] of grows) el.style.transform = `scaleX(${easeInOut(clamp((t - i) / d)).toFixed(4)})`;
+        for (const [el, [i, d]] of counts) {
+          const p = easeOut(clamp((t - i) / d));
+          const v = Number(el.dataset.count) * p;
+          const dec = Number(el.dataset.dec);
+          el.textContent =
+            el.dataset.pre +
+            v.toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec }) +
+            el.dataset.suf;
+        }
+        for (const [el, [s, e]] of zooms) {
+          const p = clamp((t - s) / (e - s));
+          el.style.transform = `translateX(-50%) scale(${(1.05 - 0.05 * p).toFixed(4)})`;
+          el.style.transformOrigin = "50% 100%";
+        }
+        arcs.setAttribute("transform", `rotate(${((rtl ? -1 : 1) * t * 0.6).toFixed(3)} 960 540)`);
+      };
+      window.renderAt(Number(new URLSearchParams(location.search).get("t") || 0));
+    </script>
+  </body>
+</html>
