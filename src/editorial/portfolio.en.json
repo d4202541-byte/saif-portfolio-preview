@@ -20,14 +20,14 @@
       "scope": "Healthcare · Google Ads · 25 days"
     },
     {
-      "metric": "5,070",
-      "label": "paid app installs",
-      "scope": "App acquisition · Google Ads"
+      "metric": "≈8.7×",
+      "label": "purchase value / ad spend",
+      "scope": "E-commerce · Google Ads · 7 weeks"
     },
     {
-      "metric": "9.5×",
-      "label": "reported ROAS",
-      "scope": "E-commerce · Google Ads"
+      "metric": "131",
+      "label": "website purchases",
+      "scope": "E-commerce, Norway · Meta Ads"
     }
   ],
   "trustDisclaimer": "Selected project results, not universal performance guarantees.",
@@ -38,7 +38,7 @@
       {
         "id": "healthcare-google",
         "category": "Google Ads · Lead Generation",
-        "industry": "Healthcare",
+        "industry": "Healthcare · KSA",
         "headline": "A clearer account structure for a multi-specialty clinic.",
         "metric": "814",
         "metricLabel": "recorded conversions",
@@ -46,42 +46,194 @@
         "challenge": "A multi-specialty clinic account needed a clearer structure and more reliable measurement for each goal.",
         "solution": "Separated campaigns by specialty and city, redefined primary conversions and adjusted bidding to the value of each objective.",
         "finePrint": "Recorded conversions are not necessarily confirmed patient bookings.",
-        "proofUrl": "https://saif-shorfa.netlify.app/assets/majesty-campaigns.png",
-        "summary": "Campaigns organized by specialty and city, with measurement aligned to each objective."
+        "context": "Google Ads recorded conversions during a 25-day reporting window. They may include multiple conversion actions and are not the same as confirmed medical bookings. The account held steady while it scaled: 464 conversions at SAR 4.03 at launch, 681 at SAR 7.63 in June, then 814 at SAR 7.26 in July.",
+        "summary": "Campaigns organized by specialty and city, with measurement aligned to each objective.",
+        "proofs": [
+          {
+            "src": "proof/healthcare-july-campaigns.webp",
+            "width": 1565,
+            "height": 786,
+            "caption": "Google Ads campaigns, July 1 to 25, 2026: 814 conversions at SAR 7.26. Campaign names blurred."
+          },
+          {
+            "src": "proof/healthcare-june-summary.webp",
+            "width": 1417,
+            "height": 348,
+            "caption": "June 2026 account summary: 681 conversions at SAR 7.63."
+          },
+          {
+            "src": "proof/healthcare-google-ads-may-jun-2026.webp",
+            "width": 1600,
+            "height": 662,
+            "caption": "Launch period, May 20 to June 15, 2026: 464 conversions at SAR 4.03, 15.97% conversion rate."
+          }
+        ]
       },
       {
-        "id": "app-google",
-        "category": "Google Ads · App Acquisition",
-        "industry": "Legal app",
-        "headline": "Acquisition and measurement for a legal app.",
-        "metric": "5,070",
-        "metricLabel": "paid installations",
-        "secondaryMetric": "SAR 0.43 cost per install",
-        "challenge": "Grow a legal app for women in Saudi Arabia while connecting acquisition with measurement of usage.",
-        "solution": "Connected Google Ads, Play Console, Firebase and GA4 to follow acquisition, usage and retention signals.",
-        "finePrint": "Install volume is not a measure of user retention or in-app revenue.",
-        "proofUrl": "https://saif-shorfa.netlify.app/assets/app-uac-year.jpeg",
-        "summary": "Paid acquisition for a legal app serving women in Saudi Arabia, supported by connected analytics."
+        "id": "healthcare-meta",
+        "category": "Meta Ads · Messaging Leads",
+        "industry": "Healthcare · KSA",
+        "headline": "Patient enquiries through WhatsApp and Messenger.",
+        "metric": "602",
+        "metricLabel": "messaging conversations",
+        "secondaryMetric": "SAR 3.72 to 3.83 per conversation · June 1 to 22, 2026 · SAR 2,281 spend",
+        "challenge": "The same clinic needed a second, lower-cost source of patient enquiries alongside Google Search.",
+        "solution": "Ran click-to-message campaigns on Facebook and Instagram that open a chat with the clinic's team, alongside the Google Ads account.",
+        "finePrint": "A started conversation is an enquiry, not a confirmed booking.",
+        "context": "Messaging conversations started, as reported by Meta Ads across two campaigns (229 and 373) over 22 days. Each one is a person who opened a chat with the clinic. It is not the same as a booked appointment.",
+        "summary": "Facebook and Instagram ads that start a chat with the clinic, at under SAR 4 each.",
+        "proofs": [
+          {
+            "src": "proof/healthcare-meta-ads-jun-2026.webp",
+            "width": 1600,
+            "height": 420,
+            "caption": "Meta Ads, June 1 to 22, 2026: 229 + 373 messaging conversations at SAR 3.72 and SAR 3.83. Campaign names blurred."
+          }
+        ]
       },
       {
         "id": "ecom-google",
         "category": "Google Ads · Search",
-        "industry": "Travel-bag store",
+        "industry": "Travel-bag store · KSA",
         "headline": "Turning purchase intent into reported sales.",
-        "metric": "9.5×",
-        "metricLabel": "reported ROAS",
-        "secondaryMetric": "SAR 105K reported revenue · 225 completed orders",
+        "metric": "≈8.7×",
+        "metricLabel": "purchase value / ad spend",
+        "secondaryMetric": "≈SAR 103K purchase value on SAR 11.8K spend · February 1 to March 24, 2026",
         "challenge": "A travel-bag store was receiving low-quality paid traffic.",
         "solution": "Isolated purchase-intent search terms in Exact Match, built negative keyword lists and improved the product and checkout journey.",
         "finePrint": "Reported advertising return is not net profit.",
-        "proofUrl": null,
-        "summary": "Focused search campaigns and a clearer journey from product page to checkout."
+        "context": "Purchase value reported by Google Ads, divided by cost for the same period. For comparison, the store backend recorded SAR 103.7K in sales from 234 orders between February 3 and March 5, across all channels, so not every order came from Google Ads. Return on ad spend is not net profit.",
+        "summary": "Focused search campaigns and a clearer journey from product page to checkout.",
+        "proofs": [
+          {
+            "src": "proof/ecommerce-google-ads-feb-mar-2026.webp",
+            "width": 1509,
+            "height": 393,
+            "caption": "Google Ads, February 1 to March 24, 2026: about SAR 103K purchase value on SAR 11.8K cost."
+          },
+          {
+            "src": "proof/ecommerce-store-sales-feb-mar-2026.webp",
+            "width": 1600,
+            "height": 881,
+            "caption": "Store backend (Salla), February 3 to March 5, 2026: SAR 103.7K sales from 234 orders, all channels."
+          }
+        ]
+      },
+      {
+        "id": "europe-meta",
+        "category": "Meta Ads · E-commerce",
+        "industry": "Online store · Norway",
+        "headline": "Website sales in a European market.",
+        "metric": "131",
+        "metricLabel": "website purchases",
+        "secondaryMetric": "≈NOK 47,000 spend · July 1 to October 15, 2026 · best campaign: 69 purchases at NOK 216.95",
+        "challenge": "A Norwegian online store needed Meta Ads to bring in website purchases, not just traffic.",
+        "solution": "Purchase-optimized campaigns on Facebook and Instagram, with budget moved toward the campaigns with the lowest cost per purchase.",
+        "finePrint": "Purchases are attributed by Meta Ads and are not net profit.",
+        "context": "Website purchases reported by Meta Ads, summed across the campaigns shown. In August alone the account recorded 71 purchases on NOK 14,686.73, and the store's own report showed NOK 47,079.70 in sales that month, up 261.5% on July across all channels.",
+        "summary": "Purchase-focused Facebook and Instagram campaigns for a store in Norway.",
+        "proofs": [
+          {
+            "src": "proof/europe-ecommerce-meta-ads-jul-oct-2026.webp",
+            "width": 1600,
+            "height": 564,
+            "caption": "Meta Ads, July 1 to October 15, 2026: website purchases by campaign. Campaign names blurred."
+          },
+          {
+            "src": "proof/europe-ecommerce-meta-ads-aug-2026.webp",
+            "width": 1600,
+            "height": 644,
+            "caption": "August 2026: 71 website purchases on NOK 14,686.73 spend."
+          }
+        ]
+      },
+      {
+        "id": "ksa-ecom-meta",
+        "category": "Meta Ads · E-commerce",
+        "industry": "Online store · KSA",
+        "headline": "Steady website sales from Meta Ads.",
+        "metric": "163",
+        "metricLabel": "website purchases",
+        "secondaryMetric": "SAR 120.75 per purchase · January 1 to April 21, 2026 · SAR 19,682.11 spend",
+        "challenge": "An online store in Saudi Arabia needed paid social to produce purchases it could track, not just engagement.",
+        "solution": "Conversion campaigns optimized for website purchases and measured through the Meta Pixel.",
+        "finePrint": "Cost per purchase is not profit. Order value varies by product.",
+        "context": "Website purchases attributed by Meta Ads. Delivery was paused for most of February, so the total covers roughly three months of active campaigns.",
+        "summary": "Conversion campaigns for an online store, measured by website purchases.",
+        "proofs": [
+          {
+            "src": "proof/ecommerce-meta-ads-jan-apr-2026.webp",
+            "width": 1385,
+            "height": 590,
+            "caption": "Meta Ads, January 1 to April 21, 2026: 163 website purchases at SAR 120.75 each."
+          }
+        ]
+      },
+      {
+        "id": "messaging-meta",
+        "category": "Meta Ads · Messaging Leads",
+        "industry": "Two service accounts",
+        "headline": "Conversations at volume, at a low cost.",
+        "metric": "4,070",
+        "metricLabel": "messaging conversations",
+        "secondaryMetric": "Two accounts · ≈$3,560 spend · September 1 to October 15, 2026 · from $0.31 per conversation",
+        "challenge": "Two businesses that sell through chat needed a steady flow of new conversations at a cost they could sustain.",
+        "solution": "Click-to-message campaigns with daily budgets, scaled through the ad sets that delivered the lowest cost per conversation.",
+        "finePrint": "A conversation is a started chat, not a sale.",
+        "context": "Account A: 2,126 conversations on about $1,085 (September 15 to October 14). Account B: 1,944 conversations on $2,474.89 (September 1 to October 15). The best campaign reached $0.31 per conversation.",
+        "summary": "Click-to-message campaigns across two accounts, averaging under $1 per conversation.",
+        "proofs": [
+          {
+            "src": "proof/messaging-meta-ads-sep-oct-2026-a.webp",
+            "width": 1600,
+            "height": 530,
+            "caption": "Account A, September 15 to October 14, 2026: 581 + 499 + 1,046 conversations on about $1,085."
+          },
+          {
+            "src": "proof/messaging-meta-ads-sep-oct-2026-b.webp",
+            "width": 1600,
+            "height": 557,
+            "caption": "Account B, September 1 to October 15, 2026: 1,944 conversations on $2,474.89."
+          }
+        ]
       }
-    ],
-    "pendingMetaCase": {
-      "publish": false,
-      "placeholder": "Add one verified Meta Ads case with permission, date range, spend, purchase/lead count, source and attribution window."
-    }
+    ]
+  },
+  "measurement": {
+    "heading": "Numbers you can check.",
+    "intro": "Every account starts with clean tracking: GA4 e-commerce events, Google Tag Manager, Meta Pixel and Conversions API. Then the ad platforms get checked against what the store actually recorded.",
+    "items": [
+      {
+        "title": "The full purchase funnel",
+        "body": "5.6K add-to-carts, 1.1K checkouts, 180 purchases and SAR 86K revenue, tracked as GA4 e-commerce events for one store.",
+        "proof": {
+          "src": "proof/ga4-ecommerce-funnel.webp",
+          "width": 1600,
+          "height": 652,
+          "caption": "GA4 e-commerce funnel for an online store. Store details blurred."
+        }
+      },
+      {
+        "title": "Channel and campaign reporting",
+        "body": "Users and sessions by channel, with Google Ads campaigns reported side by side in GA4. 91K users over four weeks.",
+        "proof": {
+          "src": "proof/ga4-channel-acquisition-jan-feb-2026.webp",
+          "width": 1515,
+          "height": 871,
+          "caption": "GA4 traffic acquisition by channel, January 17 to February 13, 2026. Campaign names blurred."
+        }
+      },
+      {
+        "title": "Ad platform vs store backend",
+        "body": "Google Ads purchase value for the travel-bag store was compared with Salla sales and orders, so the reported return is grounded in real orders.",
+        "proof": {
+          "src": "proof/ecommerce-store-sales-feb-mar-2026.webp",
+          "width": 1600,
+          "height": 881,
+          "caption": "Salla store report used to check Google Ads purchase value."
+        }
+      }
+    ]
   },
   "services": {
     "heading": "Two platforms. One performance mindset.",
