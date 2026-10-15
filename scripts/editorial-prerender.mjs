@@ -18,6 +18,9 @@ person.knowsAbout = [
   "Google Ads",
   "Paid acquisition",
   "Conversion tracking",
+  "Google Analytics 4",
+  "Google Tag Manager",
+  "Meta Pixel and Conversions API",
 ];
 const escape = (value) =>
   String(value)
@@ -72,7 +75,10 @@ function htmlFor(route) {
     "og:description": description,
     "og:url": origin + path,
     "og:locale": ar ? "ar_SA" : "en_US",
-    "og:image": origin + "brand/saif-portrait-current.webp",
+    "og:image": origin + "brand/og-image.jpg",
+    "twitter:title": title,
+    "twitter:description": description,
+    "twitter:image": origin + "brand/og-image.jpg",
   };
   for (const [name, value] of Object.entries(metas)) {
     const type = name.startsWith("og:") ? "property" : "name";
@@ -91,6 +97,34 @@ function htmlFor(route) {
       `<link rel="alternate" hreflang="${locale}" href="${origin + (locale === "ar" ? "ar/" : "") + local}" />`,
     );
   const schema = [person];
+  if (page === "home")
+    schema.push(
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Saif Shorfa",
+        url: origin,
+        inLanguage: ["en", "ar"],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        name: "Saif Shorfa | Meta Ads & Google Ads",
+        url: origin + path,
+        description,
+        image: origin + "brand/og-image.jpg",
+        email: person.email,
+        telephone: person.telephone,
+        founder: { "@type": "Person", name: "Saif Shorfa" },
+        areaServed: ["Saudi Arabia", "GCC", "Europe"],
+        knowsLanguage: ["en", "ar"],
+        serviceType: [
+          "Meta Ads management",
+          "Google Ads management",
+          "Conversion tracking",
+        ],
+      },
+    );
   if (platform)
     schema.push({
       "@context": "https://schema.org",
@@ -126,18 +160,79 @@ fs.writeFileSync(
   "dist/robots.txt",
   preview
     ? "User-agent: *\nDisallow: /\n"
-    : `User-agent: *\nAllow: /\nSitemap: ${origin}sitemap.xml\n`,
+    : [
+        "User-agent: *",
+        "Allow: /",
+        "",
+        "# AI search and answer engines are welcome to read this site.",
+        ...[
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-SearchBot",
+          "PerplexityBot",
+          "Google-Extended",
+          "Applebot-Extended",
+        ].map((bot) => `User-agent: ${bot}\nAllow: /\n`),
+        `Sitemap: ${origin}sitemap.xml`,
+        "",
+      ].join("\n"),
 );
 if (preview) fs.rmSync("dist/sitemap.xml", { force: true });
 else
   fs.writeFileSync(
     "dist/sitemap.xml",
-    '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
+    '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
       routes
-        .map((r) => "<url><loc>" + escape(origin + r.path) + "</loc></url>")
-        .join("") +
-      "</urlset>",
+        .map((r) => {
+          const en = origin + r.local;
+          const ar = origin + "ar/" + r.local;
+          return (
+            "<url><loc>" +
+            escape(origin + r.path) +
+            "</loc><lastmod>" +
+            new Date().toISOString().slice(0, 10) +
+            "</lastmod>" +
+            `<xhtml:link rel="alternate" hreflang="en" href="${escape(en)}"/>` +
+            `<xhtml:link rel="alternate" hreflang="ar" href="${escape(ar)}"/>` +
+            `<xhtml:link rel="alternate" hreflang="x-default" href="${escape(en)}"/>` +
+            "</url>"
+          );
+        })
+        .join("\n") +
+      "\n</urlset>\n",
   );
+if (!preview) {
+  const en = JSON.parse(
+    fs.readFileSync("src/editorial/portfolio.en.json", "utf8"),
+  );
+  const lines = [
+    "# Saif Shorfa",
+    "",
+    `> ${en.positioning} for ${en.markets}, working in Arabic and English. Meta Ads and Google Ads management with reliable conversion tracking (GA4, Google Tag Manager, Meta Pixel and Conversions API).`,
+    "",
+    "## Pages",
+    `- [Home (English)](${origin}): selected work, approach and contact`,
+    `- [Home (Arabic)](${origin}ar/): the same site in Arabic`,
+    ...platforms.map(
+      (p) => `- [${p.name}](${origin}services/${p.slug}/): ${p.en.description}`,
+    ),
+    "",
+    "## Selected results",
+    "Each result is shown on the site with a blurred screenshot as proof. Client names are withheld.",
+    ...en.work.cases.map(
+      (c) =>
+        `- ${c.industry}, ${c.category}: ${c.metric} ${c.metricLabel} (${c.secondaryMetric}). ${c.finePrint}`,
+    ),
+    "",
+    "## Contact",
+    `- Email: ${en.contacts.email}`,
+    `- WhatsApp: https://wa.me/${en.contacts.whatsapp}`,
+    "",
+  ];
+  fs.writeFileSync("dist/llms.txt", lines.join("\n"));
+}
 console.log(
   `Prerendered ${routes.length} editorial pages. ${preview ? "Preview is noindex." : "Origin: " + origin}`,
 );
