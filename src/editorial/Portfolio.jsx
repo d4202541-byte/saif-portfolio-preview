@@ -370,11 +370,13 @@ function Work({ c, l }) {
                 {project.disclaimer || project.finePrint}
               </p>
               <button
-                className="text-link"
+                className="text-link case-cta"
                 onClick={(event) => choose(event, i)}
               >
-                {l.caseDetail}
-                <Arrow diagonal />
+                <span>{l.caseDetail}</span>
+                <span className="case-cta-icon">
+                  <Arrow diagonal />
+                </span>
               </button>
             </div>
           </article>
