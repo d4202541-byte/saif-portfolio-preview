@@ -282,6 +282,8 @@ function ProofFigure({ proof, l }) {
       <a href={sitePath(proof.src)} target="_blank" rel="noreferrer">
         <img
           src={sitePath(proof.src)}
+          draggable={false}
+          onContextMenu={(event) => event.preventDefault()}
           width={proof.width}
           height={proof.height}
           loading="lazy"
