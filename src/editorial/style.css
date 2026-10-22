@@ -596,6 +596,77 @@ em {
   width: 100%;
   justify-content: space-between;
 }
+.case-card {
+  position: relative;
+  cursor: pointer;
+}
+.case-body .case-cta {
+  border-bottom: 0;
+  padding-bottom: 14px;
+  font-size: 15px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) left bottom / 0 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) left bottom / 100% 1px no-repeat;
+  transition: background-size 0.45s ease;
+}
+.case-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.case-card:hover .case-cta,
+.case-cta:focus-visible {
+  background-size:
+    100% 1px,
+    100% 1px;
+}
+.case-cta-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
+  transition: transform 0.3s;
+}
+.case-cta-icon .arrow {
+  width: 18px;
+  height: 18px;
+}
+.case-cta-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  opacity: 0;
+  animation: case-cta-ring 3.6s ease-out 0.6s infinite;
+}
+.case-card:nth-child(3n + 2) .case-cta-icon::after {
+  animation-delay: 1.8s;
+}
+.case-card:nth-child(3n) .case-cta-icon::after {
+  animation-delay: 3s;
+}
+.case-card:hover .case-cta-icon {
+  transform: scale(1.08);
+}
+.case-card:hover .case-cta-icon .arrow {
+  transform: translate(2px, -2px);
+}
+@keyframes case-cta-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  45%,
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
 .case-dialog {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -1243,6 +1314,17 @@ em {
 [dir="rtl"] .text-link:hover > .arrow,
 [dir="rtl"] .button:hover > .arrow {
   transform: scaleX(-1) translateX(4px);
+}
+[dir="rtl"] .case-body .case-cta {
+  background-position:
+    right bottom,
+    right bottom;
+}
+[dir="rtl"] .case-cta-icon .arrow {
+  transform: scaleX(-1);
+}
+[dir="rtl"] .case-card:hover .case-cta-icon .arrow {
+  transform: scaleX(-1) translate(2px, -2px);
 }
 [dir="rtl"] .hero-bottom-note {
   direction: ltr;
