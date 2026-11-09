@@ -49,3 +49,13 @@ Replaced the inaccurate hand-drawn marks with original full-color platform artwo
 
 - Meta symbol: https://static.xx.fbcdn.net/rsrc.php/yf/r/-7pQO6hUGK_.svg , sourced from https://about.fb.com/media-gallery/ on October 12, 2026.
 - Google Ads: https://www.gstatic.com/marketing-cms/assets/images/a0/c7/a37cda3447639b52f627e91993ee/ads.webp=s80-fcrop64=1,00000000ffffffff-rw , sourced from https://about.google/brand-resource-center/products-and-services/ on October 12, 2026.
+
+## Arabic-first structure and Growth Lab, November 9, 2026
+
+Arabic is now the default language at the site root (`/`, `/services/…`). English moved to `/en/`. `x-default` hreflang points to Arabic. The old `/ar/…` URLs are static pages with an instant meta refresh and a canonical to the new root URL, which Google treats as a permanent redirect (GitHub Pages cannot send a server 301).
+
+New Arabic blog, مختبر النمو, at `/blog/` with five articles. Article metadata lives in `src/editorial/articles.meta.js`; bodies are server-rendered from `src/editorial/articles.body.js` and are not shipped in the client bundle. Each article gets BlogPosting and BreadcrumbList structured data and a sitemap entry. To add an article, add its metadata and body with the same slug.
+
+Titles and descriptions now name the service and market, and `/services/` has its own title and description instead of repeating the homepage.
+
+Still needed outside the code: turn on "Enforce HTTPS" in the repository's GitHub Pages settings so `http://` requests redirect to `https://`, then resubmit the sitemap in Search Console.
