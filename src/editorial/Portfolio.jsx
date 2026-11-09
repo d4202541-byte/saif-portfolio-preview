@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { content, labels, platforms } from "./copy";
 import { routePath, sitePath } from "../paths";
+import { articles, blog, categories, formatDate } from "./articles.meta.js";
 
 function Arrow({ diagonal = false }) {
   return (
@@ -106,6 +107,15 @@ function Header({ lang, page, serviceSlug, l }) {
               {text}
             </a>
           ))}
+          {lang === "ar" && (
+            <a
+              href={routePath("ar", "blog")}
+              aria-current={page === "blog" ? "page" : undefined}
+              onClick={() => setOpen(false)}
+            >
+              {blog.name}
+            </a>
+          )}
           <a
             className="mobile-contact"
             href="#contact"
@@ -119,7 +129,7 @@ function Header({ lang, page, serviceSlug, l }) {
             className="language-link"
             href={routePath(
               lang === "en" ? "ar" : "en",
-              page === "notfound" ? "home" : page,
+              ["notfound", "blog", "article"].includes(page) ? "home" : page,
               serviceSlug,
             )}
             lang={lang === "en" ? "ar" : "en"}
@@ -721,6 +731,9 @@ function Footer({ l, lang }) {
         <div>
           <a href={routePath(lang, "service", "meta-ads")}>Meta Ads</a>
           <a href={routePath(lang, "service", "google-ads")}>Google Ads</a>
+          <a href={routePath("ar", "blog")} lang="ar">
+            {blog.name}
+          </a>
         </div>
       </div>
     </footer>
@@ -781,10 +794,95 @@ function ServiceDetail({ platform: p, lang, l }) {
     </>
   );
 }
+function ArticleCard({ article }) {
+  return (
+    <li className="article-card">
+      <p className="eyebrow">
+        {categories[article.category]} · {article.readMinutes} دقائق قراءة
+      </p>
+      <h2>
+        <a href={routePath("ar", "article", article.slug)}>{article.title}</a>
+      </h2>
+      <p>{article.description}</p>
+      <time dateTime={article.published}>{formatDate(article.published)}</time>
+    </li>
+  );
+}
+function BlogIndex() {
+  return (
+    <>
+      <section className="service-hero blog-hero container">
+        <a className="text-link breadcrumb" href={routePath("ar")}>
+          الرئيسية
+          <Arrow />
+        </a>
+        <p className="eyebrow">{blog.name}</p>
+        <h1>{blog.title}</h1>
+        <div className="service-lead">
+          <p>{blog.description}</p>
+        </div>
+      </section>
+      <section className="section container">
+        <ul className="article-list">
+          {articles.map((a) => (
+            <ArticleCard key={a.slug} article={a} />
+          ))}
+        </ul>
+      </section>
+    </>
+  );
+}
+function Article({ article, html }) {
+  const service = platforms.find((p) => p.slug === article.service);
+  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
+  return (
+    <article className="article container">
+      <nav className="article-breadcrumb" aria-label="مسار التنقل">
+        <a href={routePath("ar")}>الرئيسية</a>
+        <span aria-hidden="true">/</span>
+        <a href={routePath("ar", "blog")}>{blog.name}</a>
+      </nav>
+      <header className="article-header">
+        <p className="eyebrow">{categories[article.category]}</p>
+        <h1>{article.title}</h1>
+        <p className="article-meta">
+          بقلم {blog.author} ·{" "}
+          <time dateTime={article.published}>
+            {formatDate(article.published)}
+          </time>{" "}
+          · {article.readMinutes} دقائق قراءة
+        </p>
+      </header>
+      <div
+        className="article-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
+      <aside className="article-aside">
+        {service && (
+          <a
+            className="article-service"
+            href={routePath("ar", "service", service.slug)}
+          >
+            <span className="eyebrow">الخدمة المرتبطة</span>
+            <strong>إدارة {service.name}</strong>
+            <Arrow diagonal />
+          </a>
+        )}
+        <p className="eyebrow">اقرأ أيضًا</p>
+        <ul className="article-list compact">
+          {related.map((a) => (
+            <ArticleCard key={a.slug} article={a} />
+          ))}
+        </ul>
+      </aside>
+    </article>
+  );
+}
 export default function Portfolio({
-  lang = "en",
+  lang = "ar",
   page = "home",
   serviceSlug = "",
+  articleHtml = "",
 }) {
   const c = content[lang],
     l = labels[lang];
@@ -815,7 +913,12 @@ export default function Portfolio({
         .forEach((el) => el.classList.remove("reveal-ready"));
     };
   }, []);
-  const missing = page === "notfound" || (page === "service" && !platform);
+  const article =
+    page === "article" ? articles.find((a) => a.slug === serviceSlug) : null;
+  const missing =
+    page === "notfound" ||
+    (page === "service" && !platform) ||
+    (page === "article" && !article);
   return (
     <div
       className="editorial-site"
@@ -838,6 +941,10 @@ export default function Portfolio({
             <Process {...{ c, l }} />
             <About {...{ c, l, lang }} />
           </>
+        ) : page === "blog" ? (
+          <BlogIndex />
+        ) : page === "article" && article ? (
+          <Article article={article} html={articleHtml} />
         ) : page === "services" ? (
           <Services {...{ c, l, lang }} directory />
         ) : !missing ? (

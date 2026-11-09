@@ -11,7 +11,7 @@ for (const lang of ["en", "ar"])
       await page.emulateMedia({ reducedMotion: "reduce" });
       const errors = [];
       page.on("pageerror", (e) => errors.push(e.message));
-      await page.goto(lang === "ar" ? "/ar/" : "/");
+      await page.goto(lang === "ar" ? "/" : "/en/");
       await page.evaluate(() => document.fonts.ready);
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.locator("h1")).toContainText(
@@ -52,7 +52,7 @@ test("mobile navigation, language route and dialog keyboard flow", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("/en/");
   const toggle = page.locator(".menu-toggle");
   await toggle.click();
   await expect(toggle).toHaveAttribute("aria-expanded", "true");
@@ -74,13 +74,13 @@ test("mobile navigation, language route and dialog keyboard flow", async ({
   await expect(page.locator("dialog")).not.toBeVisible();
   await expect(opener).toBeFocused();
   await page.locator(".language-link").click();
-  await expect(page).toHaveURL(/\/ar\/$/);
+  await expect(page).toHaveURL(/127\.0\.0\.1:4176\/$/);
 });
 for (const lang of ["en", "ar"])
   test(`${lang}: contact encodes fields and does not submit before action`, async ({
     page,
   }) => {
-    await page.goto(lang === "ar" ? "/ar/" : "/");
+    await page.goto(lang === "ar" ? "/" : "/en/");
     await page.locator("input[name=name]").fill("Saif & فريق");
     await page
       .locator("input[name=business]")
@@ -109,7 +109,7 @@ for (const lang of ["en", "ar"])
       page,
       request,
     }) => {
-      const path = (lang === "ar" ? "/ar" : "") + "/services/" + slug + "/";
+      const path = (lang === "en" ? "/en" : "") + "/services/" + slug + "/";
       const response = await request.get(path);
       const html = await response.text();
       expect(html).toContain("application/ld+json");
@@ -136,7 +136,7 @@ test("server-rendered content and safe form without JavaScript", async ({
 }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4176/ar/");
+  await page.goto("http://127.0.0.1:4176/");
   await expect(page.locator("h1")).toContainText("سيف");
   await expect(page.locator("input[name=name]")).toBeDisabled();
   await expect(page.locator("noscript a")).toHaveAttribute(
@@ -146,7 +146,57 @@ test("server-rendered content and safe form without JavaScript", async ({
   await context.close();
 });
 test("unknown routes show a recovery link", async ({ page }) => {
-  await page.goto("/services/technical-seo/");
+  await page.goto("/en/services/technical-seo/");
   await expect(page.locator("h1")).toHaveText("This page has moved.");
-  await expect(page.locator(".notfound a")).toHaveAttribute("href", "/");
+  await expect(page.locator(".notfound a")).toHaveAttribute("href", "/en/");
+});
+test("old /ar/ URLs redirect to the Arabic root", async ({ request }) => {
+  for (const local of [
+    "",
+    "services/",
+    "services/meta-ads/",
+    "services/google-ads/",
+  ]) {
+    const html = await (await request.get("/ar/" + local)).text();
+    expect(html).toContain(
+      `<meta http-equiv="refresh" content="0; url=https://saif-growth.com/${local}"`,
+    );
+    expect(html).toContain(
+      `<link rel="canonical" href="https://saif-growth.com/${local}"`,
+    );
+  }
+});
+test("Growth Lab index and articles render, hydrate and pass axe", async ({
+  page,
+  request,
+}) => {
+  const errors = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  for (const width of [390, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("/blog/");
+    await expect(page.locator("h1")).toHaveCount(1);
+    const links = await page
+      .locator(".article-card h2 a")
+      .evaluateAll((els) => els.map((el) => el.getAttribute("href")));
+    expect(links.length).toBeGreaterThanOrEqual(5);
+    for (const href of links) {
+      const html = await (await request.get(href)).text();
+      expect(html).toContain('"@type":"BlogPosting"');
+      expect(html).toContain('class="article-body"');
+      await page.goto(href);
+      await expect(page.locator("h1")).toHaveCount(1);
+      await expect(page.locator(".article-body h2").first()).toBeVisible();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth + 1,
+        ),
+      ).toBe(true);
+      const axe = await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+        .analyze();
+      expect(axe.violations).toEqual([]);
+    }
+  }
+  expect(errors).toEqual([]);
 });

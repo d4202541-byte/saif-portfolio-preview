@@ -11,9 +11,12 @@ const { lang } = route;
 document.documentElement.lang = lang;
 document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 const root = document.getElementById("root");
+// Article bodies are server-rendered only; reuse the rendered HTML.
+route.articleHtml = root.querySelector(".article-body")?.innerHTML || "";
 const missing =
   route.page === "notfound" ||
   (route.page === "service" &&
-    !["meta-ads", "google-ads"].includes(route.serviceSlug));
+    !["meta-ads", "google-ads"].includes(route.serviceSlug)) ||
+  (route.page === "article" && !route.articleHtml);
 if (root.childElementCount && !missing) hydrateRoot(root, <App {...route} />);
 else createRoot(root).render(<App {...route} />);
