@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { content, labels, platforms } from "./copy";
 import { routePath, sitePath } from "../paths";
-import { articles, blog, categories, formatDate } from "./articles.meta.js";
+import {
+  articles,
+  blog,
+  categories,
+  categoryBySlug,
+  formatDate,
+} from "./articles.meta.js";
 
 function Arrow({ diagonal = false }) {
   return (
@@ -111,6 +117,11 @@ function Header({ lang, page, serviceSlug, l }) {
             <a
               href={routePath("ar", "blog")}
               aria-current={page === "blog" ? "page" : undefined}
+              className={
+                ["blog", "category", "article"].includes(page)
+                  ? "is-current"
+                  : undefined
+              }
               onClick={() => setOpen(false)}
             >
               {blog.name}
@@ -129,7 +140,9 @@ function Header({ lang, page, serviceSlug, l }) {
             className="language-link"
             href={routePath(
               lang === "en" ? "ar" : "en",
-              ["notfound", "blog", "article"].includes(page) ? "home" : page,
+              ["notfound", "blog", "article", "category"].includes(page)
+                ? "home"
+                : page,
               serviceSlug,
             )}
             lang={lang === "en" ? "ar" : "en"}
@@ -519,7 +532,8 @@ function Process({ c, l }) {
     </section>
   );
 }
-function About({ c, l, lang }) {
+function About({ c, l, lang, asPage = false }) {
+  const Heading = asPage ? "h1" : "h2";
   return (
     <section id="about" className="about-section section container">
       <div className="about-image" data-reveal>
@@ -543,7 +557,13 @@ function About({ c, l, lang }) {
       </div>
       <div className="about-copy">
         <SectionLabel>{l.about}</SectionLabel>
-        <h2>{c.about.heading}</h2>
+        <Heading>
+          {asPage
+            ? lang === "ar"
+              ? "سيف الشرفا: متخصص Meta Ads وGoogle Ads"
+              : "Saif Shorfa: Meta Ads & Google Ads Specialist"
+            : c.about.heading}
+        </Heading>
         <p>{l.aboutText}</p>
         <ul className="about-tags">
           {l.aboutTags.map((tag) => (
@@ -731,6 +751,9 @@ function Footer({ l, lang }) {
         <div>
           <a href={routePath(lang, "service", "meta-ads")}>Meta Ads</a>
           <a href={routePath(lang, "service", "google-ads")}>Google Ads</a>
+          <a href={routePath(lang, "about")}>
+            {lang === "ar" ? "عن سيف" : "About"}
+          </a>
           <a href={routePath("ar", "blog")} lang="ar">
             {blog.name}
           </a>
@@ -794,37 +817,74 @@ function ServiceDetail({ platform: p, lang, l }) {
     </>
   );
 }
-function ArticleCard({ article }) {
+function ArticleCard({ article, headingLevel = "h2" }) {
+  const Heading = headingLevel;
   return (
     <li className="article-card">
       <p className="eyebrow">
-        {categories[article.category]} · {article.readMinutes} دقائق قراءة
+        {categoryBySlug[article.category].name} · {article.readMinutes} دقائق
+        قراءة
       </p>
-      <h2>
+      <Heading className="article-card-title">
         <a href={routePath("ar", "article", article.slug)}>{article.title}</a>
-      </h2>
+      </Heading>
       <p>{article.description}</p>
       <time dateTime={article.published}>{formatDate(article.published)}</time>
     </li>
   );
 }
-function BlogIndex() {
+function CategoryNav({ current = "" }) {
+  return (
+    <nav className="category-nav" aria-label="تصنيفات المقالات">
+      <a
+        href={routePath("ar", "blog")}
+        aria-current={!current ? "page" : undefined}
+      >
+        كل المقالات
+      </a>
+      {categories.map((c) => (
+        <a
+          key={c.slug}
+          href={routePath("ar", "category", c.slug)}
+          aria-current={current === c.slug ? "page" : undefined}
+        >
+          {c.name}
+        </a>
+      ))}
+    </nav>
+  );
+}
+function BlogIndex({ category = "" }) {
+  const cat = categoryBySlug[category];
+  const list = cat ? articles.filter((a) => a.category === category) : articles;
   return (
     <>
       <section className="service-hero blog-hero container">
-        <a className="text-link breadcrumb" href={routePath("ar")}>
-          الرئيسية
-          <Arrow />
-        </a>
+        <nav className="article-breadcrumb" aria-label="مسار التنقل">
+          <a href={routePath("ar")}>الرئيسية</a>
+          <span aria-hidden="true">›</span>
+          {cat ? (
+            <a href={routePath("ar", "blog")}>{blog.name}</a>
+          ) : (
+            <span aria-current="page">{blog.name}</span>
+          )}
+          {cat && (
+            <>
+              <span aria-hidden="true">›</span>
+              <span aria-current="page">{cat.name}</span>
+            </>
+          )}
+        </nav>
         <p className="eyebrow">{blog.name}</p>
-        <h1>{blog.title}</h1>
+        <h1>{cat ? cat.title : blog.title}</h1>
         <div className="service-lead">
-          <p>{blog.description}</p>
+          <p>{cat ? cat.intro : blog.description}</p>
         </div>
       </section>
-      <section className="section container">
+      <section className="section container blog-list">
+        <CategoryNav current={category} />
         <ul className="article-list">
-          {articles.map((a) => (
+          {list.map((a) => (
             <ArticleCard key={a.slug} article={a} />
           ))}
         </ul>
@@ -832,50 +892,92 @@ function BlogIndex() {
     </>
   );
 }
+function relatedArticles(article, count = 3) {
+  const others = articles.filter((a) => a.slug !== article.slug);
+  return [
+    ...others.filter((a) => a.category === article.category),
+    ...others.filter((a) => a.category !== article.category),
+  ].slice(0, count);
+}
 function Article({ article, html }) {
-  const service = platforms.find((p) => p.slug === article.service);
-  const related = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
+  const cat = categoryBySlug[article.category];
   return (
     <article className="article container">
       <nav className="article-breadcrumb" aria-label="مسار التنقل">
         <a href={routePath("ar")}>الرئيسية</a>
-        <span aria-hidden="true">/</span>
+        <span aria-hidden="true">›</span>
         <a href={routePath("ar", "blog")}>{blog.name}</a>
+        <span aria-hidden="true">›</span>
+        <a href={routePath("ar", "category", cat.slug)}>{cat.name}</a>
       </nav>
       <header className="article-header">
-        <p className="eyebrow">{categories[article.category]}</p>
         <h1>{article.title}</h1>
-        <p className="article-meta">
-          بقلم {blog.author} ·{" "}
-          <time dateTime={article.published}>
-            {formatDate(article.published)}
-          </time>{" "}
-          · {article.readMinutes} دقائق قراءة
-        </p>
+        <div className="article-byline">
+          <img
+            src={sitePath("brand/saif-portrait-current.webp")}
+            width="48"
+            height="60"
+            alt=""
+          />
+          <p>
+            <a href={routePath("ar", "about")}>{blog.author}</a>،{" "}
+            {blog.authorRole}
+            <br />
+            <span>
+              نُشر{" "}
+              <time dateTime={article.published}>
+                {formatDate(article.published)}
+              </time>
+              {article.updated && article.updated !== article.published && (
+                <>
+                  {" "}
+                  · آخر تحديث{" "}
+                  <time dateTime={article.updated}>
+                    {formatDate(article.updated)}
+                  </time>
+                </>
+              )}{" "}
+              · {article.readMinutes} دقائق قراءة
+            </span>
+          </p>
+        </div>
       </header>
       <div
-        className="article-body"
+        className="article-content"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <aside className="article-aside">
-        {service && (
-          <a
-            className="article-service"
-            href={routePath("ar", "service", service.slug)}
-          >
-            <span className="eyebrow">الخدمة المرتبطة</span>
-            <strong>إدارة {service.name}</strong>
-            <Arrow diagonal />
-          </a>
-        )}
-        <p className="eyebrow">اقرأ أيضًا</p>
-        <ul className="article-list compact">
-          {related.map((a) => (
-            <ArticleCard key={a.slug} article={a} />
+      <section className="article-related" aria-labelledby="related-title">
+        <h2 id="related-title">مقالات ذات صلة</h2>
+        <ul className="article-list">
+          {relatedArticles(article).map((a) => (
+            <ArticleCard key={a.slug} article={a} headingLevel="h3" />
           ))}
         </ul>
-      </aside>
+      </section>
     </article>
+  );
+}
+function ArticleTeasers({ service = "", title, lang }) {
+  if (lang !== "ar") return null;
+  const list = (
+    service ? articles.filter((a) => a.service === service) : articles
+  ).slice(0, 3);
+  if (!list.length) return null;
+  return (
+    <section className="article-teasers section container">
+      <div className="section-heading">
+        <h2>{title}</h2>
+        <a className="text-link" href={routePath("ar", "blog")}>
+          كل مقالات {blog.name}
+          <Arrow />
+        </a>
+      </div>
+      <ul className="article-list">
+        {list.map((a) => (
+          <ArticleCard key={a.slug} article={a} headingLevel="h3" />
+        ))}
+      </ul>
+    </section>
   );
 }
 export default function Portfolio({
@@ -918,7 +1020,8 @@ export default function Portfolio({
   const missing =
     page === "notfound" ||
     (page === "service" && !platform) ||
-    (page === "article" && !article);
+    (page === "article" && !article) ||
+    (page === "category" && !categoryBySlug[serviceSlug]);
   return (
     <div
       className="editorial-site"
@@ -940,15 +1043,38 @@ export default function Portfolio({
             <Services {...{ c, l, lang }} />
             <Process {...{ c, l }} />
             <About {...{ c, l, lang }} />
+            <ArticleTeasers
+              lang={lang}
+              title={"أحدث المقالات من " + blog.name}
+            />
+          </>
+        ) : page === "about" ? (
+          <>
+            <About {...{ c, l, lang }} asPage />
+            <ProofStrip c={c} />
+            <Process {...{ c, l }} />
+            <ArticleTeasers
+              lang={lang}
+              title={"مقالات كتبتها في " + blog.name}
+            />
           </>
         ) : page === "blog" ? (
           <BlogIndex />
+        ) : page === "category" && categoryBySlug[serviceSlug] ? (
+          <BlogIndex category={serviceSlug} />
         ) : page === "article" && article ? (
           <Article article={article} html={articleHtml} />
         ) : page === "services" ? (
           <Services {...{ c, l, lang }} directory />
         ) : !missing ? (
-          <ServiceDetail {...{ platform, lang, l }} />
+          <>
+            <ServiceDetail {...{ platform, lang, l }} />
+            <ArticleTeasers
+              lang={lang}
+              service={platform.slug}
+              title={"أدلة ومقالات عن " + platform.name}
+            />
+          </>
         ) : (
           <section className="container section notfound">
             <h1>{l.notfound}</h1>

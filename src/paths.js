@@ -1,4 +1,4 @@
-import { articleSlugs } from "./editorial/articles.meta.js";
+import { articleSlugs, categories } from "./editorial/articles.meta.js";
 
 // Arabic is the default language and lives at the site root.
 // English lives under /en/. The blog (مختبر النمو) is Arabic only.
@@ -9,6 +9,8 @@ export function sitePath(path = "") {
 export function localPath(page = "home", slug = "") {
   if (page === "home") return "";
   if (page === "blog") return "blog/";
+  if (page === "about") return "about/";
+  if (page === "category") return "blog/category/" + slug + "/";
   if (page === "article") return "blog/" + slug + "/";
   return "services/" + (slug ? slug + "/" : "");
 }
@@ -38,6 +40,16 @@ export function resolveRoute(pathname) {
       page: segments[1] ? "service" : "services",
       serviceSlug: segments[1] || "",
     };
+  if (segments[0] === "about" && segments.length === 1)
+    return { lang, page: "about", serviceSlug: "" };
+  if (
+    lang === "ar" &&
+    segments[0] === "blog" &&
+    segments[1] === "category" &&
+    segments.length === 3 &&
+    categories.some((c) => c.slug === segments[2])
+  )
+    return { lang, page: "category", serviceSlug: segments[2] };
   if (lang === "ar" && segments[0] === "blog" && segments.length <= 2) {
     if (!segments[1]) return { lang, page: "blog", serviceSlug: "" };
     if (articleSlugs.includes(segments[1]))

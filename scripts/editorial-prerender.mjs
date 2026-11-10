@@ -1,5 +1,13 @@
 import fs from "node:fs";
-import { render, platforms, articles, blog } from "../.ssr/entry-server.js";
+import {
+  render,
+  platforms,
+  articles,
+  blog,
+  categories,
+  articleData,
+} from "../.ssr/entry-server.js";
+const base = process.env.VITE_BASE_PATH || "/";
 const template = fs.readFileSync("dist/index.html", "utf8");
 const preview = process.env.VITE_PREVIEW_MODE === "true";
 if (preview && !process.env.VITE_PREVIEW_URL)
@@ -36,6 +44,7 @@ for (const lang of ["ar", "en"]) {
   routes.push(
     { lang, page: "home", path: prefix, local: "" },
     { lang, page: "services", path: prefix + "services/", local: "services/" },
+    { lang, page: "about", path: prefix + "about/", local: "about/" },
   );
   for (const platform of platforms)
     routes.push({
@@ -48,6 +57,15 @@ for (const lang of ["ar", "en"]) {
     });
 }
 routes.push({ lang: "ar", page: "blog", path: "blog/", arOnly: true });
+for (const category of categories)
+  routes.push({
+    lang: "ar",
+    page: "category",
+    slug: category.slug,
+    path: "blog/category/" + category.slug + "/",
+    arOnly: true,
+    category,
+  });
 for (const article of articles)
   routes.push({
     lang: "ar",
@@ -63,6 +81,10 @@ const seo = {
       "إدارة إعلانات Google وMeta في السعودية والخليج | سيف الشرفا",
       "متخصص مستقل في إدارة إعلانات Google وMeta (فيسبوك وإنستغرام) للشركات والمتاجر في السعودية والخليج، مع قياس تحويلات موثوق ونتائج موثقة بلقطات.",
     ],
+    about: [
+      "عن سيف الشرفا: متخصص إعلانات Meta وGoogle Ads | سيف الشرفا",
+      "سيف الشرفا متخصص مستقل في إدارة إعلانات Meta وGoogle وقياس التحويلات للشركات والمتاجر والعيادات في السعودية والخليج، بنتائج موثقة بلقطات.",
+    ],
     services: [
       "خدمات إعلانات Google وMeta للشركات والمتاجر | سيف الشرفا",
       "إدارة حملات Google Ads وMeta Ads وتدقيق تتبع التحويلات للمتاجر والعيادات والشركات في السعودية والخليج.",
@@ -77,6 +99,10 @@ const seo = {
       "Saif Shorfa | Meta Ads & Google Ads Specialist for Saudi Arabia & GCC",
       "Independent Meta Ads and Google Ads specialist for businesses and online stores in Saudi Arabia and the GCC, with reliable conversion tracking and documented results.",
     ],
+    about: [
+      "About Saif Shorfa: Meta Ads & Google Ads Specialist",
+      "Saif Shorfa is an independent Meta Ads and Google Ads specialist working with stores, clinics and businesses in Saudi Arabia and the GCC, with documented results.",
+    ],
     services: [
       "Meta Ads & Google Ads Services | Saif Shorfa",
       "Google Ads and Meta Ads management plus conversion tracking audits for stores, clinics and businesses in Saudi Arabia, the GCC and Europe.",
@@ -87,26 +113,32 @@ const seo = {
   },
 };
 function htmlFor(route) {
-  const { lang, page, path, local = "", platform, article } = route;
+  const { lang, page, path, local = "", platform, article, category } = route;
+  const data = article ? articleData(article.slug) : null;
   const ar = lang === "ar";
   const title = article
     ? `${article.seoTitle} | سيف الشرفا`
-    : page === "blog"
-      ? `${blog.name}: أدلة إعلانات Google وMeta والقياس | سيف الشرفا`
-      : platform
-        ? seo[lang][platform.slug]
-        : page === "notfound"
-          ? ar
-            ? "الصفحة غير موجودة | سيف الشرفا"
-            : "Page not found | Saif Shorfa"
-          : seo[lang][page][0];
+    : category
+      ? `${category.title} | ${blog.name}`
+      : page === "blog"
+        ? `${blog.name}: أدلة إعلانات Google وMeta والقياس | سيف الشرفا`
+        : platform
+          ? seo[lang][platform.slug]
+          : page === "notfound"
+            ? ar
+              ? "الصفحة غير موجودة | سيف الشرفا"
+              : "Page not found | Saif Shorfa"
+            : seo[lang][page][0];
   const description = article
     ? article.description
-    : page === "blog"
-      ? blog.description
-      : platform?.[lang].description || (seo[lang][page] || seo[lang].home)[1];
+    : category
+      ? category.intro
+      : page === "blog"
+        ? blog.description
+        : platform?.[lang].description ||
+          (seo[lang][page] || seo[lang].home)[1];
   let html = template
-    .replace("<!--app-->", render(lang, page, route.slug || ""))
+    .replace("<!--app-->", render(lang, page, route.slug || "", base))
     .replace(
       'lang="ar" dir="rtl"',
       `lang="${lang}" dir="${ar ? "rtl" : "ltr"}"`,
@@ -118,10 +150,11 @@ function htmlFor(route) {
     "og:description": description,
     "og:url": origin + path,
     "og:locale": ar ? "ar_SA" : "en_US",
-    "og:image": origin + "brand/og-image.jpg",
+    "og:image": origin + (article ? article.cover.src : "brand/og-image.jpg"),
     "twitter:title": title,
     "twitter:description": description,
-    "twitter:image": origin + "brand/og-image.jpg",
+    "twitter:image":
+      origin + (article ? article.cover.src : "brand/og-image.jpg"),
   };
   for (const [name, value] of Object.entries(metas)) {
     const type = name.startsWith("og:") ? "property" : "name";
@@ -154,55 +187,75 @@ function htmlFor(route) {
       )
       .replace(
         "</head>",
-        `<meta property="article:published_time" content="${article.published}" />\n</head>`,
+        `<meta property="article:published_time" content="${article.published}T09:00:00+03:00" />\n<meta property="article:modified_time" content="${article.updated || article.published}T09:00:00+03:00" />\n<meta property="og:image:alt" content="${escape(article.cover.alt)}" />\n</head>`,
       );
-  const schema = [person];
+  // One @graph per page. The same Person @id appears on every page so the
+  // whole site reads as one person with a defined expertise.
+  const personId = origin + "#saif";
+  const websiteId = origin + "#website";
+  const graph = [
+    {
+      ...person,
+      "@context": undefined,
+      "@id": personId,
+      url: origin + "about/",
+      image: origin + "brand/saif-portrait-current.webp",
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      name: "Saif Shorfa",
+      url: origin,
+      inLanguage: ["ar", "en"],
+      publisher: { "@id": personId },
+    },
+  ];
   if (page === "home")
-    schema.push(
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "Saif Shorfa",
-        url: origin,
-        inLanguage: ["ar", "en"],
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        name: "Saif Shorfa | Meta Ads & Google Ads",
-        url: origin + path,
-        description,
-        image: origin + "brand/og-image.jpg",
-        email: person.email,
-        telephone: person.telephone,
-        founder: { "@type": "Person", name: "Saif Shorfa" },
-        areaServed: ["Saudi Arabia", "GCC", "Europe"],
-        knowsLanguage: ["en", "ar"],
-        serviceType: [
-          "Meta Ads management",
-          "Google Ads management",
-          "Conversion tracking",
-        ],
-      },
-    );
+    graph.push({
+      "@type": "ProfessionalService",
+      name: "Saif Shorfa | Meta Ads & Google Ads",
+      url: origin + path,
+      description,
+      image: origin + "brand/og-image.jpg",
+      email: person.email,
+      telephone: person.telephone,
+      founder: { "@id": personId },
+      areaServed: ["Saudi Arabia", "GCC", "Europe"],
+      knowsLanguage: ["ar", "en"],
+      serviceType: [
+        "Meta Ads management",
+        "Google Ads management",
+        "Conversion tracking",
+      ],
+    });
+  if (page === "about")
+    graph.push({
+      "@type": "ProfilePage",
+      url: origin + path,
+      mainEntity: { "@id": personId },
+      inLanguage: lang,
+    });
   if (platform)
-    schema.push({
-      "@context": "https://schema.org",
+    graph.push({
       "@type": "Service",
-      name: platform.name,
+      "@id": origin + "services/" + platform.slug + "/#service",
+      name: platform.name + (ar ? " إدارة" : " management"),
       description,
       url: origin + path,
-      provider: { "@type": "Person", name: "Saif Shorfa", url: origin },
+      provider: { "@id": personId },
       areaServed: ["Saudi Arabia", "GCC", "Europe"],
     });
-  if (page === "blog" || article) {
+  if (page === "blog" || category || article) {
     const crumbs = [
       ["الرئيسية", origin],
       [blog.name, origin + "blog/"],
     ];
+    const cat =
+      category || categories.find((c) => c.slug === article?.category);
+    if (cat)
+      crumbs.push([cat.name, origin + "blog/category/" + cat.slug + "/"]);
     if (article) crumbs.push([article.title, origin + path]);
-    schema.push({
-      "@context": "https://schema.org",
+    graph.push({
       "@type": "BreadcrumbList",
       itemListElement: crumbs.map(([name, item], i) => ({
         "@type": "ListItem",
@@ -212,31 +265,63 @@ function htmlFor(route) {
       })),
     });
   }
-  if (article)
-    schema.push({
-      "@context": "https://schema.org",
+  if (article) {
+    const service = platforms.find((p) => p.slug === article.service);
+    graph.push({
       "@type": "BlogPosting",
+      "@id": origin + path + "#article",
       headline: article.title,
       description: article.description,
-      datePublished: article.published,
-      dateModified: article.updated || article.published,
+      image: {
+        "@type": "ImageObject",
+        url: origin + article.cover.src,
+        width: article.cover.width,
+        height: article.cover.height,
+      },
+      datePublished: article.published + "T09:00:00+03:00",
+      dateModified: (article.updated || article.published) + "T09:00:00+03:00",
       inLanguage: "ar",
-      url: origin + path,
+      articleSection: categories.find((c) => c.slug === article.category).name,
+      keywords: [article.targetKeyword, ...article.secondaryKeywords].join(
+        ", ",
+      ),
+      wordCount: data.wordCount,
+      author: { "@id": personId },
+      publisher: { "@id": personId },
+      isPartOf: { "@id": websiteId },
       mainEntityOfPage: origin + path,
-      image: origin + "brand/og-image.jpg",
-      author: { "@type": "Person", name: "Saif Shorfa", url: origin },
-      publisher: { "@type": "Person", name: "Saif Shorfa", url: origin },
+      about: { "@id": origin + "services/" + service.slug + "/#service" },
     });
+    if (data.faq.length)
+      graph.push({
+        "@type": "FAQPage",
+        mainEntity: data.faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      });
+  }
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": JSON.parse(JSON.stringify(graph)),
+  };
   html = html.replace(
     "<!--person-->",
     '<script type="application/ld+json">' +
       JSON.stringify(schema).replaceAll("<", "\\u003c") +
       "</script>",
   );
-  if (preview || page === "notfound")
+  html = html.replace(
+    "</head>",
+    preview || page === "notfound"
+      ? '<meta name="robots" content="noindex, nofollow" /></head>'
+      : '<meta name="robots" content="index, follow, max-image-preview:large" /></head>',
+  );
+  if (page === "blog" || category || article)
     html = html.replace(
       "</head>",
-      '<meta name="robots" content="noindex, nofollow" /></head>',
+      `<link rel="alternate" type="application/rss+xml" title="${escape(blog.name)}" href="${origin}blog/rss.xml" /></head>`,
     );
   return html;
 }
@@ -316,6 +401,24 @@ else
       "\n</urlset>\n",
   );
 if (!preview) {
+  const rss = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">',
+    "<channel>",
+    `<title>${escape(blog.name)} | سيف الشرفا</title>`,
+    `<link>${origin}blog/</link>`,
+    `<description>${escape(blog.description)}</description>`,
+    "<language>ar</language>",
+    `<atom:link href="${origin}blog/rss.xml" rel="self" type="application/rss+xml" />`,
+    ...articles.map(
+      (a) =>
+        `<item><title>${escape(a.title)}</title><link>${origin}blog/${a.slug}/</link><guid>${origin}blog/${a.slug}/</guid><pubDate>${new Date(a.published + "T09:00:00+03:00").toUTCString()}</pubDate><description>${escape(a.description)}</description></item>`,
+    ),
+    "</channel>",
+    "</rss>",
+    "",
+  ].join("\n");
+  fs.writeFileSync("dist/blog/rss.xml", rss);
   const en = JSON.parse(
     fs.readFileSync("src/editorial/portfolio.en.json", "utf8"),
   );
@@ -327,6 +430,7 @@ if (!preview) {
     "## Pages",
     `- [Home (Arabic, default)](${origin}): selected work, approach and contact`,
     `- [Home (English)](${origin}en/): the same site in English`,
+    `- [About Saif Shorfa](${origin}en/about/): who writes the articles and runs the campaigns`,
     ...platforms.map(
       (p) =>
         `- [${p.name}](${origin}en/services/${p.slug}/): ${p.en.description}`,

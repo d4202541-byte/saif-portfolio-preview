@@ -184,6 +184,9 @@ test("Growth Lab index and articles render, hydrate and pass axe", async ({
       const html = await (await request.get(href)).text();
       expect(html).toContain('"@type":"BlogPosting"');
       expect(html).toContain('class="article-body"');
+      expect(html).toContain('"@type":"FAQPage"');
+      expect(html).toContain('class="article-summary"');
+      expect(html).toContain("max-image-preview:large");
       await page.goto(href);
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.locator(".article-body h2").first()).toBeVisible();
@@ -199,4 +202,30 @@ test("Growth Lab index and articles render, hydrate and pass axe", async ({
     }
   }
   expect(errors).toEqual([]);
+});
+
+test("category pages, about pages and RSS render", async ({
+  page,
+  request,
+}) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  for (const slug of ["meta-ads", "google-ads", "tracking", "strategy"]) {
+    await page.goto(`/blog/category/${slug}/`);
+    await expect(page.locator("h1")).toHaveCount(1);
+    await expect(
+      page.locator(".category-nav [aria-current=page]"),
+    ).toHaveAttribute("href", `/blog/category/${slug}/`);
+  }
+  for (const path of ["/about/", "/en/about/"]) {
+    const html = await (await request.get(path)).text();
+    expect(html).toContain('"@type":"ProfilePage"');
+    await page.goto(path);
+    await expect(page.locator("h1")).toHaveCount(1);
+    const axe = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+      .analyze();
+    expect(axe.violations).toEqual([]);
+  }
+  const rss = await (await request.get("/blog/rss.xml")).text();
+  expect(rss.match(/<item>/g).length).toBeGreaterThanOrEqual(5);
 });
