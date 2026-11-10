@@ -1,16 +1,17 @@
 import { renderToString } from "react-dom/server";
 import App from "./App.jsx";
-import { bodies } from "./editorial/articles.body.js";
-export function render(lang, page = "home", serviceSlug = "") {
+import { articleHtml } from "./editorial/article-html.js";
+export function render(lang, page = "home", serviceSlug = "", base = "/") {
   return renderToString(
     <App
       lang={lang}
       page={page}
       serviceSlug={serviceSlug}
-      articleHtml={page === "article" ? bodies[serviceSlug] || "" : ""}
+      articleHtml={page === "article" ? articleHtml(serviceSlug, base) : ""}
     />,
   );
 }
 
 export { platforms } from "./editorial/copy.js";
-export { articles, blog } from "./editorial/articles.meta.js";
+export { articles, blog, categories } from "./editorial/articles.meta.js";
+export { articleData } from "./editorial/article-html.js";

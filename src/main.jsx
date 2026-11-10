@@ -12,7 +12,7 @@ document.documentElement.lang = lang;
 document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 const root = document.getElementById("root");
 // Article bodies are server-rendered only; reuse the rendered HTML.
-route.articleHtml = root.querySelector(".article-body")?.innerHTML || "";
+route.articleHtml = root.querySelector(".article-content")?.innerHTML || "";
 const missing =
   route.page === "notfound" ||
   (route.page === "service" &&

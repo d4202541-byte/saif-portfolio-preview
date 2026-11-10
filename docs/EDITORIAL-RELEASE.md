@@ -59,3 +59,17 @@ New Arabic blog, مختبر النمو, at `/blog/` with five articles. Article 
 Titles and descriptions now name the service and market, and `/services/` has its own title and description instead of repeating the homepage.
 
 Still needed outside the code: turn on "Enforce HTTPS" in the repository's GitHub Pages settings so `http://` requests redirect to `https://`, then resubmit the sitemap in Search Console.
+
+## Article spec template, November 10, 2026
+
+Articles follow the approved article spec ("مواصفة نظام المقالات"). Order on the page: breadcrumb (home › Growth Lab › category), one H1, byline with photo, published and updated dates and reading time, quick summary box, 1200×630 cover with alt, key takeaways, collapsible table of contents, body (question H2s, answer first, a mid-article service box, an optional "من تجربتي" real case), FAQ (details/summary), sources, author box, a WhatsApp CTA prefilled with the article title, and three related articles from the same category first.
+
+Fields per article: light metadata in `src/editorial/articles.meta.js` (title, seoTitle, slug, description, target and secondary keywords, category, related service, CTA, dates, cover); long content in `src/editorial/articles.body.js` (summary, takeaways, body, FAQ, sources). `src/editorial/article-html.js` builds the page server-side, so the full text is in the raw HTML and not in the client bundle.
+
+Each article page carries one JSON-LD `@graph`: Person (same `#saif` id on every page), WebSite, BlogPosting (wordCount, articleSection, keywords, `about` the related Service), BreadcrumbList and FAQPage. Also `robots: max-image-preview:large`, `article:published_time` and `article:modified_time`, and a per-article `og:image`.
+
+New pages: `/blog/category/{meta-ads,google-ads,tracking,strategy}/` with a written intro each, `/about/` and `/en/about/` (ProfilePage), and `/blog/rss.xml`. Service pages and the Arabic homepage list related articles.
+
+URL note: the spec assumed an English-first site with `/ar/blog/`. The site is Arabic-first since November 9, so Arabic articles live at `/blog/…` and an English translation, when written, goes to `/en/blog/…` with hreflang both ways.
+
+Covers: `scripts/blog-covers.mjs` renders them from the article titles with the site fonts; convert the PNGs to WebP into `public-editorial/blog/covers/`.
