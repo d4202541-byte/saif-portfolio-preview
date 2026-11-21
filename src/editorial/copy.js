@@ -33,12 +33,11 @@ export const labels = {
     serviceLink: "Explore the service",
     processNote: "A considered process. A clear next step.",
     aboutText:
-      "I’m Saif Shorfa, an independent paid media specialist working with businesses in Saudi Arabia and the GCC. I bring campaign execution and measurement together, so you can understand what your advertising is doing, and decide what comes next. My next focus is collaborating with businesses in Europe.",
+      "I’m Saif Shorfa, an independent paid media specialist working with businesses in Saudi Arabia and the GCC. I bring campaign execution and measurement together, so you can understand what your advertising is doing, and decide what comes next.",
     aboutTags: [
       "Direct collaboration",
       "Arabic & English",
       "Saudi Arabia & GCC",
-      "Europe: next focus",
     ],
     contactIntro:
       "Tell me about your business, the campaigns you’re running and what you want to improve. Let’s find a practical starting point.",
@@ -107,12 +106,11 @@ export const labels = {
     serviceLink: "تعرّف على الخدمة",
     processNote: "خطوات مدروسة، وقرار واضح في كل مرحلة.",
     aboutText:
-      "أنا سيف الشرفا، متخصص مستقل في الإعلانات الممولة، أعمل مع الشركات والمتاجر في السعودية والخليج. أجمع بين إدارة الحملات والقياس حتى تفهم ما يقدّمه الإعلان لمشروعك، وتعرف أين تضع خطوتك القادمة. أتطلّع في المرحلة القادمة إلى التعاون مع مشاريع في السوق الأوروبي.",
+      "أنا سيف الشرفا، متخصص مستقل في الإعلانات الممولة، أعمل مع الشركات والمتاجر في السعودية والخليج. أجمع بين إدارة الحملات والقياس حتى تفهم ما يقدّمه الإعلان لمشروعك، وتعرف أين تضع خطوتك القادمة.",
     aboutTags: [
       "تواصل وعمل مباشر معي",
       "العربية والإنجليزية",
       "السعودية والخليج",
-      "أوروبا: الوجهة القادمة",
     ],
     contactIntro:
       "احكِ لي عن مشروعك، وحملاتك الحالية، وما تريد تحسينه. نبدأ بفهم التحدي ونحدّد خطوة عملية تناسبك.",
