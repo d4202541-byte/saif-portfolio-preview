@@ -266,6 +266,54 @@ export const articles = [
       label: "محادثة · 3.72 إلى 3.83 ريال",
     },
   },
+  {
+    slug: "meta-pixel-capi-salla",
+    title: "ربط بكسل ميتا وConversions API مع متجر سلة: الإعداد والفحص",
+    seoTitle:
+      "ربط بكسل ميتا مع سلة وConversions API: خطوات الإعداد والفحص 2027",
+    description:
+      "كيف تربط بكسل Meta وConversions API والكتالوج بمتجرك في سلة خطوة بخطوة، وكيف تتأكد أن حدث الشراء لا يُحسب مرتين، وما الذي تفحصه في Events Manager قبل أن تثق بأرقام حملاتك.",
+    targetKeyword: "ربط بكسل ميتا مع سلة",
+    secondaryKeywords: [
+      "Conversions API سلة",
+      "بكسل فيسبوك سلة",
+      "ربط سلة مع ميتا",
+    ],
+    category: "tracking",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readMinutes: 8,
+    coverStat: {
+      value: "7",
+      label: "خطوات للربط من لوحة سلة",
+    },
+  },
+  {
+    slug: "google-ads-conversion-tracking-salla",
+    title:
+      "تتبع تحويلات إعلانات جوجل في متجر سلة: الإعداد الصحيح وأخطاء التكرار",
+    seoTitle: "ربط إعلانات جوجل مع سلة وتتبع التحويلات: الدليل العملي 2027",
+    description:
+      "خطوات ربط Google Ads بمتجر سلة عبر تطبيق Google AdWords (معرّف التحويل وتسمية الشراء)، وكيف تمنع تكرار التحويل بين التطبيق وGTM وGA4، وكيف تطابق أرقام جوجل مع طلبات سلة.",
+    targetKeyword: "ربط اعلانات جوجل مع سلة",
+    secondaryKeywords: [
+      "تتبع التحويلات سلة",
+      "Google Ads سلة",
+      "Conversion ID سلة",
+    ],
+    category: "tracking",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readMinutes: 8,
+    coverStat: {
+      value: "4",
+      label: "تحويلات يدعمها تطبيق سلة",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
