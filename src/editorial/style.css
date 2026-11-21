@@ -2291,6 +2291,48 @@ em {
   font-weight: 700;
   background: var(--soft);
 }
+.article-figure {
+  margin: 32px 0;
+}
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+.article-figure figcaption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.article-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin: 32px 0;
+  padding: 0;
+  list-style: none;
+}
+.article-stats li {
+  background: #fffdf8;
+  padding: 18px 20px;
+  margin: 0;
+}
+.article-stats strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1.2;
+}
+.article-stats span {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+}
 .experience {
   border-inline-start: 4px solid var(--ink);
   padding: 4px 24px 8px;

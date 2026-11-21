@@ -74,7 +74,8 @@ export function articleHtml(slug, base = "/") {
   const waURL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
   const body = d.body
     .replace("<!--cta-->", cta)
-    .replaceAll('href="/', `href="${base}`);
+    .replaceAll('href="/', `href="${base}`)
+    .replaceAll('src="/', `src="${base}`);
   return `
 <div class="article-summary">
   <p class="eyebrow">الخلاصة السريعة</p>
@@ -112,7 +113,7 @@ ${
   <img src="${base}brand/saif-portrait-current.webp" width="96" height="120" alt="سيف الشرفا" loading="lazy" />
   <div>
     <p class="article-author-name"><a href="${base}about/">${esc(blog.author)}</a></p>
-    <p>${esc(blog.authorRole)} مستقل. أدير حملات المتاجر والعيادات والشركات وأتحقق من قياسها، في السعودية والخليج، وأتجه للتعاون في أوروبا.</p>
+    <p>${esc(blog.authorRole)} مستقل. أدير حملات المتاجر والعيادات والشركات وأتحقق من قياسها، في السعودية والخليج، بالعربية والإنجليزية.</p>
     <a class="text-link" href="${base}about/">المزيد عن سيف</a>
   </div>
 </aside>

@@ -10,11 +10,24 @@ import fs from "node:fs";
   const logo = fs
     .readFileSync("public-editorial/brand/logo-integrated.svg")
     .toString("base64");
-  const b = await chromium.launch();
+  const b = await chromium.launch(
+    process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {},
+  );
   const p = await b.newPage({ viewport: { width: 1200, height: 630 } });
   await p.goto("http://127.0.0.1:4176/");
+  const only = process.argv.slice(2);
+  const accent = {
+    "meta-ads": "#1f4fd1",
+    "google-ads": "#1a7f45",
+    tracking: "#b5651d",
+    strategy: "#101010",
+  };
   for (const a of meta.articles) {
+    if (only.length && !only.includes(a.slug)) continue;
     const cat = meta.categoryBySlug[a.category].name;
+    const stat = a.coverStat
+      ? `<div class="s"><b>${a.coverStat.value}</b><span>${a.coverStat.label}</span></div>`
+      : "";
     await p.setContent(`<!doctype html><html dir="rtl" lang="ar"><head><style>
 ${faces}
 body{margin:0;width:1200px;height:630px;background:#f7f5f0;font-family:'IBM Plex Sans Arabic',sans-serif;color:#101010;position:relative;overflow:hidden}
@@ -22,8 +35,12 @@ body{margin:0;width:1200px;height:630px;background:#f7f5f0;font-family:'IBM Plex
 h1{position:absolute;right:80px;left:80px;top:150px;font-size:66px;line-height:1.35;font-weight:600;margin:0}
 .f{position:absolute;bottom:56px;right:80px;left:80px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #101010;padding-top:28px;font-size:26px}
 .f img{height:44px}
-.bar{position:absolute;top:0;left:0;width:22px;height:630px;background:#101010}
-</style></head><body><div class="bar"></div><div class="k">مختبر النمو · ${cat}</div><h1>${a.title}</h1><div class="f"><span>بقلم سيف الشرفا</span><img src="data:image/svg+xml;base64,${logo}"></div></body></html>`);
+.bar{position:absolute;top:0;left:0;width:22px;height:630px;background:${accent[a.category]}}
+.s{position:absolute;left:80px;top:150px;width:330px;border:2px solid #101010;padding:26px 28px;background:#fffdf8}
+.s b{display:block;font-size:64px;line-height:1.1;font-weight:700;direction:ltr;text-align:right;unicode-bidi:plaintext}
+.s span{display:block;margin-top:12px;font-size:24px;color:#5e5c58}
+body.has-s h1{left:500px;font-size:56px}
+</style></head><body class="${stat ? "has-s" : ""}"><div class="bar"></div>${stat}<div class="k">مختبر النمو · ${cat}</div><h1>${a.title}</h1><div class="f"><span>بقلم سيف الشرفا</span><img src="data:image/svg+xml;base64,${logo}"></div></body></html>`);
     await p.evaluate(() => document.fonts.ready);
     const h = await p.evaluate(
       () => document.querySelector("h1").getBoundingClientRect().bottom,

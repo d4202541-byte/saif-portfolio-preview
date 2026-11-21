@@ -125,6 +125,101 @@ export const articles = [
     updated: "2026-11-10",
     readMinutes: 7,
   },
+  {
+    slug: "best-marketing-services-saudi-2027",
+    title:
+      "أفضل خدمات التسويق الإلكتروني في السعودية 2027: كيف تختار الجهة المناسبة؟",
+    seoTitle: "أفضل خدمات التسويق الإلكتروني في السعودية 2027: دليل الاختيار",
+    description:
+      "وكالة شاملة أم وكالة أداء أم مستقل متخصص؟ معايير عملية لاختيار أفضل خدمة تسويق إلكتروني وإعلانات في السعودية عام 2027، مع أسئلة تطرحها قبل التعاقد وعلامات تحذير.",
+    targetKeyword: "أفضل خدمات التسويق الإلكتروني في السعودية",
+    secondaryKeywords: [
+      "أفضل شركة تسويق في السعودية 2027",
+      "شركة إعلانات ممولة",
+      "مسوق إعلانات مستقل",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readMinutes: 9,
+    coverStat: {
+      value: "2027",
+      label: "دليل اختيار خدمة التسويق",
+    },
+  },
+  {
+    slug: "ads-specialist-riyadh",
+    title: "إدارة إعلانات Google وMeta للشركات والمتاجر في الرياض",
+    seoTitle: "مسوق إعلانات Google وMeta في الرياض | سيف الشرفا",
+    description:
+      "كيف أدير حملات Google وMeta لشركات ومتاجر الرياض: الاستهداف الجغرافي داخل المدينة، وقياس اتصالات وواتساب الفروع، ونتائج موثقة من حسابات سعودية، وطريقة العمل عن بُعد.",
+    targetKeyword: "مسوق إعلانات في الرياض",
+    secondaryKeywords: [
+      "شركة إعلانات جوجل الرياض",
+      "إعلانات سناب وانستقرام الرياض",
+      "تسويق إلكتروني الرياض",
+    ],
+    category: "strategy",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readMinutes: 7,
+    coverStat: {
+      value: "الرياض",
+      label: "Google Ads · Meta Ads",
+    },
+  },
+  {
+    slug: "ads-specialist-jeddah",
+    title: "إدارة إعلانات Google وMeta للشركات والمتاجر في جدة",
+    seoTitle: "مسوق إعلانات Google وMeta في جدة | سيف الشرفا",
+    description:
+      "حملات Google وMeta لشركات ومتاجر جدة: التخطيط حول المواسم، والاستهداف داخل جدة ومكة، وقياس طلبات واتساب، ونتائج موثقة من حسابات سعودية، مع طريقة العمل عن بُعد.",
+    targetKeyword: "مسوق إعلانات في جدة",
+    secondaryKeywords: [
+      "شركة تسويق إلكتروني جدة",
+      "إعلانات جوجل جدة",
+      "إعلانات انستقرام جدة",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readMinutes: 7,
+    coverStat: {
+      value: "جدة",
+      label: "Google Ads · Meta Ads",
+    },
+  },
+  {
+    slug: "clinic-google-ads-case-study",
+    title:
+      "دراسة حالة: 464 تحويلًا لعيادة سعودية بتكلفة 4.03 ريال من Google Ads",
+    seoTitle:
+      "إعلانات العيادات في السعودية: دراسة حالة 464 تحويلًا بـ4.03 ريال",
+    description:
+      "أرقام حقيقية من حساب عيادة متعددة التخصصات في السعودية: 464 تحويلًا بـ4.03 ريال على Google Ads، ثم 814 تحويلًا عند التوسع، و602 محادثة من Meta بأقل من 4 ريالات. ماذا تعني الأرقام وكيف تقرأها.",
+    targetKeyword: "إعلانات العيادات في السعودية",
+    secondaryKeywords: [
+      "إعلانات جوجل للعيادات",
+      "تسويق العيادات الطبية",
+      "تكلفة العميل للعيادة",
+    ],
+    category: "google-ads",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-21",
+    updated: "2026-11-21",
+    readMinutes: 8,
+    coverStat: {
+      value: "464 × 4.03",
+      label: "تحويلًا · ريال للتحويل",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
