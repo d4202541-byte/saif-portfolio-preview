@@ -105,7 +105,7 @@ const seo = {
     ],
     services: [
       "Meta Ads & Google Ads Services | Saif Shorfa",
-      "Google Ads and Meta Ads management plus conversion tracking audits for stores, clinics and businesses in Saudi Arabia, the GCC and Europe.",
+      "Google Ads and Meta Ads management plus conversion tracking audits for stores, clinics and businesses in Saudi Arabia and the GCC.",
     ],
     "meta-ads": "Meta Ads Management for Saudi & GCC Businesses | Saif Shorfa",
     "google-ads":
@@ -220,7 +220,7 @@ function htmlFor(route) {
       email: person.email,
       telephone: person.telephone,
       founder: { "@id": personId },
-      areaServed: ["Saudi Arabia", "GCC", "Europe"],
+      areaServed: ["Saudi Arabia", "GCC"],
       knowsLanguage: ["ar", "en"],
       serviceType: [
         "Meta Ads management",
@@ -243,7 +243,7 @@ function htmlFor(route) {
       description,
       url: origin + path,
       provider: { "@id": personId },
-      areaServed: ["Saudi Arabia", "GCC", "Europe"],
+      areaServed: ["Saudi Arabia", "GCC"],
     });
   if (page === "blog" || category || article) {
     const crumbs = [
