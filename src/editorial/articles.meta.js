@@ -360,6 +360,48 @@ export const articles = [
       label: "مستخدم لسناب شات في السعودية",
     },
   },
+  {
+    slug: "google-ads-guide-saudi",
+    title: "إعلانات جوجل: الدليل العملي للشركات والمتاجر في السعودية",
+    seoTitle: "اعلانات جوجل 2027: دليل عملي للشركات والمتاجر في السعودية",
+    description:
+      "دليل إعلانات جوجل للشركات في السعودية: أنواع الحملات وأيها تبدأ به، وخطوات الإعداد الصحيح، وأرقام حقيقية من عيادة سعودية (464 تحويلًا بتكلفة 4.03 ريال)، وأكثر الأخطاء التي تحرق الميزانية.",
+    targetKeyword: "اعلانات جوجل",
+    secondaryKeywords: ["اعلانات قوقل", "Google Ads", "حملات جوجل الاعلانية"],
+    category: "google-ads",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-22",
+    updated: "2026-11-22",
+    readMinutes: 10,
+    coverStat: {
+      value: "15.97%",
+      label: "نسبة تحويل حملة بحث لعيادة سعودية",
+    },
+  },
+  {
+    slug: "meta-ads-manager-guide",
+    title: "مدير إعلانات فيسبوك (Meta Ads Manager): شرح عملي خطوة بخطوة",
+    seoTitle: "مدير اعلانات فيس بوك 2027: شرح Meta Ads Manager بالعربي",
+    description:
+      "شرح عملي لمدير إعلانات فيسبوك وإنستغرام: الحملة ومجموعة الإعلانات والإعلان، واختيار الهدف والجمهور والميزانية، والأعمدة التي تقرأها لتعرف هل الحملة تربح، مع أرقام حقيقية من حسابات سعودية.",
+    targetKeyword: "مدير اعلانات فيس بوك",
+    secondaryKeywords: [
+      "Meta Ads Manager",
+      "مدير الاعلانات فيسبوك",
+      "شرح مدير الاعلانات",
+    ],
+    category: "meta-ads",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-22",
+    updated: "2026-11-22",
+    readMinutes: 9,
+    coverStat: {
+      value: "3",
+      label: "مستويات: الحملة، المجموعة، الإعلان",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
