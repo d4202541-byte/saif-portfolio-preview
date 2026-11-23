@@ -472,6 +472,75 @@ export const articles = [
       label: "أسباب تشيك عليها قبل ما ترفع الميزانية",
     },
   },
+  {
+    slug: "abandoned-cart-shipping-salla",
+    title: "الشحن اللي يطلع في آخر خطوة: ليش العميل يترك السلة عند الدفع",
+    seoTitle: "ترك السلة في سلة: ليش العميل يطلع عند الدفع وكيف توقفه",
+    description:
+      "العميل يضيف للسلة ويطلع عند الدفع؟ غالبًا الشحن أو السعر يظهر له متأخر. هنا كيف تعرف وين يطلع العميل من متجرك على سلة، وكيف تصلحها خطوة بخطوة.",
+    targetKeyword: "ترك السلة سلة",
+    secondaryKeywords: [
+      "السلات المتروكة سلة",
+      "العميل يترك السلة عند الدفع",
+      "تكلفة الشحن متجر سلة",
+    ],
+    category: "tracking",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "180",
+      label: "شراء من 5.6 ألف إضافة للسلة",
+    },
+  },
+  {
+    slug: "influencer-ads-no-sales",
+    title: "دفعت 25 ألف لمشهور وجاني 38 طلب: كيف تختبر المشاهير قبل ما تدفع",
+    seoTitle: "إعلان مشاهير ما جاب مبيعات؟ كيف تختبر المشهور قبل ما تدفع",
+    description:
+      "إعلان مشاهير ما جاب مبيعات؟ قبل ما تدفع لمشهور ثاني، هذي طريقة تختبر فيها جمهوره بمبلغ صغير، وتحسب كم طلب لازم يجيب عشان الإعلان يغطي نفسه.",
+    targetKeyword: "إعلان مشاهير ما جاب مبيعات",
+    secondaryKeywords: [
+      "اعلانات المشاهير",
+      "تسويق المشاهير للمتاجر",
+      "سناب المشاهير مبيعات",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "38",
+      label: "طلب مقابل 25 ألف ريال لمشهور",
+    },
+  },
+  {
+    slug: "fake-roas-google-ads",
+    title: "ROAS من 50 إلى 90 ضعف؟ كيف إجراء شراء مكرر ينفخ نتائج Google Ads",
+    seoTitle: "ROAS غير حقيقي في Google Ads؟ كيف تكشف إجراء الشراء المكرر",
+    description:
+      "حسابك في Google Ads يعرض ROAS خيالي؟ غالبًا فيه إجراء شراء مكرر. هنا كيف تكشفه في 10 دقايق وتصلحه، مع مثال من متجر سعودي على سلة.",
+    targetKeyword: "ROAS غير حقيقي Google Ads",
+    secondaryKeywords: [
+      "تحويلات مكررة جوجل ادز",
+      "ROAS عالي بدون مبيعات",
+      "إجراء التحويل الأساسي Google Ads",
+    ],
+    category: "google-ads",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 7,
+    coverStat: {
+      value: "50-90x",
+      label: "ROAS معروض، والسبب شراء مكرر",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
