@@ -1007,6 +1007,122 @@ export const articles = [
       label: "طلب، والسؤال كم ربح",
     },
   },
+  {
+    slug: "google-maps-ads-restaurants",
+    title:
+      "إعلانات Google Maps للمطاعم والمحلات: دليل البداية بنطاق 3 إلى 5 كم",
+    seoTitle: "إعلانات قوقل ماب للمطاعم والمحلات: دليل البداية خطوة بخطوة",
+    description:
+      "تبي تطلع إعلانك في قوقل ماب لما أحد يدور مطعم قريب؟ هنا دليل البداية: ملف Google التجاري، ربطه مع Google Ads، استهداف 3 إلى 5 كم، وكيف تقيس الزيارات والاتصالات.",
+    targetKeyword: "إعلانات قوقل ماب للمطاعم",
+    secondaryKeywords: [
+      "اعلانات خرائط جوجل",
+      "ظهور المطعم في قوقل ماب",
+      "اعلانات محلية للمحلات",
+    ],
+    category: "google-ads",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "3-5 كم",
+      label: "نطاق تبدأ فيه",
+    },
+  },
+  {
+    slug: "salon-or-online-store-test-demand",
+    title: "صالون أو متجر إلكتروني؟ كيف تختبر الطلب قبل ما تدفع إيجار",
+    seoTitle: "فتح صالون نسائي أو متجر إلكتروني؟ كيف تختبر الطلب قبل الإيجار",
+    description:
+      "تفكرين تفتحين صالون نسائي؟ قبل ما تدفعين إيجار وتجهيز، اختبري الطلب بإعلان صغير وصفحة حجز وواتساب. هنا خطة 4 أسابيع تعطيك أرقام حقيقية قبل القرار.",
+    targetKeyword: "فتح صالون نسائي",
+    secondaryKeywords: [
+      "اختبار فكرة مشروع",
+      "صالون منزلي أو محل",
+      "دراسة الطلب قبل فتح مشروع",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "4",
+      label: "أسابيع اختبار قبل الإيجار",
+    },
+  },
+  {
+    slug: "app-ads-cost-per-registration",
+    title: "تطبيق حجوزات: أندرويد أرخص تثبيت، بس 7% بس سجّلوا",
+    seoTitle: "إعلانات التطبيقات: تكلفة التسجيل أهم من تكلفة التثبيت",
+    description:
+      "إعلانات تطبيقك تجيب تثبيتات رخيصة بدون تسجيلات؟ مثال من تطبيق حجوزات سعودي: أندرويد أرخص تثبيت لكن 7% بس سجّلوا، وiOS على Meta حوّل 45%. هنا كيف تقيس وتوزع الميزانية.",
+    targetKeyword: "إعلانات تطبيقات تكلفة التسجيل",
+    secondaryKeywords: [
+      "اعلانات التطبيقات السعودية",
+      "تكلفة التثبيت",
+      "اعلانات تطبيق اندرويد ايفون",
+    ],
+    category: "tracking",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "7% / 45%",
+      label: "تسجيل من التثبيت: Android مقابل iOS",
+    },
+  },
+  {
+    slug: "constant-discounts-eat-margin",
+    title: "العروض المستمرة: متى تجيب عملاء جدد ومتى تاكل الهامش",
+    seoTitle: "العروض والخصومات تاكل الربح؟ متى العرض يجيب عملاء جدد ومتى يضرك",
+    description:
+      "سنة عروض بدون نتيجة؟ العروض المستمرة تعوّد العميل ما يشتري إلا بخصم وتاكل الهامش. هنا كيف تعرف إذا عرضك يجيب عملاء جدد أو يخصم لعملاء كانوا بيشترون أصلًا.",
+    targetKeyword: "العروض والخصومات تاكل الربح",
+    secondaryKeywords: [
+      "العروض المستمرة مطعم",
+      "خصومات المتاجر",
+      "عرض يجيب عملاء جدد",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "12",
+      label: "شهر عروض بدون نتيجة",
+    },
+  },
+  {
+    slug: "seo-organic-traffic-growth",
+    title: "الزيارات من قوقل بدون إعلانات: +195% نقرات لمنصة دورات",
+    seoTitle: "زيادة زيارات الموقع من قوقل بدون إعلانات: مثال +195% نقرات",
+    description:
+      "تبي تزيد زيارات موقعك من قوقل بدون إعلانات؟ مثال حقيقي من منصة دورات عربية: النقرات زادت 195% في 4 أسابيع. هنا وش اشتغلنا عليه وكيف تبدأ في موقعك.",
+    targetKeyword: "زيادة زيارات الموقع من قوقل",
+    secondaryKeywords: [
+      "SEO للمواقع العربية",
+      "تحسين محركات البحث",
+      "Google Search Console",
+    ],
+    category: "strategy",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "+195%",
+      label: "نقرات من بحث قوقل",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
