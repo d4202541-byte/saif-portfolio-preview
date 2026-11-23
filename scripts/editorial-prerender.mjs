@@ -220,7 +220,7 @@ function htmlFor(route) {
       email: person.email,
       telephone: person.telephone,
       founder: { "@id": personId },
-      areaServed: ["Saudi Arabia", "GCC"],
+      areaServed: ["Saudi Arabia", "Riyadh", "Jeddah", "Dammam", "GCC"],
       knowsLanguage: ["ar", "en"],
       serviceType: [
         "Meta Ads management",
@@ -243,7 +243,7 @@ function htmlFor(route) {
       description,
       url: origin + path,
       provider: { "@id": personId },
-      areaServed: ["Saudi Arabia", "GCC"],
+      areaServed: ["Saudi Arabia", "Riyadh", "Jeddah", "Dammam", "GCC"],
     });
   if (page === "blog" || category || article) {
     const crumbs = [
@@ -444,10 +444,12 @@ if (!preview) {
     "",
     "## Selected results",
     "Each result is shown on the site with a blurred screenshot as proof. Client names are withheld.",
-    ...en.work.cases.map(
-      (c) =>
-        `- ${c.industry}, ${c.category}: ${c.metric} ${c.metricLabel} (${c.secondaryMetric}). ${c.finePrint}`,
-    ),
+    ...en.work.cases
+      .filter((c) => !/norway|europe/i.test(c.industry + " " + c.category))
+      .map(
+        (c) =>
+          `- ${c.industry}, ${c.category}: ${c.metric} ${c.metricLabel} (${c.secondaryMetric}). ${c.finePrint}`,
+      ),
     "",
     "## Contact",
     `- Email: ${en.contacts.email}`,
