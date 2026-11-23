@@ -611,6 +611,76 @@ export const articles = [
       label: "ريال شهريًا عمولات توصيل",
     },
   },
+  {
+    slug: "when-to-increase-ad-budget",
+    title: "متى ترفع ميزانية الإعلانات؟ 3 أرقام لازم تعرفها قبل",
+    seoTitle: "متى أزيد ميزانية الإعلانات؟ 3 أرقام تعرفها قبل ما ترفع",
+    description:
+      "متى أزيد ميزانية الإعلانات؟ مو لما الحملة «تبين حلوة». هنا 3 أرقام تحسبها قبل ما ترفع: تكلفة الطلب، أعلى تكلفة تتحملها، وثبات النتائج، وكيف ترفع بدون ما تخرب الحملة.",
+    targetKeyword: "متى أزيد ميزانية الإعلانات",
+    secondaryKeywords: [
+      "رفع ميزانية الحملة",
+      "زيادة ميزانية اعلانات ميتا",
+      "توسيع الحملات الإعلانية",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "3",
+      label: "أرقام قبل ما ترفع الميزانية",
+    },
+  },
+  {
+    slug: "abaya-store-size-chart",
+    title:
+      "جدول المقاسات: أرخص طريقة تقلل المرتجع وترفع الطلبات في متاجر العبايات",
+    seoTitle: "جدول مقاسات العبايات لمتجرك: كيف تسويه صح وتقلل المرتجع",
+    description:
+      "جدول مقاسات العبايات في متجرك ناقص؟ هنا كيف تسوي جدول مقاسات واضح بالسنتيمتر، وش تكتب جنبه، وكيف تعرف إنه قلل المرتجع ورفع الطلبات.",
+    targetKeyword: "جدول مقاسات عبايات متجر",
+    secondaryKeywords: [
+      "مقاسات العبايات",
+      "متجر عبايات الكتروني",
+      "تقليل المرتجع عبايات",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 5,
+    coverStat: {
+      value: "1",
+      label: "جدول يوفر عليك مرتجعات كثيرة",
+    },
+  },
+  {
+    slug: "google-ads-vs-appsflyer-conversions",
+    title: "Google Ads قال 751 تحويل وAppsFlyer قال 191: أي رقم تصدق؟",
+    seoTitle: "فرق أرقام Google Ads وAppsFlyer: ليش يختلفون وأي رقم تعتمد",
+    description:
+      "Google Ads يعرض تحويلات أكثر بكثير من AppsFlyer؟ هنا ليش يصير الفرق، وكيف تختار مصدر واحد للأرقام، ومثال من تطبيق حجوزات سعودي: 751 مقابل 191.",
+    targetKeyword: "فرق أرقام Google Ads و AppsFlyer",
+    secondaryKeywords: [
+      "Google Ads AppsFlyer",
+      "قياس اعلانات التطبيقات",
+      "تحويلات تطبيق جوجل ادز",
+    ],
+    category: "tracking",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "751 / 191",
+      label: "Google Ads مقابل AppsFlyer",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
