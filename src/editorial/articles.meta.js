@@ -821,6 +821,99 @@ export const articles = [
       label: "ROAS بعد رفع الميزانية",
     },
   },
+  {
+    slug: "tabby-tamara-fees-stores",
+    title: "تابي وتمارا: متى ترفع المبيعات ومتى تاكل الربح",
+    seoTitle: "رسوم تابي وتمارا للمتاجر: متى ترفع المبيعات ومتى تاكل الربح",
+    description:
+      "رسوم تابي وتمارا تاكل ربح متجرك؟ هنا كيف تحسب كم تكلفك فعلًا على كل طلب، ومتى ترفع المبيعات بما يكفي يغطي الرسوم، ومتى تحتاج تعيد التسعير.",
+    targetKeyword: "رسوم تابي تمارا للمتاجر",
+    secondaryKeywords: [
+      "تابي للمتاجر",
+      "تمارا للتجار",
+      "اشتر الآن وادفع لاحقا متجر",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "126K / 9K",
+      label: "مبيعات مقابل اللي باقي",
+    },
+  },
+  {
+    slug: "high-ctr-no-sales",
+    title: "CTR ارتفع والمبيعات نزلت: ليش إعلانك صار يجيب الشخص الغلط",
+    seoTitle: "CTR عالي بدون مبيعات؟ ليش إعلانك يجيب الشخص الغلط وكيف تصلحه",
+    description:
+      "CTR عالي بدون مبيعات؟ الإعلان اللي يجيب نقرات كثيرة ممكن يجيب الشخص الغلط. هنا كيف تعرف إذا نقراتك فضول، وكيف تكتب إعلان يفلتر قبل ما يجيب.",
+    targetKeyword: "CTR عالي بدون مبيعات",
+    secondaryKeywords: [
+      "نسبة النقر عالية بدون مبيعات",
+      "اعلان يجيب نقرات بدون شراء",
+      "تحسين CTR",
+    ],
+    category: "meta-ads",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "CTR ↑",
+      label: "والمبيعات ↓",
+    },
+  },
+  {
+    slug: "meta-ads-new-store-start",
+    title: "متجر جديد على Meta: كيف تبدأ أول حملة بيع بدون ما تحرق الميزانية",
+    seoTitle: "بداية إعلانات ميتا لمتجر جديد: أول حملة بيع خطوة بخطوة",
+    description:
+      "تبدأ إعلانات ميتا لمتجر جديد؟ هنا الترتيب الصح: القياس أول، حملة بيع وحدة، كم إعلان تختبر، ومتى تحكم على النتيجة، مع أرقام حقيقية من متجر سعودي.",
+    targetKeyword: "بداية إعلانات ميتا لمتجر جديد",
+    secondaryKeywords: [
+      "اعلانات فيسبوك لمتجر جديد",
+      "أول حملة ميتا",
+      "اعلانات انستقرام متجر جديد",
+    ],
+    category: "meta-ads",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 7,
+    coverStat: {
+      value: "1",
+      label: "حملة بيع وحدة تبدأ فيها",
+    },
+  },
+  {
+    slug: "google-merchant-center-salla",
+    title: "ربط سلة مع Google Merchant: هل لازم 100 ريال باليوم؟",
+    seoTitle:
+      "Google Merchant Center مع سلة: الربط، القوائم المجانية، وكم ميزانية تحتاج",
+    description:
+      "تبي تربط سلة مع Google Merchant Center؟ الربط والقوائم المجانية ما تحتاج ميزانية. هنا خطوات الربط، أشهر أسباب رفض المنتجات، وكم تحتاج فعلًا لما تبدأ إعلانات التسوق.",
+    targetKeyword: "Google Merchant Center سلة",
+    secondaryKeywords: [
+      "ربط سلة مع جوجل ميرشنت",
+      "اعلانات جوجل شوبنج سلة",
+      "القوائم المجانية جوجل",
+    ],
+    category: "google-ads",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "0",
+      label: "ريال للقوائم المجانية",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
