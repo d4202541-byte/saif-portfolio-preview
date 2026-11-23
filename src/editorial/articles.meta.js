@@ -1123,6 +1123,77 @@ export const articles = [
       label: "نقرات من بحث قوقل",
     },
   },
+  {
+    slug: "tiktok-ads-saudi-guide",
+    title: "إعلانات تيك توك في السعودية: دليل البداية للمتاجر خطوة بخطوة",
+    seoTitle: "اعلانات تيك توك في السعودية: دليل البداية للمتاجر 2027",
+    description:
+      "تبي تبدأ اعلانات تيك توك لمتجرك في السعودية؟ هنا الترتيب الصح: البكسل والقياس، نوع الحملة، المحتوى اللي يشتغل كإعلان، الميزانية، ومتى تحكم على النتيجة.",
+    targetKeyword: "اعلانات تيك توك",
+    secondaryKeywords: [
+      "اعلانات تيك توك السعودية",
+      "تيك توك للمتاجر",
+      "بكسل تيك توك سلة",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 7,
+    coverStat: {
+      value: "6",
+      label: "خطوات قبل أول ريال على تيك توك",
+    },
+  },
+  {
+    slug: "zid-store-tracking-setup",
+    title:
+      "متجر زد: كيف تربط بكسل ميتا وتيك توك وقوقل وتتأكد إن الشراء ينحسب صح",
+    seoTitle: "ربط بكسل ميتا وتيك توك وقوقل مع متجر زد: خطوات القياس الصحيح",
+    description:
+      "عندك متجر على زد وتبي تعلن؟ قبل أي حملة، اربط بكسل ميتا وتيك توك وتتبع قوقل صح. هنا الخطوات، وكيف تختبر إن الشراء ينحسب مرة وحدة، وكيف تطابق مع طلبات زد.",
+    targetKeyword: "ربط بكسل ميتا مع زد",
+    secondaryKeywords: [
+      "متجر زد اعلانات",
+      "بكسل تيك توك زد",
+      "تتبع التحويلات متجر زد",
+    ],
+    category: "tracking",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "1",
+      label: "شراء = حدث واحد، مو اثنين",
+    },
+  },
+  {
+    slug: "google-ads-ecommerce-saudi",
+    title: "إعلانات قوقل للمتاجر الإلكترونية في السعودية: وش تشغّل أول",
+    seoTitle:
+      "إعلانات قوقل للمتاجر الإلكترونية في السعودية: Search أو Shopping أو PMax؟",
+    description:
+      "تبي تبدأ إعلانات قوقل لمتجرك الإلكتروني في السعودية؟ هنا وش تشغّل أول: بحث باسم المنتج، تسوق، أو Performance Max، وكيف تقيس على طلبات المتجر، مع مثال متجر شنط على سلة.",
+    targetKeyword: "إعلانات قوقل للمتاجر الإلكترونية",
+    secondaryKeywords: [
+      "اعلانات جوجل شوبنج السعودية",
+      "Performance Max متجر",
+      "اعلانات جوجل لمتجر سلة",
+    ],
+    category: "google-ads",
+    service: "google-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 7,
+    coverStat: {
+      value: "234",
+      label: "طلب في 30 يوم لمتجر شنط على سلة",
+    },
+  },
 ].map((a) => ({
   ...a,
   cover: {
