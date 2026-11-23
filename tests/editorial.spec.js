@@ -170,6 +170,8 @@ test("Growth Lab index and articles render, hydrate and pass axe", async ({
   page,
   request,
 }) => {
+  // Every article is checked twice with axe; the default 45s no longer covers 20+ articles.
+  test.setTimeout(400_000);
   const errors = [];
   page.on("pageerror", (e) => errors.push(e.message));
   for (const width of [390, 1440]) {
