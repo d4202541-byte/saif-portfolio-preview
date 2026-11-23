@@ -206,6 +206,7 @@ export const articles = [
     targetKeyword: "إعلانات العيادات في السعودية",
     secondaryKeywords: [
       "إعلانات جوجل للعيادات",
+      "إعلانات قوقل للعيادات",
       "تسويق العيادات الطبية",
       "تكلفة العميل للعيادة",
     ],
@@ -213,7 +214,7 @@ export const articles = [
     service: "google-ads",
     cta: "whatsapp",
     published: "2026-11-21",
-    updated: "2026-11-21",
+    updated: "2026-11-23",
     readMinutes: 8,
     coverStat: {
       value: "464 × 4.03",
@@ -679,6 +680,52 @@ export const articles = [
     coverStat: {
       value: "751 / 191",
       label: "Google Ads مقابل AppsFlyer",
+    },
+  },
+  {
+    slug: "cash-on-delivery-refused-orders",
+    title: "الرفض عند الباب: 3 طرق تقلل خسارة الدفع عند الاستلام بدون ما تلغيه",
+    seoTitle: "رفض الطلب عند الاستلام: 3 طرق تقلل خسارة الدفع عند الاستلام",
+    description:
+      "رفض الطلب عند الاستلام يخسرك شحن رايح وجاي ومخزون معلق. بدون ما تلغي الدفع عند الاستلام، هذي 3 طرق تقلل الرفض: تأكيد الطلب، رسوم أو عربون ذكي، وتنظيف مصادر الطلبات.",
+    targetKeyword: "رفض الطلب الدفع عند الاستلام",
+    secondaryKeywords: [
+      "الدفع عند الاستلام متجر سلة",
+      "تقليل رفض الطلبات",
+      "تأكيد الطلب واتساب",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "3",
+      label: "طرق تقلل الرفض عند الباب",
+    },
+  },
+  {
+    slug: "roas-with-discounts",
+    title: "ROAS 2 مع خصم 40%: ليش ممكن تخسر وانت شايف نفسك تربح",
+    seoTitle: "ROAS كم لازم يكون مع الخصومات؟ ليش خصم 40% ممكن يخسرك",
+    description:
+      "ROAS كم لازم يكون؟ يعتمد على هامشك بعد الخصم. هنا ليش ROAS 2 مع خصم 40% ممكن يعني خسارة، وكيف تحسب ROAS التعادل لكل عرض قبل ما تطلقه.",
+    targetKeyword: "ROAS كم لازم يكون",
+    secondaryKeywords: [
+      "ROAS مع الخصم",
+      "الخصومات تاكل الربح",
+      "حساب ROAS التعادل",
+    ],
+    category: "strategy",
+    service: "meta-ads",
+    cta: "whatsapp",
+    published: "2026-11-23",
+    updated: "2026-11-23",
+    readMinutes: 6,
+    coverStat: {
+      value: "2x",
+      label: "ROAS ممكن يكون خسارة مع خصم 40%",
     },
   },
 ].map((a) => ({
