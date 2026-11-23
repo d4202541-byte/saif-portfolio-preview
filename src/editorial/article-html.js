@@ -70,7 +70,7 @@ export function articleHtml(slug, base = "/") {
   <p>أدير حملات ${esc(service.name)} للمتاجر والشركات في السعودية والخليج، وأبدأ دائمًا بالتأكد من أن القياس صحيح.</p>
   <a class="article-cta-link" href="${servicePath}">تعرّف على خدمة إدارة ${esc(service.name)}</a>
 </aside>`;
-  const message = `مرحبًا سيف، قرأت مقال «${article.title}» وأريد مناقشة حسابي.`;
+  const message = `AUDIT\nقرأت مقال «${article.title}» وأريد مراجعة حسابي. رابط متجري أو حسابي: `;
   const waURL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`;
   const body = d.body
     .replace("<!--cta-->", cta)
@@ -118,7 +118,7 @@ ${
   </div>
 </aside>
 <div class="article-final-cta">
-  <p>عندك سؤال عن هذا الموضوع في حسابك؟</p>
-  <a class="button" href="${esc(waURL)}" target="_blank" rel="noreferrer" data-track="click_whatsapp_cta">اسألني على واتساب</a>
+  <p>إذا تبي أراجع حسابك، أرسل «AUDIT» على واتساب مع رابط متجرك، وأحدد لك أهم 3 نقاط تبدأ فيها.</p>
+  <a class="button" href="${esc(waURL)}" target="_blank" rel="noreferrer" data-track="click_whatsapp_cta">أرسل AUDIT على واتساب</a>
 </div>`;
 }
