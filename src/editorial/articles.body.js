@@ -2109,10 +2109,7 @@ export const content = {
       ],
     ],
     sources: [
-      [
-        "Snapchat Business: Creator marketing",
-        "https://forbusiness.snapchat.com/advertising/creator-marketing",
-      ],
+      ["Snapchat for Business", "https://forbusiness.snapchat.com/"],
       [
         "Google Analytics Help: Collect campaign data with custom URLs",
         "https://support.google.com/analytics/answer/10917952",
