@@ -123,7 +123,7 @@ function pageHtml(route) {
       serviceType: data.title,
       url: canonical,
       provider: { "@type": "Person", name: "Saif Shorfa", url: origin },
-      areaServed: ["Saudi Arabia", "GCC"],
+      areaServed: ["Saudi Arabia", "Riyadh", "Jeddah", "Dammam", "GCC"],
     });
   html = html.replace(
     "<!--person-->",

@@ -9,3 +9,11 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# The old preview at saif-shorfa.netlify.app is still indexed. Send every
+# request there to the live site so search engines and AI tools see one identity.
+[[redirects]]
+  from = "https://saif-shorfa.netlify.app/*"
+  to = "https://saif-growth.com/:splat"
+  status = 301
+  force = true
