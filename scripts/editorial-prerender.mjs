@@ -431,13 +431,23 @@ if (!preview) {
     `- [Home (Arabic, default)](${origin}): selected work, approach and contact`,
     `- [Home (English)](${origin}en/): the same site in English`,
     `- [About Saif Shorfa](${origin}en/about/): who writes the articles and runs the campaigns`,
+    `- [About Saif Shorfa (Arabic)](${origin}about/): the same page in Arabic`,
+    `- [Services (English)](${origin}en/services/): Meta Ads and Google Ads management for KSA and GCC`,
+    `- [Services (Arabic)](${origin}services/): the same page in Arabic`,
     ...platforms.map(
       (p) =>
         `- [${p.name}](${origin}en/services/${p.slug}/): ${p.en.description}`,
     ),
+    ...platforms.map(
+      (p) =>
+        `- [${p.name} (Arabic)](${origin}services/${p.slug}/): the ${p.name} service page in Arabic`,
+    ),
     "",
     "## Growth Lab articles (Arabic)",
     `- [${blog.name}](${origin}blog/): ${blog.description}`,
+    ...categories.map(
+      (c) => `- [${c.title}](${origin}blog/category/${c.slug}/): ${c.intro}`,
+    ),
     ...articles.map(
       (a) => `- [${a.title}](${origin}blog/${a.slug}/): ${a.description}`,
     ),
