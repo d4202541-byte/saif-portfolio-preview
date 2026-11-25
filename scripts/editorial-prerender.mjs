@@ -144,17 +144,23 @@ function htmlFor(route) {
       `lang="${lang}" dir="${ar ? "rtl" : "ltr"}"`,
     )
     .replace(/<title>.*?<\/title>/, `<title>${escape(title)}</title>`);
+  // LinkedIn (and some other scrapers) cannot read WebP, so share images use
+  // the JPEG copies in blog/og/ (generated from blog/covers/*.webp).
+  const shareImage = article
+    ? article.cover.src
+        .replace("blog/covers/", "blog/og/")
+        .replace(/\.webp$/, ".jpg")
+    : "brand/og-image.jpg";
   const metas = {
     description,
     "og:title": title,
     "og:description": description,
     "og:url": origin + path,
     "og:locale": ar ? "ar_SA" : "en_US",
-    "og:image": origin + (article ? article.cover.src : "brand/og-image.jpg"),
+    "og:image": origin + shareImage,
     "twitter:title": title,
     "twitter:description": description,
-    "twitter:image":
-      origin + (article ? article.cover.src : "brand/og-image.jpg"),
+    "twitter:image": origin + shareImage,
   };
   for (const [name, value] of Object.entries(metas)) {
     const type = name.startsWith("og:") ? "property" : "name";

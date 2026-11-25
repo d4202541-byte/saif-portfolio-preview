@@ -1,7 +1,8 @@
 import { chromium } from "playwright";
 import fs from "node:fs";
 // Renders 1200x630 article covers. Run with `npm run preview` on port 4176,
-// then: node scripts/blog-covers.mjs (writes PNGs to /tmp; convert to WebP).
+// then: node scripts/blog-covers.mjs (writes PNGs to /tmp; convert to WebP for
+// blog/covers/ and to JPEG for blog/og/, which is the share image LinkedIn reads).
 (async () => {
   const meta = await import("../src/editorial/articles.meta.js");
   const faces = fs
