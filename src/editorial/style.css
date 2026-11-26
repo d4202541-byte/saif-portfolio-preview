@@ -2456,3 +2456,47 @@ em {
     height: 90px;
   }
 }
+
+.pin-figure {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.pin-figure > a,
+.pin-figure > span {
+  max-width: 100%;
+}
+.pin-figure > a {
+  display: inline-block;
+  padding: 14px 20px;
+  border: 1px solid var(--line);
+  background: var(--soft);
+}
+.pin-figure figcaption {
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.pin-credit {
+  display: block;
+  font-size: 13px;
+}
+.prompt-label {
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+.article-body p > code:only-child {
+  display: block;
+  padding: 12px 14px;
+  line-height: 1.7;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.article-body code[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}

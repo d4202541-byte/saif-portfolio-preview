@@ -20,3 +20,12 @@ const missing =
   (route.page === "article" && !route.articleHtml);
 if (root.childElementCount && !missing) hydrateRoot(root, <App {...route} />);
 else createRoot(root).render(<App {...route} />);
+
+// Pinterest examples in articles use the official embed widget, so images
+// stay on Pinterest with their owners' credit.
+if (route.articleHtml.includes("data-pin-do")) {
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://assets.pinterest.com/js/pinit.js";
+  document.body.appendChild(s);
+}
