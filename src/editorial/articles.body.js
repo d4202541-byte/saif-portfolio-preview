@@ -4910,144 +4910,145 @@ export const content = {
 <p>كثير من أصحاب المتاجر في السعودية والخليج يحسبون إن الإعلان لازم يكون فيديو عشان يبيع. الفيديو قوي، بس الإعلان الثابت (Static Ad) أسرع وأرخص، وتقدر تختبر منه عشر أفكار بتكلفة فيديو واحد. جمعت لك هنا 12 شكل إعلان ثابت من براندات عالمية منشورة على Pinterest، ومع كل واحد: ليش يشتغل، وكيف تطبقه على متجرك، وبرومبت تبدأ فيه مع أدوات الذكاء الاصطناعي.</p>
 <p><strong>ملاحظة:</strong> الصور معروضة من Pinterest مباشرة مع رابط المصدر، وكل الحقوق لأصحابها. الهدف نتعلم الفكرة، مو ننسخ التصميم.</p>
 
-<h2>ليش الإعلان الثابت لسه يبيع؟</h2>
-<p>لأنه يوصل الرسالة في ثانية. العميل يسكرول بسرعة، والصورة اللي فيها جملة وحدة واضحة ومنتج واضح توقفه. وفوق هذا، الإعلان الثابت يخليك تختبر <strong>الزاوية</strong> (وش اللي يقنع العميل) قبل ما تصرف على فيديو. لما تعرف الزاوية الرابحة، بعدين حوّلها لفيديو.</p>
+<h2>هل إعلان الصورة لسه يبيع في ميتا ولا لازم فيديو؟</h2>
+<p>نعم، إعلان الصورة لسه يبيع، لأنه يوصل الرسالة في ثانية. العميل يسكرول بسرعة، والصورة اللي فيها جملة وحدة واضحة ومنتج واضح توقفه. وفوق هذا، الإعلان الثابت يخليك تختبر <strong>الزاوية</strong> (وش اللي يقنع العميل) قبل ما تصرف على فيديو. لما تعرف الزاوية الرابحة، بعدين حوّلها لفيديو.</p>
 
-<h2>1. من هذا إلى هذا (قبل وبعد)</h2>
+<h2>كيف أسوي إعلان قبل وبعد بدون ما ترفضه ميتا؟</h2>
+<p><strong>الجواب المختصر:</strong> يبان كأنه محتوى شخصي مو إعلان، والرسم البسيط يوصل النتيجة بدون كلام كثير.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/1125407394438815394/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>سبورة بيضاء مرسوم عليها «قبل وبعد» بخط اليد، والمنتج في اليد. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/1125407394438815394/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> يبان كأنه محتوى شخصي مو إعلان، والرسم البسيط يوصل النتيجة بدون كلام كثير.</p>
 <p><strong>طبقه في الخليج:</strong> مناسب لمنتجات العناية والشعر والتنظيف. اكتب بخط اليد بلهجة قريبة: «إذا شعرك يتساقط... هذا اللي تحتاجه». انتبه لسياسات ميتا: لا تعرض صور جسم قبل وبعد لمنتجات الوزن والصحة.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>A hand holding a [product] jar next to a small whiteboard with simple hand-drawn before/after doodles, bright kitchen counter, natural daylight, UGC phone photo style, leave empty space on the whiteboard for text</code></p>
 
-<h2>2. عرض بوقت محدد</h2>
+<h2>وش أفضل شكل إعلان لعرض بوقت محدد مثل الجمعة البيضاء؟</h2>
+<p><strong>الجواب المختصر:</strong> الرقم كبير وواضح، والشريط المائل يعطي إحساس الاستعجال.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/1085226841492932743/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>إعلان خصم 30% على الموقع كله مع شريط «الساعات الأخيرة». <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/1085226841492932743/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> الرقم كبير وواضح، والشريط المائل يعطي إحساس الاستعجال.</p>
 <p><strong>طبقه في الخليج:</strong> استخدمه في الجمعة البيضاء، اليوم الوطني، ونهاية الشهر وقت الرواتب. اكتب «آخر 24 ساعة» وخل الخصم الحقيقي هو الرقم الأكبر في الصورة. وقبل ما تكثر من الخصومات اقرأ <a href="/blog/constant-discounts-eat-margin/">الخصم الدائم يأكل هامشك</a>.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Bold sale poster for a [product category] brand, deep [brand color] background, product bottles arranged in the center, diagonal neon tape banner across the image, large empty area at the top for the discount number, studio lighting, high contrast</code></p>
 
-<h2>3. البحث والحل</h2>
+<h2>كيف أحوّل سؤال العميل في قوقل لإعلان صورة يبيع؟</h2>
+<p><strong>الجواب المختصر:</strong> يبدأ من سؤال العميل نفسه، فيحس إن الإعلان يكلمه هو.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/880242690208455354/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>شريط بحث فيه سؤال العميل، وتحته المنتج كحل. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/880242690208455354/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> يبدأ من سؤال العميل نفسه، فيحس إن الإعلان يكلمه هو.</p>
 <p><strong>طبقه في الخليج:</strong> خذ أسئلة عملائك الحقيقية من واتساب والتعليقات واكتبها بلهجتهم: «كيف أخلي بشرتي ما تنشف في الشتاء؟». تحت السؤال: المنتج وجملة وحدة عن النتيجة.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Minimal light grey background, a realistic search bar mockup at the top, below it a [product] jar with a creamy texture swatch, soft shadows, clean skincare aesthetic, space for two short text lines</code></p>
 
-<h2>4. الميم أو المشهد المعروف</h2>
+<h2>هل إعلانات الميمز تنفع للبراندات في السعودية والخليج؟</h2>
+<p><strong>الجواب المختصر:</strong> الدعابة توقف السكرول، والجملة القصيرة تربط الضحكة بفائدة المنتج.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/659707045460694681/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>إعلان واقي شمس يستخدم صيغة «محد كامل... بس» مع وضعية مشهورة. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/659707045460694681/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> الدعابة توقف السكرول، والجملة القصيرة تربط الضحكة بفائدة المنتج.</p>
 <p><strong>طبقه في الخليج:</strong> استخدم عبارات دارجة في الخليج وميمز معروفة عند جمهورك، بس تجنب صور أشخاص مشهورين بدون إذن. الأفضل تصور شخص من فريقك بنفس الفكرة.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>A man in a black suit striking a dramatic pose on a plain beige background, a [product] tube standing on the right side, playful advertising composition, lots of negative space at the top for a quote</code></p>
 
-<h2>5. شكل تطبيق الملاحظات</h2>
+<h2>ليش الإعلان اللي يشبه ملاحظات الجوال يوقف السكرول؟</h2>
+<p><strong>الجواب المختصر:</strong> يشبه شي يشاركه صديق، فالعين ما تعامله كإعلان.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/1149754979901890661/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>إعلان مصمم كأنه ملاحظة في الجوال: «سري للحبوب والبشرة الدهنية». <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/1149754979901890661/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> يشبه شي يشاركه صديق، فالعين ما تعامله كإعلان.</p>
 <p><strong>طبقه في الخليج:</strong> اكتب كأنها ملاحظة شخصية: «روتيني قبل الدوام» أو «مشترياتي من الجمعة البيضاء»، مع 3 إلى 4 نقاط فيها إيموجي، والمنتج تحت.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Phone notes app screenshot style, white background with a subtle grid, a [product] jar at the bottom, realistic iOS notes interface, leave the top two thirds empty for a handwritten-style list</code></p>
 
-<h2>6. خريطة الفوائد</h2>
+<h2>كيف أوضح مكونات المنتج وفوايده في صورة إعلان وحدة؟</h2>
+<p><strong>الجواب المختصر:</strong> يجاوب «وش فيه؟» في نظرة وحدة، وهذا يرفع الثقة في المنتجات اللي العميل يقارن مكوناتها.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/432134526763983081/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>المنتج في المنتصف، وحوله أسهم توضح كل مكون وفايدته. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/432134526763983081/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> يجاوب «وش فيه؟» في نظرة وحدة، وهذا يرفع الثقة في المنتجات اللي العميل يقارن مكوناتها.</p>
 <p><strong>طبقه في الخليج:</strong> قوي للعطور (المكونات)، والعناية، والمكملات. اكتب الفوائد بكلمتين لكل سهم، ولا تزحم الصورة بأكثر من 5 أسهم.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Product flat lay of [product] packets on a warm cream background, thin line arrows pointing to each part, editorial infographic style, empty labels area around the product, soft light</code></p>
 
-<h2>7. شكل منشور إنستغرام</h2>
+<h2>هل الإعلان اللي يشبه منشور إنستغرام عادي يبيع أكثر؟</h2>
+<p><strong>الجواب المختصر:</strong> يتماشى مع الفيد، فيبان محتوى عادي، والزر يوضح الخطوة الجاية.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/1026117096398811495/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>إعلان مصمم كأنه منشور إنستغرام مع زر خصم. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/1026117096398811495/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> يتماشى مع الفيد، فيبان محتوى عادي، والزر يوضح الخطوة الجاية.</p>
 <p><strong>طبقه في الخليج:</strong> حط اسم حسابك وصورة المنتج بألوان البراند، وزر واضح مثل «اطلب الحين واستلم بكرة».</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Instagram post mockup with a bright sky blue background, a [product] jar surrounded by its raw ingredients, small rounded badges on both sides, a pill-shaped button at the bottom, playful food brand style</code></p>
 
-<h2>8. إعلان الموسم</h2>
+<h2>وش أفضل تصميم إعلان لمواسم رمضان واليوم الوطني والجمعة البيضاء؟</h2>
+<p><strong>الجواب المختصر:</strong> التاريخ واضح، والخصم كبير، والمنتجات في مشهد جذاب.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/848084173619769984/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>إعلان بلاك فرايدي بخلفية بنفسجية ومنتجات على الرمل وخصم يصل 40%. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/848084173619769984/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> التاريخ واضح، والخصم كبير، والمنتجات في مشهد جذاب.</p>
 <p><strong>طبقه في الخليج:</strong> نفس الفكرة لرمضان واليوم الوطني ويوم التأسيس والجمعة البيضاء، مع التواريخ مكتوبة. ولقراءة نتائج الموسم صح شوف <a href="/blog/black-friday-results-review/">كيف تقيّم نتائج الجمعة البيضاء</a>.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Festive seasonal sale visual, purple gradient sky, [product] bottles standing on soft sand with small decorative elements, glossy commercial lighting, large empty area at the top for the sale headline and dates</code></p>
 
-<h2>9. التقييمات حول المنتج</h2>
+<h2>كيف أستخدم تقييمات عملائي في إعلان صورة؟</h2>
+<p><strong>الجواب المختصر:</strong> الإثبات الاجتماعي يجاوب «هل جربه أحد؟» قبل ما يسأل.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/1049127675703104700/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>منتج واقي شمس وحوله تقييمات عملاء بخمس نجوم. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/1049127675703104700/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> الإثبات الاجتماعي يجاوب «هل جربه أحد؟» قبل ما يسأل.</p>
 <p><strong>طبقه في الخليج:</strong> استخدم تقييمات حقيقية من متجرك في سلة أو زد، بأسماء مختصرة وبإذن العميل. لا تخترع تقييمات.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>A [product] tube on a vivid blue background, floating white review cards with five stars arranged around it, clean UI style, soft shadows, leave the review text areas blank</code></p>
 
-<h2>10. فقاعات المحادثة</h2>
+<h2>كيف أكتب إعلان صورة بكلام العميل نفسه؟</h2>
+<p><strong>الجواب المختصر:</strong> العميل يشوف شكواه مكتوبة بكلماته، فيحس إن المنتج له.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/1085226841496413153/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>فقاعات محادثة فيها شكاوى يومية، والمنتج كحل. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/1085226841496413153/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> العميل يشوف شكواه مكتوبة بكلماته، فيحس إن المنتج له.</p>
 <p><strong>طبقه في الخليج:</strong> اكتب الفقاعات بلهجة خليجية: «الساعة 3 العصر وأنا خلاص طفيت»، «بشرتي باهتة من المكيف». المحادثة شي يعرفه الكل من واتساب.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Soft pastel gradient background, three chat bubbles with small round avatars on the left, a [product] tub in the bottom left corner, friendly wellness brand style, bubble text left empty</code></p>
 
-<h2>11. عرض الباقة</h2>
+<h2>هل عروض الباقات مثل «اشتر 2 واحصل على 2» تنفع لمتجري؟</h2>
+<p><strong>الجواب المختصر:</strong> العرض مكتوب بخط ضخم، والعربة المليانة توصل إحساس الكمية والقيمة.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/896779344563954123/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>عرض «اشتر 2 واحصل على 2» بعربة تسوق مليانة منتجات وخلفية صفراء. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/896779344563954123/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> العرض مكتوب بخط ضخم، والعربة المليانة توصل إحساس الكمية والقيمة.</p>
 <p><strong>طبقه في الخليج:</strong> الباقات ترفع متوسط قيمة الطلب، وهذا يهم لما يكون عندك شحن أو دفع عند الاستلام. احسب الهامش قبل العرض، وشوف <a href="/blog/roas-with-discounts/">كيف تحسب العائد مع الخصومات</a>.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>Mini shopping cart full of [product] bottles and tubes on a bright yellow background, a small receipt hanging from the cart, punchy retail ad style, large empty area at the top for an offer headline</code></p>
 
-<h2>12. التشبيه البصري</h2>
+<h2>كيف أوصل ميزة منتجي بصورة بدون كلام كثير؟</h2>
+<p><strong>الجواب المختصر:</strong> يحول ميزة مجردة (سكر أقل) لصورة يفهمها أي أحد بدون قراءة.</p>
 
 <figure class="pin-figure">
   <a data-pin-do="embedPin" data-pin-width="medium" href="https://www.pinterest.com/pin/920986192568148542/" target="_blank" rel="noopener nofollow">شاهد الإعلان على Pinterest</a>
   <figcaption>ميزان فيه علب مشروب مقابل مكعبات سكر توضح الفرق. <span class="pin-credit">المصدر: <a href="https://www.pinterest.com/pin/920986192568148542/" target="_blank" rel="noopener nofollow">Pinterest</a>، والحقوق لأصحاب التصميم والبراند.</span></figcaption>
 </figure>
-<p><strong>ليش يشتغل:</strong> يحول ميزة مجردة (سكر أقل) لصورة يفهمها أي أحد بدون قراءة.</p>
 <p><strong>طبقه في الخليج:</strong> فكر بالميزة الأقوى عندك وكيف تشوفها العين: ميزان، مقارنة حجم، أو ساعة. وتأكد إن أي ادعاء صحي أو رقمي عندك دليل عليه.</p>
 <p class="prompt-label">برومبت تجربه:</p>
 <p><code>A vintage kitchen scale on a cobalt blue background, [product] cans on one side and a pile of sugar cubes on the other, cubes falling from above, surreal clean product photography, space at the top for a headline</code></p>
 
 <!--cta-->
 
-<h2>كيف تختار من الـ 12؟</h2>
+<h2>أي شكل إعلان صورة أبدأ فيه لمتجري؟</h2>
+<p>ابدأ من أقوى شي عندك: لو عندك أسئلة متكررة من العملاء، ابدأ بإعلان «البحث والحل» أو «المحادثة». لو عندك تقييمات قوية، ابدأ بالتقييمات أو قبل وبعد. ولو عندك موسم أو عرض، ابدأ بإعلان العرض أو الباقة. واختبر 3 إلى 5 أشكال مع بعض بدل ما تراهن على واحد.</p>
 <ol>
   <li><strong>ابدأ بمشكلة العميل:</strong> لو عندك أسئلة متكررة، ابدأ بـ «البحث والحل» و«فقاعات المحادثة».</li>
   <li><strong>لو عندك تقييمات قوية:</strong> «التقييمات حول المنتج» و«قبل وبعد».</li>
@@ -5056,7 +5057,7 @@ export const content = {
   <li><strong>احكم على المبيعات، مو النقرات:</strong> إعلان يجيب نقرات كثير وما يبيع ممكن تكون المشكلة في الصفحة أو العرض. اقرأ <a href="/blog/high-ctr-no-sales/">نقرات عالية بدون مبيعات</a>.</li>
 </ol>
 
-<h2>كيف تستخدم البرومبتات؟</h2>
+<h2>كيف أستخدم البرومبتات مع أدوات الذكاء الاصطناعي لتصميم الإعلان؟</h2>
 <p>البرومبتات مكتوبة بالإنجليزي لأن أدوات توليد الصور تفهمه أفضل. بدّل <code>[product]</code> باسم منتجك ونوعه، وارفع صورة منتجك الحقيقية كمرجع إذا الأداة تسمح. خل الصورة بدون نص، وأضف النص العربي بعدين في Canva أو أي برنامج تصميم، لأن أدوات الذكاء الاصطناعي لسه تغلط في الحروف العربية.</p>
 
 <h2>الخلاصة</h2>
@@ -5078,6 +5079,22 @@ export const content = {
       [
         "كم إعلان ثابت أختبر في البداية؟",
         "من 3 إلى 5 أشكال مختلفة في نفس الوقت، وكل شكل بنسختين، وبعدها كبّر اللي يبيع.",
+      ],
+      [
+        "وش أفضل تصميم إعلان لمتجر عطور أو عناية في السعودية؟",
+        "الأشكال اللي توضح المكونات والفوائد، والتقييمات، وقبل وبعد (للعناية بدون ادعاءات طبية). اختبر أكثر من شكل واحكم على المبيعات.",
+      ],
+      [
+        "هل أكتب الإعلان بالفصحى أو باللهجة الخليجية؟",
+        "اللهجة الخليجية البسيطة غالبًا أقرب للعميل في السوشيال، بشرط تكون واضحة ومفهومة. اكتب بكلمات عملائك نفسهم من التعليقات وواتساب.",
+      ],
+      [
+        "كم مرة أغير تصاميم الإعلانات؟",
+        "لما تلاحظ الأداء ينزل والتكرار يرتفع، وغالبًا كل أسبوعين إلى أربعة لإعلانات الصور. جهز النسخ الجديدة قبل ما يتعب الإعلان القديم.",
+      ],
+      [
+        "هل إعلانات الصور تنفع في سناب شات وتيك توك؟",
+        "تنفع، بس الفيديو أقوى هناك عادة. استخدم الصورة لاختبار الفكرة بسرعة، وحوّل الرابح لفيديو قصير.",
       ],
     ],
     sources: [
@@ -5107,7 +5124,8 @@ export const content = {
 <p>أكثر شي يوقف أصحاب المتاجر عن اختبار إعلانات جديدة هو الوقت والتكلفة: مصمم، جلسة تصوير، وأيام انتظار. مع الذكاء الاصطناعي تقدر تطلع 20 نسخة إعلان ثابت في ساعة، بشرط تشتغل بنظام واضح. هنا الطريقة اللي أنصح فيها، مع برومبتات جاهزة وأمثلة من Pinterest تلهمك.</p>
 <p><strong>ملاحظة:</strong> الأمثلة معروضة من Pinterest مع رابط المصدر، والحقوق لأصحابها. نتعلم منها الفكرة، ونصمم نسختنا.</p>
 
-<h2>المعادلة: 5 زوايا × 4 نسخ</h2>
+<h2>كيف أطلع 20 إعلان لمتجري في ساعة وحدة؟</h2>
+<p>الطريقة إنك تشتغل بمعادلة: 5 زوايا بيع × 4 نسخ لكل زاوية = 20 إعلان. الذكاء الاصطناعي يكتب العناوين ويولد المشاهد، وأنت تضيف صورة منتجك الحقيقية والنص العربي في Canva. هيك كل مجموعة إعلانات تختبر فكرة وحدة، وتعرف بسرعة وش يقنع عميلك.</p>
 <p>الزاوية هي السبب اللي يخلي العميل يشتري. مثلًا لمتجر عناية بالبشرة:</p>
 <ol>
   <li><strong>المشكلة:</strong> «بشرتك تنشف من المكيف؟»</li>
@@ -5118,12 +5136,14 @@ export const content = {
 </ol>
 <p>لكل زاوية سوّي 4 نسخ: تغير الخلفية، أو العنوان، أو زاوية التصوير، أو اللون. هيك عندك 20 إعلان، وكل مجموعة تختبر فكرة وحدة.</p>
 
-<h2>الخطوة 1: العناوين في 10 دقايق</h2>
+<h2>كيف أكتب عناوين إعلانات بالذكاء الاصطناعي بلهجة خليجية؟</h2>
+<p>أعطِ الأداة نوع منتجك، وسوقك (السعودية والخليج)، والزوايا اللي تبيها، واطلب عناوين قصيرة أقل من 7 كلمات بلهجة خليجية بسيطة وبدون مبالغة. بعدين اختار الأقوى وراجع كل وعد فيه. هذا ياخذ حوالي 10 دقايق.</p>
 <p>اطلب من ChatGPT أو Claude أو Gemini:</p>
 <p><code dir="rtl">أنا متجر [نوع المنتج] في السعودية والخليج. اكتب لي 4 عناوين إعلان قصيرة (أقل من 7 كلمات) لكل زاوية من هذه الزوايا: المشكلة، النتيجة، الإثبات، العرض، الهوية. بلهجة خليجية بسيطة، بدون مبالغة ولا ادعاءات طبية.</code></p>
 <p>اختر الأقوى، وتأكد إن كل وعد في العنوان صحيح وتقدر تثبته.</p>
 
-<h2>الخطوة 2: المشاهد في 30 دقيقة</h2>
+<h2>وش أفضل برومبت لتصميم إعلان منتج بالذكاء الاصطناعي؟</h2>
+<p>أفضل برومبت يوصف المشهد مو الإعلان كامل: المنتج، والخلفية واللون، والإضاءة، وزاوية التصوير، ومساحة فاضية للنص. اكتبه بالإنجليزي لأن أدوات الصور تفهمه أفضل، واطلب الصورة بدون أي نص. تحت 8 أنماط مجرّبة مع برومبت لكل واحد.</p>
 <p>هذي أمثلة من Pinterest لأنماط بصرية تنفع كقوالب، ومع كل واحد برومبت لنسختك.</p>
 
 <h3>المودل مع المنتج</h3>
@@ -5198,7 +5218,9 @@ export const content = {
 <p>يناسب زاوية <strong>المشكلة</strong> بأسلوب ذكي. الشكل مألوف للكل من الجوال.</p>
 <p><code>Smartphone incoming call screen mockup, dark green background, a [product] pouch shown as the caller photo, red and green call buttons at the bottom, space at the top for a two line message</code></p>
 
-<h2>الخطوة 3: التجميع في 20 دقيقة</h2>
+<h2>هل أقدر أكتب نص عربي في الصورة بالذكاء الاصطناعي؟</h2>
+<p>غالبًا لا بشكل مضبوط. أدوات توليد الصور لسه تغلط في الحروف العربية وتشبيكها، فالأفضل تطلب الصورة بدون نص، وتضيف العنوان العربي بنفسك في Canva أو أي برنامج تصميم. هيك تضمن الخط والإملاء وتحافظ على هوية البراند.</p>
+<p>خطوات التجميع (حوالي 20 دقيقة):</p>
 <ol>
   <li>افتح Canva، وحط المشهد اللي طلعته.</li>
   <li>إذا المشهد فيه منتج مولّد، بدّله بصورة منتجك الحقيقية (احذف الخلفية من الصورة الأصلية). العميل لازم يشوف المنتج اللي بيستلمه.</li>
@@ -5208,7 +5230,8 @@ export const content = {
 
 <!--cta-->
 
-<h2>كيف تختبر الـ 20 بدون ما تحرق الميزانية؟</h2>
+<h2>كم إعلان أختبر بالبداية وكيف ما أحرق الميزانية؟</h2>
+<p>لا تشغّل الـ 20 مع بعض. ابدأ بنسخة وحدة من كل زاوية (5 إعلانات) عشان تعرف أي سبب يقنع العميل، وبعدها اختبر النسخ الأربع للزاوية الرابحة بس. واحكم على الطلبات والمبيعات، مو على النقرات.</p>
 <ol>
   <li><strong>أول اختبار للزوايا:</strong> نسخة وحدة من كل زاوية (5 إعلانات) في حملة وحدة.</li>
   <li><strong>بعد ما تبان الزاوية الرابحة:</strong> شغّل نسخها الأربع وشوف أي تصميم أقوى.</li>
@@ -5217,7 +5240,8 @@ export const content = {
 </ol>
 <p>وللأفكار اللي تبدأ منها، شوف <a href="/blog/static-ad-formats-gulf/">12 شكل إعلان ثابت يبيع في الخليج</a>.</p>
 
-<h2>أخطاء شائعة مع إعلانات الذكاء الاصطناعي</h2>
+<h2>هل ميتا ترفض الإعلانات المصممة بالذكاء الاصطناعي؟</h2>
+<p>ميتا ما ترفض الإعلان لأنه مصمم بالذكاء الاصطناعي بحد ذاته. الرفض غالبًا يجي من المحتوى: ادعاءات ما تقدر تثبتها، أو صور قبل وبعد لمنتجات صحية، أو محتوى مضلل. وفي بعض الحالات ممكن تطلب الإفصاح عن الصور المولدة. هذي أشهر الأخطاء:</p>
 <ul>
   <li><strong>منتج مولّد يختلف عن الحقيقي:</strong> هذا يضر الثقة ويرفع المرتجع. استخدم صورة منتجك.</li>
   <li><strong>نص عربي من أداة الصور:</strong> غالبًا فيه أخطاء. أضفه يدويًا.</li>
@@ -5244,6 +5268,22 @@ export const content = {
       [
         "هل ميتا ترفض الإعلانات المصممة بالذكاء الاصطناعي؟",
         "ميتا تراجع المحتوى والادعاءات، وممكن تطلب الإفصاح عن الصور المولدة في بعض الحالات. التزم بسياسات الإعلانات، وتجنب الادعاءات اللي ما تقدر تثبتها.",
+      ],
+      [
+        "هل أحتاج مصمم إذا استخدمت الذكاء الاصطناعي؟",
+        "تقدر تبدأ بدون مصمم للاختبار. لما تعرف الفكرة الرابحة، المصمم يفيدك في تحسينها وتوحيد الهوية.",
+      ],
+      [
+        "هل الإعلانات المولدة بالذكاء الاصطناعي تبيع مثل التصوير الحقيقي؟",
+        "تعتمد على الفكرة والمنتج. الأهم إن المنتج في الإعلان هو نفسه الحقيقي، والحكم يكون على المبيعات مو على شكل التصميم.",
+      ],
+      [
+        "كيف أخلي إعلانات الذكاء الاصطناعي تناسب جمهور الخليج؟",
+        "استخدم لهجة خليجية في العنوان، ولبس وستايل يناسب جمهورك، ومواسم مثل رمضان واليوم الوطني، والعملة المحلية في العرض.",
+      ],
+      [
+        "أي مقاس أصدّر فيه إعلانات الصور؟",
+        "مربع 1:1 للفيد، وطولي 9:16 للستوري والريلز. جهز المقاسين لكل نسخة.",
       ],
     ],
     sources: [
