@@ -15,3 +15,4 @@ export function render(lang, page = "home", serviceSlug = "", base = "/") {
 export { platforms } from "./editorial/copy.js";
 export { articles, blog, categories } from "./editorial/articles.meta.js";
 export { articleData } from "./editorial/article-html.js";
+export { automation } from "./editorial/automation.js";

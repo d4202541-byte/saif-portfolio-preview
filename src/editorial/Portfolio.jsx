@@ -8,6 +8,7 @@ import {
   categoryBySlug,
   formatDate,
 } from "./articles.meta.js";
+import { AutomationPage } from "./Automation.jsx";
 
 function Arrow({ diagonal = false }) {
   return (
@@ -113,6 +114,14 @@ function Header({ lang, page, serviceSlug, l }) {
               {text}
             </a>
           ))}
+          <a
+            href={routePath(lang, "automation")}
+            aria-current={page === "automation" ? "page" : undefined}
+            className={"nav-ai" + (page === "automation" ? " is-current" : "")}
+            onClick={() => setOpen(false)}
+          >
+            {lang === "ar" ? "أتمتة AI" : "AI automation"}
+          </a>
           {lang === "ar" && (
             <a
               href={routePath("ar", "blog")}
@@ -751,6 +760,11 @@ function Footer({ l, lang }) {
         <div>
           <a href={routePath(lang, "service", "meta-ads")}>Meta Ads</a>
           <a href={routePath(lang, "service", "google-ads")}>Google Ads</a>
+          <a href={routePath(lang, "automation")}>
+            {lang === "ar"
+              ? "أتمتة التسويق بالذكاء الاصطناعي"
+              : "AI marketing automation"}
+          </a>
           <a href={routePath(lang, "about")}>
             {lang === "ar" ? "عن سيف" : "About"}
           </a>
@@ -1064,6 +1078,8 @@ export default function Portfolio({
           <BlogIndex category={serviceSlug} />
         ) : page === "article" && article ? (
           <Article article={article} html={articleHtml} />
+        ) : page === "automation" ? (
+          <AutomationPage lang={lang} />
         ) : page === "services" ? (
           <Services {...{ c, l, lang }} directory />
         ) : !missing ? (

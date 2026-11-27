@@ -12,6 +12,7 @@ export function localPath(page = "home", slug = "") {
   if (page === "about") return "about/";
   if (page === "category") return "blog/category/" + slug + "/";
   if (page === "article") return "blog/" + slug + "/";
+  if (page === "automation") return "services/ai-marketing-automation/";
   return "services/" + (slug ? slug + "/" : "");
 }
 
@@ -40,6 +41,12 @@ export function resolveRoute(pathname) {
       page: segments[1] ? "service" : "services",
       serviceSlug: segments[1] || "",
     };
+  if (
+    segments[0] === "services" &&
+    segments[1] === "ai-marketing-automation" &&
+    segments.length === 2
+  )
+    return { lang, page: "automation", serviceSlug: "" };
   if (segments[0] === "about" && segments.length === 1)
     return { lang, page: "about", serviceSlug: "" };
   if (
