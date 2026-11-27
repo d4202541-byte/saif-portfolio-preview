@@ -6,6 +6,7 @@ import {
   blog,
   categories,
   articleData,
+  automation,
 } from "../.ssr/entry-server.js";
 const base = process.env.VITE_BASE_PATH || "/";
 const template = fs.readFileSync("dist/index.html", "utf8");
@@ -45,6 +46,12 @@ for (const lang of ["ar", "en"]) {
     { lang, page: "home", path: prefix, local: "" },
     { lang, page: "services", path: prefix + "services/", local: "services/" },
     { lang, page: "about", path: prefix + "about/", local: "about/" },
+    {
+      lang,
+      page: "automation",
+      path: prefix + "services/ai-marketing-automation/",
+      local: "services/ai-marketing-automation/",
+    },
   );
   for (const platform of platforms)
     routes.push({
@@ -89,6 +96,10 @@ const seo = {
       "خدمات إعلانات Google وMeta للشركات والمتاجر | سيف الشرفا",
       "إدارة حملات Google Ads وMeta Ads وتدقيق تتبع التحويلات للمتاجر والعيادات والشركات في السعودية والخليج.",
     ],
+    automation: [
+      "كيف تأتمت المحتوى والحملات الإعلانية بالذكاء الاصطناعي في السعودية والخليج؟ | سيف الشرفا",
+      "فريق تسويق بالذكاء الاصطناعي: بحث وتحليل منافسين ومحتوى بالخليجي وفحص جودة ونشر تلقائي بعد موافقتك، مع أتمتة تقارير ميتا وقوقل. الباقات تبدأ من 3,900 ريال شهريًا.",
+    ],
     "meta-ads":
       "إدارة إعلانات فيسبوك وإنستغرام في السعودية والخليج | سيف الشرفا",
     "google-ads":
@@ -106,6 +117,10 @@ const seo = {
     services: [
       "Meta Ads & Google Ads Services | Saif Shorfa",
       "Google Ads and Meta Ads management plus conversion tracking audits for stores, clinics and businesses in Saudi Arabia and the GCC.",
+    ],
+    automation: [
+      "How can GCC businesses automate content and ad campaigns with AI? | Saif Shorfa",
+      "An AI marketing team: research, competitor analysis, Gulf Arabic and English content, QA and auto-publishing after your approval, plus automated Meta and Google reporting. Plans from SAR 3,900 a month.",
     ],
     "meta-ads": "Meta Ads Management for Saudi & GCC Businesses | Saif Shorfa",
     "google-ads":
@@ -251,6 +266,52 @@ function htmlFor(route) {
       provider: { "@id": personId },
       areaServed: ["Saudi Arabia", "Riyadh", "Jeddah", "Dammam", "GCC"],
     });
+  if (page === "automation") {
+    const t = automation[lang];
+    const serviceId = origin + "services/ai-marketing-automation/#service";
+    graph.push({
+      "@type": "Service",
+      "@id": serviceId,
+      name: ar ? "فريق تسويق بالذكاء الاصطناعي" : "AI Marketing Team",
+      serviceType: "AI marketing automation",
+      description,
+      url: origin + path,
+      provider: { "@id": personId },
+      areaServed: [
+        "Saudi Arabia",
+        "Kuwait",
+        "United Arab Emirates",
+        "Qatar",
+        "Bahrain",
+        "Oman",
+      ],
+      availableLanguage: ["ar", "en"],
+      offers: t.plans.map((p) => ({
+        "@type": "Offer",
+        name: p.name,
+        price: p.price.replace(",", ""),
+        priceCurrency: "SAR",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: p.price.replace(",", ""),
+          priceCurrency: "SAR",
+          unitText: "MONTH",
+        },
+      })),
+    });
+    graph.push({
+      "@type": "FAQPage",
+      mainEntity: [
+        ...t.sections.map((x) => [x.q, x.a]),
+        [t.pricingQ, t.pricingA],
+        ...t.faqs,
+      ].map(([q, a]) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
+    });
+  }
   if (page === "blog" || category || article) {
     const crumbs = [
       ["الرئيسية", origin],
