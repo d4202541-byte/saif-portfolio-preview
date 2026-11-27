@@ -2,7 +2,7 @@
    Deliberately its own look: a dark base with sharper electric colours,
    different from the paper/ink identity of the rest of the site. */
 .ai-page {
-  --ai-bg: #07070d;
+  --ai-bg: #0d0d12;
   --ai-surface: #12121c;
   --ai-surface-2: #1a1a28;
   --ai-line: #2a2a3d;
@@ -16,6 +16,10 @@
   color: var(--ai-text);
   padding-bottom: 0;
   overflow: hidden;
+  /* A framed dark "stage" inside the paper site, so the light header and
+     footer read as one identity instead of hard breaks. */
+  margin: 12px clamp(10px, 1.6vw, 24px) 0;
+  border-radius: clamp(22px, 3vw, 40px);
 }
 .ai-page h1,
 .ai-page h2,
@@ -621,4 +625,74 @@
   border-radius: 50%;
   background: #ff2e7e;
   vertical-align: super;
+}
+
+/* Centred layout: headings, answers and calls to action sit on the page
+   axis; cards keep start-aligned text for easy reading. */
+.ai-hero .ai-wrap,
+.ai-qa,
+.ai-branches,
+.ai-work,
+.ai-pricing,
+.ai-steps,
+.ai-faq > h2,
+.ai-final .ai-wrap {
+  text-align: center;
+}
+.ai-hero h1,
+.ai-lead,
+.ai-page h2,
+.ai-final p {
+  margin-inline: auto;
+}
+.ai-actions {
+  justify-content: center;
+}
+.ai-answer {
+  margin-inline: auto;
+  border-inline-start: 0;
+  padding-inline-start: 0;
+  position: relative;
+  padding-top: 22px;
+}
+.ai-answer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  margin-inline: auto;
+  width: 48px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--ai-blue), var(--ai-pink));
+}
+.ai-layers li,
+.ai-branch,
+.ai-work-card,
+.ai-plan,
+.ai-steps li {
+  text-align: start;
+}
+.ai-stats li {
+  text-align: center;
+  justify-items: center;
+}
+[dir="rtl"] .ai-stats strong {
+  text-align: center;
+}
+.ai-faq details {
+  max-width: 860px;
+  margin-inline: auto;
+}
+.ai-offer {
+  text-align: center;
+}
+.ai-glow {
+  inset: -20% 0 auto;
+}
+.ai-page .ai-lead,
+.ai-page .ai-answer,
+.ai-page .ai-final p,
+.ai-page .ai-offer {
+  margin-inline: auto;
 }
